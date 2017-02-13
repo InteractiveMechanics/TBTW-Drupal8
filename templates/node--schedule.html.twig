@@ -1,0 +1,305 @@
+<div class="subpage-hero-section">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        
+                        <div class="subpage-hero-details schedule-hero" style="">
+                            <section>
+                                <ol class="breadcrumb">
+                                    <li><a href="#">Primary Navigation</a></li>
+                                    <li class="active"><a href="#">{{node.title.value}}</a></li>
+                                </ol>
+
+                                <h1 class="subpage-title">{{node.title.value}}</h1>
+                            </section>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="main-content-subpages schedule">
+
+            <div class="container-fluid">
+
+                <div class="padded-box">
+
+                    <div class="row">
+                        <div class="col-md-9">
+                          
+                          {{schedule_table|raw}}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h1>Important Info</h1>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{node.body.value|raw}}
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+        
+        
+    <div class="buy-now-popup display-none">
+		<div class="close-icon close-icon-tickets">
+	    	<img src="../{{front_page}}themes/tbtw/assets/icons/icon-close.svg" style="width: 10px; height: 10px;">
+	    </div>
+        <h3>Tickets for <span class="month-picked">October</span> <span class="day-picked">14</span>, 2016</h3>
+
+        <label class="uppercase" >General Admission</label>
+
+        <ul>
+            <li>
+                <div class="pull-left">
+                    <p>
+                        Online
+                    </p>
+                </div>
+
+                <div class="pull-right">
+                    <p class="price online">
+                        $29
+                    </p>
+                </div>
+
+                <br style="clear:both;" />
+            </li>
+
+            <li>
+                <div class="pull-left">
+                    <p>
+                        At the Door
+                    </p>
+                </div>
+
+                <div class="pull-right">
+                    <p class="price atdoor">
+                        $35
+                    </p>
+                </div>
+
+                <br style="clear:both;" />
+            </li>
+
+            <li>
+                <div class="pull-left">
+                    <p>
+                        Group Rate <span data-toggle="tooltip" data-placement="top" title="Tooltip Content Here" class="help-icon"></span>
+                    </p>
+                </div>
+
+                <div class="pull-right">
+                    <p class="price grouprate">
+                        $28
+                    </p>
+                </div>
+
+                <br style="clear:both;" />
+            </li>
+        </ul>
+
+        <label>VIP Experiences</label>
+
+        <ul>
+            <li>
+                <div class="pull-left">
+                    <p>
+                        Quick Pass <span data-toggle="tooltip" data-placement="top" title="Tooltip Content Here" class="help-icon"></span>
+                    </p>
+                </div>
+
+                <div class="pull-right">
+                    <p class="price vipquick">
+                        $10
+                    </p>
+                </div>
+
+                <br style="clear:both;" />
+            </li>
+
+            <li>
+                <div class="pull-left">
+                    <p>
+                        After Dark VIP Tour <span data-toggle="tooltip" data-placement="top" title="Tooltip Content Here" class="help-icon"></span>
+                    </p>
+                </div>
+
+                <div class="pull-right">
+                    <p class="price vipdark">
+                        $99
+                    </p>
+                </div>
+
+                <br style="clear:both;" />
+            </li>
+
+            <li>
+                <div class="pull-left">
+                    <p>
+                        The Hex Challenge <span data-toggle="tooltip" data-placement="top" title="Tooltip Content Here" class="help-icon"></span>
+                    </p>
+                </div>
+
+                <div class="pull-right">
+                    <p class="price viphex">
+                        $55
+                    </p>
+                </div>
+
+                <br style="clear:both;" />
+            </li>
+
+            <li>
+                <div class="pull-left">
+                    <p>
+                        After Dark + Hex Combo <span data-toggle="tooltip" data-placement="top" title="Tooltip Content Here" class="help-icon"></span>
+                    </p>
+                </div>
+
+                <div class="pull-right">
+                    <p class="price vipdarkhex">
+                        $139
+                    </p>
+                </div>
+
+                <br style="clear:both;" />
+            </li>
+        </ul>
+
+        <div class="buy-now">
+            <button class="btn btn-white btn-big btn-buy-now-link" id="buy-now-link" style="width:100%;" onclick="buyTikcets()">
+                BUY NOW & SAVE
+            </button>
+        </div>
+    </div>
+        
+	<script type="text/javascript">
+
+        $(document).ready(function(){
+	        
+	        function showPopup() {
+		        var dateKey = getParameterByName('date');
+		        if(dateKey) {
+			        
+			        var dateClass = "." + dateKey;
+			        
+			        $('html, body').animate({
+	                    scrollTop: $(dateClass).offset().top - 300
+	                }, 2000);
+	                
+	                setTimeout(function(){
+			       		$(dateClass).click();
+	                }, 500);
+		        }
+	        }
+	        
+	        var dateKey = getParameterByName('date');
+	        if(dateKey) {
+		        
+		        setTimeout(showPopup, 1000);
+		        
+	        }
+	        
+            $('td').click(function(){
+	            if(!$(this).hasClass('not-colored') && !$(this).hasClass('padding-td') ) {
+	            	
+	            	
+	            	var price = $(this).data('price');
+	            	var atdoor = $(this).data('atdoor');
+	            	var grouprate = $(this).data('grouprate');
+	            	var onlineprice = $(this).data('onlineprice');
+	            	var vipdark = $(this).data('vipdark');
+	            	
+	            	var vipquick = $(this).data('vipquick');
+	            	var viphex = $(this).data('viphex');
+	            	var vipdarkhex = $(this).data('vipdarkhex');
+	            	var day = $(this).data('day');
+	            	var month = getMonth($(this).data('month'));
+	            	
+	            	var link = $(this).data('link');
+	            	var color = $(this).data('color');
+	            	
+	            	$('.buy-now-popup h3').removeClass().addClass(color);
+	            	$('.btn-buy-now-link').attr('data-link', link);
+	            	
+	            	$('p.price').text('$' + price);
+	            	$('p.atdoor').text('$' + atdoor);
+	            	$('p.grouprate').text('$' + grouprate);
+	            	$('p.vipdark').text('$' + vipdark);
+	            	$('p.vipquick').text('$' + vipquick);
+	            	$('p.viphex').text('$' + viphex);
+	            	$('p.vipdarkhex').text('$' + vipdarkhex);
+	            	
+	            	$('.month-picked').text(month);
+	            	$('.day-picked').text(day);
+	            	
+	            	var hasClass = $('.buy-now-popup').hasClass('display-block');
+	            
+		            if(!hasClass) {
+		            	$('.buy-now-popup').toggleClass('display-none display-block');    
+		            }
+		            
+					$('td').removeClass('active');
+					$(this).addClass('active');   
+	            }
+            });
+            
+            
+            $('.close-icon-tickets').click(function(){
+	           $('td').removeClass('active');
+	           $('.buy-now-popup').toggleClass('display-none display-block');  
+            });
+            
+        });
+        
+        function getMonth(month) {
+	        
+	        if(month == "september") {
+		        return "Sept";
+	        }
+	        
+	        if(month == "october") {
+		        return "Oct";
+	        }
+	        
+	        if(month == "november") {
+		        return "Nov";
+	        }
+        }
+        
+        function buyTikcets() {
+	        var buy = document.getElementById('buy-now-link');
+			window.open(buy.dataset.link, '_blank');
+        }
+        
+        function getParameterByName(name, url) {
+		    if (!url) {
+		      url = window.location.href;
+		    }
+		    name = name.replace(/[\[\]]/g, "\\$&");
+		    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+		        results = regex.exec(url);
+		    if (!results) return null;
+		    if (!results[2]) return '';
+		    return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+
+    </script>

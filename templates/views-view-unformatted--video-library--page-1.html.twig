@@ -1,0 +1,103 @@
+
+<main>
+
+
+        <div class="subpage-hero-section">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        
+                        <div class="subpage-hero-details press-hero">
+                            <section>
+                                <ol class="breadcrumb">
+                                    <li><a href="#">Press Room</a></li>
+                                    <li class="active"><a href="#">Video Library</a></li>
+                                </ol>
+
+                                <h1 class="subpage-title">Video Library</h1>
+                            </section>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="main-content-subpages image-library-page">
+
+            <div class="container-fluid">
+
+                <div class="padded-box">
+                    
+                    <div class="main-item">
+					
+						<div class="row">
+							<div class="col-md-6 col-sm-8 col-xs-10 col-centered">
+								<div class="password-form">
+									<p>
+										The page you are trying to view is password protected. To obtain the password, 
+										please email your name and media organization to Ellen Feist at ef@easternstate.org.
+									</p>
+									
+									<div class="form-group">
+										<label class="error-message" style="color:#DB322B"></label>
+										<input type="password" class="form-control password" placeholder="Enter passwrod" autocomplete="off" /> <br />
+										<button class="btn btn-red">Enter</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+                        <div class="press-items" style="display:none;">
+							<div class="row equalheights">
+	                        
+	                            {% for row in rows %}  
+	                            
+	                            	{%
+					                	set row_classes = [
+											default_row_class ? 'views-row',
+										]
+									%}
+									
+									{{ row.content }}
+	                            {% endfor %}
+	                            
+	                        </div>
+                        </div>
+
+                    </div>
+                    
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+    
+    <script type="text/javascript">
+    	
+    	$(document).ready(function(){
+	    	$('.btn').click(function(){
+		    	var val = $('.password').val();
+		    	
+		    	if(val == "yes") {
+			    	$('.password-form').slideUp({
+					    complete: function(){
+					        setTimeout(function(){
+					        	$('.press-items').css('display', 'block');
+					        }, 300);
+					    }
+					});
+		    	} else {
+			    	$('.error-message').text("Incorrect password");
+		    	}
+	    	});
+    	});
+    	
+    </script>

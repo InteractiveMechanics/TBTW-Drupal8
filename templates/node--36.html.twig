@@ -1,0 +1,106 @@
+<div class="subpage-hero-section">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        
+                        <div class="subpage-hero-details generic-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url({{baseurl}}/themes/tbtw/assets/hero-images/tbtw-hero-overlay@2x.png.png), url({{file_url(node.field_lead_image.entity.uri.value)}});">
+                            <section>
+                                <ol class="breadcrumb">
+                                    <li class="active"><a href="#">{{node.title.value}}</a></li>
+                                </ol>
+
+                                <h1 class="subpage-title">{{node.title.value}}</h1>
+                            </section>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="main-content-subpages press-page">
+
+            <div class="container-fluid">
+
+                <div class="padded-box">
+                    
+                    <div class="main-item">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                
+                                <img class="img-responsive" src="{{file_url(press_item.field_lead_image.entity.uri.value)}}">
+                                
+                            </div>
+
+                            <div class="col-md-6">
+                                <p>Latest Press Release</p>
+                                <h2><a href="<{# path('entity.node.canonical', {'node': press_item.nid.value}) #}">{{press_item.title.value}}</a></h2>
+                                {{press_item.body.summary|raw}}
+                            </div>
+                        </div>
+
+                    </div>
+                    
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <hr />
+                        </div>
+                    </div>
+
+                    <div class="press-items">
+
+                        <div class="row">
+                                
+                            <div class="col-md-4">
+                                <div>
+                                    <div class="press-image">
+                                        <a href="http://dev.interactivemechanics.com/easternstate/halloween/press-releases">
+                                        	<img class="img-responsive" src="http://placehold.it/850x465">
+                                        </a>
+                                    </div>
+                                    <h2><a href="http://dev.interactivemechanics.com/easternstate/halloween/press-releases">Press Releases</a></h2>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div>
+                                    <div class="press-image">
+                                        <a href="http://dev.interactivemechanics.com/easternstate/halloween/image-library">
+                                        	<img class="img-responsive" src="http://placehold.it/850x465">
+                                        </a>
+									</div>
+                                    <h2><a href="http://dev.interactivemechanics.com/easternstate/halloween/image-library">Image Library</a></h2>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div>
+                                    <div class="press-image">
+                                        <a href="http://dev.interactivemechanics.com/easternstate/halloween/video-library">
+                                        	<img class="img-responsive" src="http://placehold.it/850x465">
+                                        </a>
+                                    </div>
+                                    <h2><a href="http://dev.interactivemechanics.com/easternstate/halloween/video-library">Video Library</a></h2>
+
+                                </div>
+                            </div>
+                                
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        
+        

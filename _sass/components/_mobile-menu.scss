@@ -1,0 +1,243 @@
+
+body {
+    &.has-active-menu {
+        overflow: hidden;
+    }
+}
+
+.c-menu {
+  position: fixed;
+  z-index: 200;
+  background-color: #4b535c;
+  transition: transform 0.3s;
+  z-index: 1000000000;
+}
+
+.mobile-menu-top {
+    padding: 15px 30px 20px;
+	height: 65%;
+	
+    h2 {
+        color:white;
+        font-weight: 200;
+        margin-bottom: 20px;
+    }
+    
+    address {
+        color: white;
+		font-size: 12px;
+		font-weight: 300;
+		line-height: 20px;
+		
+		border: 5px solid transparent;
+		border-image: url(../../assets/icons/icon-underline.svg) 0 0 3 0 repeat;
+		color: white;
+    }
+	
+    ul {
+        margin: 0px;
+        padding: 0px;
+        
+        &.scrollable-ul {
+			height: 100%;
+			overflow-y: scroll;	
+		}
+
+        li {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+
+            &.indent {
+                padding-left: 25px;
+            }
+
+            a {
+                color: #eee;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        ul {
+            li{
+                margin-bottom:20px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    > ul {
+        margin-bottom: 25px;
+
+        > li {
+            margin-bottom: 20px;
+
+            > a {
+                color: #777;
+                cursor: pointer;
+                font-size: 14px;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.mobile-menu-bottom {
+	height: 35%;
+	
+	a {
+		&.buy-now {
+			text-decoration: none;
+			
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	.address {
+		p {
+            font-size: 12px !important;
+            color: white;
+			float: left; margin-right: 15px;
+            width: 46%;
+
+            &:last-of-type {
+                margin: 0;
+            }
+			
+			a {
+				border-bottom: 5px solid transparent; border-image: url(../../assets/icons/icon-underline.svg) 0 0 5 0 repeat;
+				color: white;
+				text-decoration: none;
+				font-size: 12px; 
+                line-height: 1.6;
+				&:hover {
+					color:$red;
+					text-decoration: none;
+				}
+			}
+		}
+		span {
+			color: white;
+		}
+	}
+	
+	address {
+		margin-bottom: 5px !important;
+		float: left;
+		margin-right: 20px;
+	}
+	
+	ul {
+	    clear: both;
+	    
+        &.social-icons {
+            margin-top: 10px;
+
+            li {
+                border:0px !important;
+                font-size:11px !important;  
+
+                .fa-2x {
+                    font-size: 2em !important;
+                }
+                a {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}
+
+.mobile-label-links {
+    p {
+        a {
+            font-size: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color:#95959c;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.mobile-buy-now-menu {
+    background: $red;
+    padding: 20px 30px;
+    color:white;
+    font-size: 20px;
+    cursor: pointer;
+
+    
+
+    address {
+        font-weight: bold;
+        color:white;
+    }
+}
+
+
+.c-mask {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+
+    &.is-active {
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+        transition: opacity 0.3s;
+    }
+}
+
+.c-menu--slide-left,
+.c-menu--slide-right,
+.c-menu--push-left,
+.c-menu--push-right {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+@media all and (min-width: 320px) {
+  .c-menu--slide-left,
+  .c-menu--slide-right,
+  .c-menu--push-left,
+  .c-menu--push-right {
+    width: 350px;
+  }
+}
+
+.c-menu--slide-right,
+.c-menu--push-right {
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+}
+
+@media all and (min-width: 350px) {
+  .c-menu--slide-right,
+  .c-menu--push-right {
+    transform: translateX(350px);
+  }
+}
+
+.c-menu--slide-right.is-active,
+.c-menu--push-right.is-active {
+  transform: translateX(0);
+} 
+

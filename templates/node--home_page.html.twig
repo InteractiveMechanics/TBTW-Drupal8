@@ -1,0 +1,370 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as node.delete) will result in an exception.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node onot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ *
+ * @todo Remove the id attribute (or make it a class), because if that gets
+ *   rendered twice on a page this is invalid CSS for example: two lists
+ *   in different view modes.
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="calendar-widget display-none hidden-xs" id="Calendar">
+       
+    <div class="close-icon">
+    	<img src="../{{front_page}}themes/tbtw/assets/icons/icon-close.svg" style="width: 10px; height: 10px;">
+    </div>
+    
+    <div style="padding:45px 20px 20px">
+    	{{schedule_table_widget|raw}}
+    </div>
+</div>
+	<div class="hero-section">
+            <div class="container-fluid">
+                <div class="row">
+				
+                    <div class="col-md-12">
+                        <div class="jumbotron" style="">
+						
+							<video id="video-background" preload muted autoplay loop>
+							    <source src="http://dev.interactivemechanics.com/easternstate/halloween/themes/tbtw/assets/HomepageVideo2016-SD.mp4" type="video/mp4">
+							    <img src="" />
+							</video>
+							 
+							<div class="contaienr2">
+							
+								<h1>A Massive Haunted House Inside A Real Prison</h1>
+	
+	                            <p>
+	                                <a class="btn btn-red btn-lg btn-big" href="{{ path('entity.node.canonical', {'node': 43}) }}" role="button">
+	                                    Buy Now & Save
+	                                </a>
+	                                <a class="btn btn-white btn-lg btn-big watch-preview" href="javascript: void(0);" role="button">
+	                                   <span class="glyphicon glyphicon-play" style="display:inline-block; padding-right:10px;"></span> Watch The Preview
+	                                </a>
+	                            </p>
+							</div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+		
+        <div class="container-fluid">
+            <div class="mainpage-tagline">
+                <div class="row">
+                    <div class="col-md-12">
+                    
+                    	{% set randVar = random(2) %}
+							
+						{% if randVar == 0 %}
+	                        <span class="text-center">
+	                            {{node.field_testimonial.0.getFieldCollectionItem().field_quote.value|raw}}
+	                        </span>
+	                        <label>{{node.field_testimonial.0.getFieldCollectionItem().field_attribute.value|raw}}</label>
+                        {% endif %}
+                        
+                       {% if randVar == 1 %}
+	                        <span class="text-center">
+	                            {{node.field_testimonial.1.getFieldCollectionItem().field_quote.value|raw}}
+	                        </span>
+	                        <label>{{node.field_testimonial.1.getFieldCollectionItem().field_attribute.value|raw}}</label>
+                        {% endif %}
+                        
+                        {% if randVar == 2 %}
+	                        <span class="text-center">
+	                            {{node.field_testimonial.2.getFieldCollectionItem().field_quote.value|raw}}
+	                        </span>
+	                        <label>{{node.field_testimonial.2.getFieldCollectionItem().field_attribute.value|raw}}</label>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="acttractions-section">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="jumbotron">
+
+                            <div class="row">
+                            	
+                            	<div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
+
+                                    <h2>{{node.field_home_page_body.0.getFieldCollectionItem().field_body_title.value}}</h2>
+
+                                    <p>
+										{{node.field_home_page_body.0.getFieldCollectionItem().field_body_copy.value|raw}}
+                                    </p>
+
+                                    <p>
+                                        <a class="btn btn-white btn-lg btn-big" href="{{ path('entity.node.canonical', {'node': 34}) }}" role="button">
+                                            View All Attractions
+                                        </a>
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
+                                  <div id="prison-wrap">
+                                    <img id="prison-img" src="../{{front_page}}themes/tbtw/assets/prison-gfx@2x.png.png" alt="Prison" />
+                                    
+                                    <a href="javascript:void(0);">
+                                        <span class="bubble detritus" 
+                                        		data-title='{{attractions.8.title.value}}' 
+                                        		data-desc='{{attractions.8.field_attraction_description.value}}'
+                                        		data-image='{{file_url(attractions.8.field_tbtw_attraction_logo.entity.uri.value)}}' 
+                                        		style="top: 8%; left: 7%;"></span>
+                                    </a>
+                                    <a href="javascript:void(0);">
+	                                    <span class="bubble breakout" 
+	                                    		data-title='{{attractions.11.title.value}}' 
+	                                    		data-desc='{{attractions.11.field_attraction_description.value}}'
+	                                    		data-image='{{file_url(attractions.11.field_tbtw_attraction_logo.entity.uri.value)}}'
+	                                    		data-video='{{attractions.11.field_tbtw_attraction_video.value}}' style="top: -11%; left: 32%;"></span>
+	                                </a>
+	                                <a href="javascript:void(0);">
+	                                    <span class="bubble infirmary" 
+	                                    		data-title='{{attractions.12.title.value}}' 
+	                                    		data-desc='{{attractions.12.field_attraction_description.value}}'
+	                                    		data-image='{{file_url(attractions.12.field_tbtw_attraction_logo.entity.uri.value)}}'
+	                                    		data-video='{{attractions.12.field_tbtw_attraction_video.value}}' style="top: 14%; left: 37%;"></span>
+	                                </a>
+	                                <a href="javascript:void(0);">
+	                                    <span class="bubble quaratine" 
+	                                    		data-title='{{attractions.8.title.value}}' 
+	                                    		data-desc='{{attractions.8.field_attraction_description.value}}'
+	                                    		data-image='{{file_url(attractions.8.field_tbtw_attraction_logo.entity.uri.value)}}' 
+	                                    		data-video='{{attractions.8.field_tbtw_attraction_video.value}}' style="top: 40%; left: 17%;"></span>
+	                                </a>
+	                                <a href="javascript:void(0);">
+	                                    <span class="bubble lockdown" 
+	                                    		data-title='{{attractions.10.title.value}}' 
+	                                    		data-desc='{{attractions.10.field_attraction_description.value}}'
+	                                    		data-image='{{file_url(attractions.10.field_tbtw_attraction_logo.entity.uri.value)}}' 
+	                                    		data-video='{{attractions.10.field_tbtw_attraction_video.value}}' style="top: 53.5%; left: 48%;"></span>
+	                                </a>
+	                                <a href="javascript:void(0);">
+	                                    <span class="bubble machine-shop" 
+	                                    		data-title='{{attractions.9.title.value}}' 
+	                                    		data-desc='{{attractions.9.field_attraction_description.value}}'
+	                                    		data-image='{{file_url(attractions.9.field_tbtw_attraction_logo.entity.uri.value)}}' 
+	                                    		data-video='{{attractions.9.field_tbtw_attraction_video.value}}' style="top: 26%; left: 58%;"></span>
+	                                </a>
+                                  </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mainpage-details-section">
+            <div class="container-fluid">
+                <div class="row" style="margin:0;">
+                
+                	{%
+	                    set image  = file_url(node.field_feature_block.0.getFieldCollectionItem().field_feature_block_image.entity.uri.value)
+                    %}
+
+					{% if image ends with '.jpg' or image ends with '.jpeg' or image ends with '.png' or image ends with '.bmp' %}
+                    	<div class="col-md-4 vip-expriences" style="background: url({{image}}) top right; background-size: cover;">
+                    {% else %}
+						<div class="col-md-4 vip-expriences" style="background: #4c555c;">
+                    {% endif %}
+                    
+                        
+                        <div class="sub-detail">
+                            <h2>{{node.field_feature_block.0.getFieldCollectionItem().field_feature_block_title.value}}</h2>
+                           
+                            {{node.field_feature_block.0.getFieldCollectionItem().field_feature_block_copy.value|raw}}
+                            <p style="margin:0;">
+                            	<span  class="terror-underline underline-learn-more" href="{{node.field_feature_block.2.getFieldCollectionItem().field_feature_block_link.uri}}">
+                            		<a href="{{ path('entity.node.canonical', {'node': 1}) }}">Learn More</a>
+                            	</span>
+                            </p>
+                        </div>
+
+                        <div class="darken-overlay"></div>
+                    </div>
+                    
+                    {%
+	                    set image  = file_url(node.field_feature_block.1.getFieldCollectionItem().field_feature_block_image.entity)
+                    %}
+                    
+                    
+
+					{% if image ends with '.jpg' or image ends with '.jpeg' or image ends with '.png' or image ends with '.bmp'  %}
+                    	<div class="col-md-4 frequent-questions" style="background: url({{image}}) top right; background-size: cover;">
+                    {% else %}
+						<div class="col-md-4 frequent-questions" style="background: #4c555c;">
+                    {% endif %}
+
+                        <div class="sub-detail">
+                            <h2>{{node.field_feature_block.1.getFieldCollectionItem().field_feature_block_title.value}}</h2>
+                           
+                            {{node.field_feature_block.1.getFieldCollectionItem().field_feature_block_copy.value|raw}}
+                            <p style="margin:0;">
+                            	<span  class="terror-underline underline-learn-more" href="{{node.field_feature_block.2.getFieldCollectionItem().field_feature_block_link.uri}}">
+                            		<a href="{{ path('entity.node.canonical', {'node': 4}) }}">Learn More</a>
+                            	</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    
+                    {%
+	                    set image  = file_url(node.field_feature_block.2.getFieldCollectionItem().field_feature_block_image.entity.uri.value)
+                    %}
+
+					{% if image ends with '.jpg' or image ends with '.jpeg' or image ends with '.png' or image ends with '.bmp'  %}
+                    	<div class="col-md-4 favorite-frights" style="background: url({{image}}) top right; background-size: cover;">
+                    {% else %}
+						<div class="col-md-4 favorite-frights" style="background: #4c555c;">
+                    {% endif %}
+
+                        <div class="sub-detail">
+                            <h2>{{node.field_feature_block.2.getFieldCollectionItem().field_feature_block_title.value}}</h2>
+                           
+                            {{node.field_feature_block.2.getFieldCollectionItem().field_feature_block_copy.value|raw}}
+                            <p style="margin:0;">
+                            	<span  class="terror-underline underline-learn-more" href="{{node.field_feature_block.2.getFieldCollectionItem().field_feature_block_link.uri}}">
+                            		<a href="{{ path('entity.node.canonical', {'node': 1}) }}">Learn More</a>
+                            	</span>
+                            </p>
+                        </div>
+
+                        <div class="darken-overlay"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+		
+
+        <div class="sponsors-section">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <h2>Proudly Supported by our Corporate Sponsors</h2>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <ul class="list-unstyled">
+                        
+                        	{% for details in node.field_sponsors %}
+                        		<li class="logo">
+	                                <a href="{{details.getFieldCollectionItem().field_sponsor_link.uri}}" target="_blank">
+	                                	<img src="{{file_url(details.getFieldCollectionItem().field_sponsor_logo.entity.uri.value)}}" width="65">
+	                                </a>
+	                            </li>
+							{% endfor %}
+							
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="become-a-sponsor">
+                            Interested in 
+                            <a class="sponsor-underline terror-underline" href="{{ path('entity.node.canonical', {'node': 28}) }}">
+                            	sponsorship or sampling opportunities?
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <script type="text/javascript">
+        	$(document).ready(function(){
+	        	$('.calendar-table td').click(function(){
+					var key = $(this).data('schedulekey');
+					
+					if(key) {
+						var dateLink = window.location.origin + window.location.pathname + "schedule?date=" + key
+						window.location.replace(dateLink);
+						//window.open(dateLink);
+					} 
+			    });
+			    
+			    setTimeout(function(){
+				   $('.calendar-widget').removeClass('display-none');  
+				   $('.calendar-widget').addClass('display-block');  
+			    }, 2200);
+        	});
+        </script>

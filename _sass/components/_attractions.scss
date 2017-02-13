@@ -1,0 +1,155 @@
+#prison-wrap {
+    position: relative;
+    width:115%;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .bubble {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 23%;
+        height: 29.6%;
+        background-image: url('../..//assets/attractions/attraction-bubble@2x.png.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+    .detritus {
+        background-image: url('../..//assets/attractions/detritus-bubble.png'); 
+    }
+
+    .breakout {
+        background-image: url('../..//assets/attractions/breakout-bubble.png'); 
+    }
+
+    .infirmary {
+        background-image: url('../..//assets/attractions/infirmary-bubble.png'); 
+    }
+
+    .quaratine {
+        background-image: url('../..//assets/attractions/quaratine-4d-bubble.png'); 
+    }
+
+    .lockdown {
+        background-image: url('../..//assets/attractions/lockdown-bubble.png'); 
+    }
+
+    .machine-shop {
+        background-image: url('../..//assets/attractions/machine-shop-bubble.png'); 
+    }
+}
+
+.attraction-modal {
+    display: none; 
+    position: fixed;
+    z-index: 10000000000000000000; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.85);
+
+    .attraction-modal-content {
+        position: relative;
+        background-color: #000;
+        margin: auto;
+        padding: 0;
+        width: 960px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+
+        .attraction-modal-body {
+
+            iframe {
+                height:560px;
+            }
+        }
+        .attraction-description {
+            width:760px; 
+            float:right; 
+            padding:10px 15px;
+            
+            p {
+                font-size: 14px;
+                color:white;
+                font-weight: 200;
+                margin:2px 0;
+
+                &.title {
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+            }
+        }
+        .attraction-modal-footer {
+            color: white;
+        }
+
+    }
+
+
+}
+
+@media (max-width:990px) {
+    .attraction-modal {
+        .attraction-modal-content {
+            width:95% !important;
+
+            .attraction-image {
+                display:none !important;;
+            }
+
+            .attraction-modal-body {
+                iframe {
+                    height:360px !important;
+                }
+            }
+
+            .attraction-description {
+                padding:20px !important;
+                float:none !important;
+                width:100% !important;
+            }
+        }
+    }
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.bounce {
+  position:fixed;
+  left:50%;
+  bottom:0;
+  margin-top:-25px;
+  margin-left:-25px;
+  height:50px;
+  width:50px;
+  background:red;
+  -webkit-animation:bounce 1s infinite;
+}
+
+@-webkit-keyframes bounce {
+  0%       { bottom:5px; }
+  25%, 75% { bottom:15px; }
+  50%      { bottom:20px; }
+  100%     {bottom:0;}
+}

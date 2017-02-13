@@ -1,0 +1,158 @@
+
+input {
+	
+	&[type=checkbox] {
+		display:none;
+	}
+ 
+	&[type=checkbox] + label {
+		background: #4c555c;
+		height: 25px;
+		width: 25px;
+    	border-bottom: 2px solid #2c3135;
+		display:inline-block;
+		padding: 0 0 0 0px;
+	}
+	
+	&[type=checkbox]:checked + label {
+		background: #d1d2d4;
+		height: 25px;
+		width: 25px;
+    	border-bottom: 2px solid #2c3135;
+		display:inline-block;
+		padding: 0 0 0 0px;
+	    background-image: url(http://dev.interactivemechanics.com/easternstate/halloween/themes/tbtw/assets/icons/icon-close.svg);
+		background-size: 25px 21px;
+		background-repeat: no-repeat;
+	}
+    
+    &[type="text"] {
+    	background: #4c545c;
+    	border-radius: 0px;
+    	padding: 20px 15px;
+    	border: 0px;
+    	border-bottom: 2px solid #2c3135;
+    	font-style: italic;
+    }
+    
+    &[type="password"] {
+    	background: #4c545c;
+    	border-radius: 0px;
+    	padding: 20px 15px;
+    	border: 0px;
+    	border-bottom: 2px solid #2c3135;
+    	font-style: italic;
+    }
+
+    &[type="search"] {
+    	background: #4c545c;
+    	border-radius: 0px;
+    	padding: 20px 15px;
+    	border: 0px;
+    	border-bottom: 2px solid #2c3135;
+    	font-style: italic;
+    }
+
+    &[type="email"] {
+    	background: #4c545c;
+    	border-radius: 0px;
+    	padding: 20px 15px;
+    	border: 0px;
+    	border-bottom: 2px solid #2c3135;
+    	font-style: italic;
+    }
+
+    &.grey-input {
+    	background:#d1d2d4;
+		color:#111;
+    }
+	 
+	input:hover,  
+	input:active,  
+	input:focus {
+	    outline:0px !important;
+	    -webkit-appearance:none !important;
+	}
+}
+
+select {
+	&.form-control {
+		line-height:normal;
+	    height:40px;
+	    -webkit-appearance:none;
+	    -moz-appearance:none;
+	    -ms-appearance:none;
+	    appearance:none;
+	    display:block;
+	    width:100%;
+	    color:#9f9f9f;
+	    padding:8px 20px 7px 10px;
+	    line-height:normal;
+	  	background: #4c545c;
+		border-radius: 0px;
+		border: 0px;
+		border-bottom: 2px solid #2c3135;
+		font-style:italic;	
+		background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%,transparent 50%);
+	  	background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px),calc(100% - 2.5em) 0.5em;
+	  	
+	  	background-size: 5px 5px, 5px 5px, 1px 1.5em;
+	  	background-repeat: no-repeat;
+	}
+}
+
+.form-group {
+	label {
+		font-size: 14px !important;
+		letter-spacing:1px;
+		text-transform:none;
+		color:#d2d2d4;
+	}
+}
+
+
+
+input[type="radio"] {
+    display:none;
+}
+input[type="radio"] + label {
+    color: #d1d2d4;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    text-transform: capitalize;
+    margin-left: 25px;
+    cursor: pointer;
+}
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    border-radius:  50%;
+	border:3px solid #34393f;
+	box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.45);
+}
+
+input[type="radio"] + label span {
+     background-color:#34393f;
+}
+
+input[type="radio"]:checked + label span{
+     background-color:$red;
+     border: 3px solid #d1d2d4;
+}
+
+
+.form-item {
+	margin-bottom: 35px;
+	label {
+		display: block;
+		font-size: 14px !important;
+		letter-spacing:1px;
+		text-transform:none;
+		color:#d2d2d4;
+		
+	}
+}

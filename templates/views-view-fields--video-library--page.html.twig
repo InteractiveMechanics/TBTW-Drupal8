@@ -1,0 +1,18 @@
+<div class="col-md-4">
+    <div>
+        <div class="press-image">
+            <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal">
+                <img class="img-responsive" src="{{file_url(row._entity.field_video_thumbnail.entity.uri.value)}}" style="">
+            </a>
+
+            <div class="overlay">
+                <span class="glyphicon glyphicon-download-alt"></span>
+            </div>
+        </div>
+
+        <div class="caption">
+        
+            <p>{{ row._entity.title.value }} <strong>Video Code: {{row._entity.field_video_code.value}}</strong></p>
+        </div>
+    </div>
+</div>

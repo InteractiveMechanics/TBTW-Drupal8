@@ -1,0 +1,351 @@
+<?php
+	
+	require_once 'Calendar.php';
+
+	function tbtw_theme_suggestions_node_alter(array &$suggestions, array &$variables)  {
+		$node = \Drupal::routeMatch()->getParameter('node');
+		$contentType = $node->getType();
+		
+		$variables['content_type'] = "home_page";
+		
+		$base_url = "http://dev.interactivemechanics.com/easternstate/halloween";
+		$variables['baseurl'] = $base_url;
+		
+		$form = \Drupal::formBuilder()->getForm('Drupal\photorequest\Form\RequestForm');
+		$variables['formform'] = $form;
+		//var_dump($form['#markup']);
+  
+		if($contentType == 'home_page' || $node->id() == 34) {
+			
+			$query = \Drupal::entityQuery('node')->condition('type', 'tbtw_attraction');    
+			$nids = $query->execute();
+			$arr = \Drupal\node\Entity\Node::loadMultiple($nids);
+			
+			$variables['attractions'] = $arr;
+			$variables['content_type'] = 'home_page';
+        
+        }
+        
+        if($node->id() == 36) {
+	     
+	    	$query = \Drupal::entityQuery('node')->condition('type', 'press_release')->condition('status', 1)->sort('created', 'DESC')->range(0, 1);
+	    	$nids = $query->execute();
+			$arr = \Drupal\node\Entity\Node::loadMultiple(array_keys($nids));   
+			$press_item = reset($arr);
+			
+			$variables['press_item'] = $press_item;
+			
+        }
+        
+        $schedule_node = \Drupal\node\Entity\Node::load(43);
+        
+        /*
+	     * $g = darkGreen
+	     * $lg = lightGreen
+	     * $y = Yellow
+	     * $o = Orange
+	     * $r = Red
+	     *
+	    */
+	    
+        $g = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load(1);
+        $lg = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load(2);
+        $y = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load(3);
+        $o = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load(4);
+        $r = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load(5);
+        
+        
+        $greenArray = [];
+        $lGreenArray = [];
+        $yellowArray = [];
+        $orangeArray = [];
+        $redArray = [];
+        
+        for($i = 0; $i < count($schedule_node->field_schedule_date); $i++) {
+	        
+	        $mydate = $schedule_node->field_schedule_date[$i]->entity->field_date->value;
+	        $day = date("d",strtotime($mydate));
+	        $month = date("F",strtotime($mydate));
+			$color = $schedule_node->field_schedule_date[$i]->entity->field_price[0]->entity->field_hex_color->value;
+			
+	    	
+	    	if($color == 'green') {
+		    	array_push($greenArray, (int) $day);
+	    	}
+	    	
+	    	if($color == 'lgreen') {
+		    	array_push($lGreenArray, (int) $day);
+	    	}
+	    	
+	    	if($color == 'yellow') {
+		    	array_push($yellowArray, (int) $day);
+	    	}
+	    	
+	    	if($color == 'orange') {
+		    	array_push($orangeArray, (int) $day);
+	    	}
+	    	
+	    	if($color == 'red') {
+		    	array_push($redArray, (int) $day);
+	    	}
+        }
+        
+       // var_dump($o->field_vip_after_dark_price->description);
+        
+        $calendar = new Calendar(array(
+            'colors' => array(
+              
+              'darkGreen' => array(
+						"price" => $g->name->value, 
+						"at_door_price" => $g->field_at_door_admission_price->value, 
+						"hours" => $g->field_time->value,
+						"group_rate" => $g->field_group_rate_admission_price->value,
+						"online_price" => $g->field_online_admission_price->value,
+						"vip_after_dark" => $g->field_vip_after_dark_price->value,
+						"vip_quick_pass" => $g->field_vip_quick_pass_price->value,
+						"vip_hex_pass" => $g->field_vip_hex_challenge_price->value,
+						"vip_after_dark_hex" => $g->field_vip_hex_challenge_price->value,
+					),
+				
+					'lightGreen' => array(
+						"price" => $lg->name->value, 
+						"at_door_price" => $lg->field_at_door_admission_price->value, 
+						"hours" => $lg->field_time->value,
+						"group_rate" => $lg->field_group_rate_admission_price->value,
+						"online_price" => $lg->field_online_admission_price->value,
+						"vip_after_dark" => $lg->field_vip_after_dark_price->value,
+						"vip_quick_pass" => $lg->field_vip_quick_pass_price->value,
+						"vip_hex_pass" => $lg->field_vip_hex_challenge_price->value,
+						"vip_after_dark_hex" => $lg->field_vip_hex_challenge_price->value,				
+					),
+	              				  
+	              'yellow' => array(
+  						"price" => $y->name->value, 
+  						"at_door_price" => $y->field_at_door_admission_price->value, 
+  						"hours" => $y->field_time->value,
+  						"group_rate" => $y->field_group_rate_admission_price->value,
+  						"online_price" => $y->field_online_admission_price->value,
+  						"vip_after_dark" => $y->field_vip_after_dark_price->value,
+  						"vip_quick_pass" => $y->field_vip_quick_pass_price->value,
+  						"vip_hex_pass" => $y->field_vip_hex_challenge_price->value,
+  						"vip_after_dark_hex" => $y->field_vip_hex_challenge_price->value,					
+				  	),
+	              				  
+	              'orange' => array(
+						"price" => $o->name->value, 
+						"at_door_price" => $o->field_at_door_admission_price->value, 
+						"hours" => $o->field_time->value,
+						"group_rate" => $o->field_group_rate_admission_price->value,
+						"online_price" => $o->field_online_admission_price->value,
+						"vip_after_dark" => $o->field_vip_after_dark_price->value,
+						"vip_quick_pass" => $o->field_vip_quick_pass_price->value,
+						"vip_hex_pass" => $o->field_vip_hex_challenge_price->value,
+						"vip_after_dark_hex" => $o->field_vip_hex_challenge_price->value,
+					),
+	              				  
+	              'red' => array(
+						"price" => $r->name->value, 
+						"at_door_price" => $r->field_at_door_admission_price->value, 
+						"hours" => $r->field_time->value,
+						"group_rate" => $r->field_group_rate_admission_price->value,
+						"online_price" => $r->field_online_admission_price->value,
+						"vip_after_dark" => $r->field_vip_after_dark_price->value,
+						"vip_quick_pass" => $r->field_vip_quick_pass_price->value,
+						"vip_hex_pass" => $r->field_vip_hex_challenge_price->value,
+						"vip_after_dark_hex" => $r->field_vip_hex_challenge_price->value,
+					),
+					
+				),
+				
+				'year' => 2016,
+				
+				'months' => array(
+	            	'september' => septArray($schedule_node),
+	            	'october' => octArray($schedule_node),
+	            	'november' => novArray($schedule_node),
+	              
+				)));
+				
+				$variables['schedule_table'] = $calendar->printHTML();
+				$variables['schedule_table_widget'] = $calendar->printHTMLWidget();
+        
+	}
+	
+	function septArray($node) {
+		$greenArray = [];
+        $lGreenArray = [];
+        $yellowArray = [];
+        $orangeArray = [];
+        $redArray = [];
+        
+        $lowest_date = 32;
+        
+        for($i = 0; $i < count($node->field_schedule_date); $i++) {
+	        
+	        $mydate = $node->field_schedule_date[$i]->entity->field_date->value;
+	        $day = date("d",strtotime($mydate));
+	        $month = date("F",strtotime($mydate));
+	        
+	        
+	        
+	        if($month == "September") {
+		        
+		        if($lowest_date > (int) $day) {
+			        $lowest_date = (int) $day;
+		        }
+		        
+		        $color = $node->field_schedule_date[$i]->entity->field_price[0]->entity->field_hex_color->value;
+				if($color == 'green') {
+			    	array_push($greenArray, (int) $day);
+		    	}
+		    	
+		    	if($color == 'lgreen') {
+			    	array_push($lGreenArray, (int) $day);
+		    	}
+		    	
+		    	if($color == 'yellow') {
+			    	array_push($yellowArray, (int) $day);
+		    	}
+		    	
+		    	if($color == 'orange') {
+			    	array_push($orangeArray, (int) $day);
+		    	}
+		    	
+		    	if($color == 'red') {
+			    	array_push($redArray, (int) $day);
+		    	}
+		        
+	        }
+	        
+        }
+        
+        return array(
+            'range' => array($lowest_date, 30),
+            'colors' => array(
+            	'darkGreen' => $greenArray,
+				'lightGreen' => $lGreenArray,
+				'yellow' => $yellowArray,
+				'orange' => $orangeArray,
+				'red' => $redArray,
+            ),
+        );
+	}
+	
+	function octArray($node) {
+		
+		$greenArray = [];
+        $lGreenArray = [];
+        $yellowArray = [];
+        $orangeArray = [];
+        $redArray = [];
+        
+        for($i = 0; $i < count($node->field_schedule_date); $i++) {
+	        
+	        $mydate = $node->field_schedule_date[$i]->entity->field_date->value;
+	        $day = date("d",strtotime($mydate));
+	        $month = date("F",strtotime($mydate));
+	        
+	        
+	        if($month == "October") {
+		        
+		        $color = $node->field_schedule_date[$i]->entity->field_price[0]->entity->field_hex_color->value;
+				if($color == 'green') {
+			    	array_push($greenArray, (int) $day);
+		    	}
+		    	
+		    	if($color == 'lgreen') {
+			    	array_push($lGreenArray, (int) $day);
+		    	}
+		    	
+		    	if($color == 'yellow') {
+			    	array_push($yellowArray, (int) $day);
+		    	}
+		    	
+		    	if($color == 'orange') {
+			    	array_push($orangeArray, (int) $day);
+		    	}
+		    	
+		    	if($color == 'red') {
+			    	array_push($redArray, (int) $day);
+		    	}
+		        
+	        }
+	        
+        }
+        
+        return array(
+            'range' => array(1, 31),
+            'colors' => array(
+            	'darkGreen' => $greenArray,
+				'lightGreen' => $lGreenArray,
+				'yellow' => $yellowArray,
+				'orange' => $orangeArray,
+				'red' => $redArray,
+            ),
+        );
+        
+	}
+	
+	function novArray($node) {
+	
+		$greenArray = [];
+        $lGreenArray = [];
+        $yellowArray = [];
+        $orangeArray = [];
+        $redArray = [];
+        
+	        $max_date = 0;
+        
+        for($i = 0; $i < count($node->field_schedule_date); $i++) {
+	        
+	        $mydate = $node->field_schedule_date[$i]->entity->field_date->value;
+	        $day = date("d",strtotime($mydate));
+	        $month = date("F",strtotime($mydate));
+	        
+	        
+	        if($month == "November") {
+		        
+		        if( (int) $day > $max_date) {
+			        $max_date = (int) $day;
+		        }
+		        
+		        $color = $node->field_schedule_date[$i]->entity->field_price[0]->entity->field_hex_color->value;
+				if($color == 'green') {
+			    	array_push($greenArray, (int) $day);
+		    	}
+		    	
+		    	if($color == 'lgreen') {
+			    	array_push($lGreenArray, (int) $day);
+		    	}
+		    	
+		    	if($color == 'yellow') {
+			    	array_push($yellowArray, (int) $day);
+		    	}
+		    	
+		    	if($color == 'orange') {
+			    	array_push($orangeArray, (int) $day);
+		    	}
+		    	
+		    	if($color == 'red') {
+			    	array_push($redArray, (int) $day);
+		    	}
+		        
+	        }
+	        
+        }
+        
+        return array(
+            'range' => array(1, $max_date+5),
+            'colors' => array(
+            	'darkGreen' => $greenArray,
+				'lightGreen' => $lGreenArray,
+				'yellow' => $yellowArray,
+				'orange' => $orangeArray,
+				'red' => $redArray,
+            ),
+        );
+		
+	}
+	
+
+?>

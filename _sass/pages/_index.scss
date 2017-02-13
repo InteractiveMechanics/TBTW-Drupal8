@@ -1,0 +1,238 @@
+ .jumbotron {
+	border-radius:0px !important;
+	margin-bottom:0px;
+	height:650px;
+}
+
+.watch-preview {
+	margin-left: 40px;
+}
+
+.hero-section {	
+	.bottom-overlay {
+		width:100%;
+		background:rgba(0,0,0, .5);
+	}
+	
+	.btn-big {
+		font-size: 21px !important;
+	}
+
+	.jumbotron{
+	   position: relative;
+	   overflow: hidden;
+	   padding:170px 135px;
+	   height:800px;
+	   background: url(../../assets/hero-images/tbtw-hero-homepage@2x.jpg.jpg) top right;
+	   background-size: cover;
+	   background:none;
+	    
+	   .container2 {
+		  position: relative;
+		  color: #ffffff;
+		  z-index: 2; /* Show content above video */
+		} 
+		
+		#video-background{ 
+		  position: absolute;
+		  height: auto;
+		  width: auto;
+		  min-height: 100%;
+		  min-width: 100%;
+		  left: 50%;
+		  top: 50%;
+		  -webkit-transform: translate3d(-50%, -50%, 0);
+		  transform: translate3d(-50%, -50%, 0);
+		  z-index: -1;
+		}
+		
+		h1 {
+    		margin-bottom:60px;
+    		font-size:85px;
+    		line-height:100px;
+    		color:white;
+    		font-family: "almaq-rough";
+		    font-weight: normal;
+		    text-transform: uppercase;
+		    text-shadow: 2px 2px rgba(0,0,0,.45);
+    	}
+	}
+}
+
+.sponsors-section {
+	padding:45px 0 60px;
+	text-align:center;
+
+	h2 {
+		color:white;
+		font-weight:200;
+		padding: 0 10px;
+	}
+
+	p {
+		color:#ddd;
+		font-size:21px !important;
+		margin:20px 0;
+		padding: 0 10px;
+
+		a {
+			color:white;
+			font-weight:bold;
+
+			&:hover {
+				color:$red;
+				text-decoration:none;
+			}
+		}
+	}
+
+	ul {
+		margin:30px 0 20px;
+
+		.logo {
+			display:inline-block;
+		    margin-top: 0;
+		    width: auto;
+		    margin:10px 30px;
+		    
+		    a {
+			    border:none;
+		    }
+
+		    img {
+		    	-webkit-filter: grayscale(100%);
+	    		filter: grayscale(100%);
+	    		opacity: .5;
+	    		transition: all 0.5s;
+
+	    		&:hover {
+		    		opacity: 1;
+		    	}
+		    }
+		}
+
+
+	}
+}
+
+.mainpage-tagline {
+	padding:35px 0;
+	background: #4c555c;
+	text-align:center;
+	border-bottom:2px solid black;
+	border-top:2px solid black;
+
+	span {
+		font-size:36px;
+		font-weight:200;
+		font-style: italic;
+		color:white;
+
+		span {
+			.source {
+
+			}
+		}
+	}
+}
+
+.acttractions-section {
+	border-bottom: 2px solid black;
+	.jumbotron {
+		background: #1d1d1f;
+    	background-size: cover;
+    	padding:100px 135px;
+    	height:800px;
+    	color:white;
+
+    	h2 {
+    		font-weight: 200;
+		    font-size: 48px;
+		    line-height: 55px;
+		    margin-bottom:30px;
+    	}
+
+    	p {
+    		margin-bottom:50px;
+    	}
+	}	
+}
+
+
+.mainpage-details-section {
+	color:white;
+
+
+	h2 {
+		font-weight:200;
+		margin-bottom:25px;
+	}
+	
+	.col-md-4 {
+		border-right:2px solid black;
+	}
+
+	.vip-expriences {
+		background: url(../../assets/homepage-block-event@2x.jpg.jpg) top right;
+    	background-size: cover;
+    	
+    	&:before {
+	    	content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-image: linear-gradient(to left,#000,#000);
+			opacity: .6; 
+	  	}
+	}
+
+	.frequent-questions {
+		background: #4c555c;
+	}
+
+	.favorite-frights {
+		background: url(../../assets/homepage-block-vip@2x.jpg.jpg) top right;
+    	background-size: cover;
+    	
+    	&:before {
+	    	content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-image: linear-gradient(to left,#000,#000);
+			opacity: .6; 
+	  	}
+	}
+
+	.sub-detail {
+		padding: 35px;
+	    text-align: left;
+	    min-height: 300px;
+	    z-index: 10;
+	    position: relative;
+
+	    p {
+	    	font-size:18px;
+	    	font-weight:300;
+	    	line-height:35px;
+	    }
+
+	    span {
+	    	font-weight:bold;
+	    	
+	    	a {
+		    	color: white;
+		    	
+		    	&:hover {
+			    	color: $red;
+			    	text-decoration: none;
+		    	}
+	    	}
+
+	    }
+	}
+}

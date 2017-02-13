@@ -1,0 +1,73 @@
+<div class="subpage-hero-section">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="subpage-hero-details generic-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url({{baseurl}}/themes/tbtw/assets/hero-images/tbtw-hero-overlay@2x.png.png), url({{file_url(node.field_lead_image.entity.uri.value)}});">
+                            <section>
+                                <ol class="breadcrumb">
+                                    <li><a href="#">Primary Navigation</a></li>
+                                    <li class="active"><a href="#">{{node.title.value}}</a></li>
+                                </ol>
+
+                                <h1 class="subpage-title">{{node.title.value}}</h1>
+                            </section>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="main-content-subpages static-page">
+
+            <div class="container-fluid">
+
+                <div class="padded-box">
+
+                    <div class="row">
+                        <div class="col-md-8 col-sm-12 col-xs-12 body-area">
+                        	{{node.body.value|raw}}
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        
+        
+        
+        <script type="text/javascript">
+        	
+        	$(document).ready(function(){
+	        	
+	        	var src = $('.body-area img').attr('src');
+	        	var alt = $('.body-area img').attr('alt');
+	        	var caption = $('.body-area img').data('caption');
+	        	
+	        	var figureHTML = getFigureHTML(src, alt, caption);
+	        	
+	        	$('.body-area img').replaceWith(figureHTML);
+	        	
+	        	setTimeout(function(){
+		        	$('[data-toggle="tooltip"]').tooltip();
+	        	}, 1000);
+        	});
+        	
+        	function getFigureHTML(src, alt, caption) {
+	        	return "<figure role='group' class='align-center'>" +
+						    "<div class='relative-position'>" +
+								"<img alt='' class='img-responsive' src='"+ src +"'>" +
+								"<div data-toggle='tooltip' data-placement='left' title='' class='info-icon' data-original-title='"+ alt+ "'></div>" +
+							"</div>" +
+						    "<figcaption>" + caption + "</figcaption>" +
+						"</figure>";
+        	}
+        	
+        </script>

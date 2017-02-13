@@ -1,0 +1,91 @@
+footer {
+	
+	.footer-detail {
+		padding: 30px;
+	    margin: 0;
+	    min-height: 180px;
+	    transition: all 0.5s;
+		z-index: 10000000;
+    
+	    input {
+    		height: 50px;
+    		background: #d1d2d4;
+		    color: #111;
+		    font-style: italic;
+		    width: 98% !important;
+		    border-bottom: none;
+	    }
+	}
+
+	.map-image {
+    	background: linear-gradient(to right, rgba(0, 0, 0, .65), rgba(0, 0, 0, 0)), url(../../assets/footer/footer-map@2x.jpg.jpg) top right;
+    	background-size: cover;
+    	height: 300px;
+    	
+    	img {
+    		margin-bottom:20px;
+    		margin-left: -15px;
+    	}
+    	
+    	p { 
+    		font-size:16px;
+    		font-weight:bold;
+    		color:white;
+    		
+    		&.underline {
+	    		color: white;
+			    background-size: 170px 43px;
+			    white-space: nowrap;
+			    background-repeat: no-repeat;
+			    background-image: url(http://dev.interactivemechanics.com/easternstate/halloween/themes/tbtw/assets/icons/icon-underline.svg);
+			    margin:0px;
+    		}
+    		
+    		a {
+	    		color: white;
+	    		
+	    		&:hover {
+		    		text-decoration: none;
+		    		color: white;
+	    		}
+    		}
+    	}
+
+    	address { 
+    		font-size:16px;
+    		font-weight:bold;
+    		color:white;
+    	}
+    }
+
+    .newsletter-signup {
+    	background:#4c555c;
+    	height: 300px;
+
+    	h2 {
+			font-weight:200;
+			color:white;
+			margin-bottom:20px;
+
+            @media screen and ($screen-xs){
+                font-size: 24px !important
+            }
+		}
+
+		.input-group {
+			width: 80%;
+		}
+
+		.btn-white {
+		    height: 50px;
+		    padding-left: 25px;
+		    padding-right: 25px;
+		    margin-left: 10px;
+		}
+
+	    .form-area {
+	    	margin-bottom:30px;
+	    }
+
+    }
+}

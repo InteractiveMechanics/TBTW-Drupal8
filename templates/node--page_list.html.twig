@@ -1,0 +1,69 @@
+	<div class="subpage-hero-section">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-12">
+                    
+                    <div class="subpage-hero-details generic-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url({{baseurl}}/themes/tbtw/assets/hero-images/tbtw-hero-overlay@2x.png.png), url({{file_url(node.field_lead_image.entity.uri.value)}});">
+                        <section>
+                            <ol class="breadcrumb">
+                                <li><a href="#">Primary Navigation</a></li>
+                                <li class="active"><a href="#">{{node.title.value}}</a></li>
+                            </ol>
+
+                            <h1 class="subpage-title">{{node.title.value}}</h1>
+                        </section>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main-content-subpages listview-page">
+
+        <div class="container-fluid">
+
+            <div class="padded-box">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        
+                        <ul class="list-unstyled">
+                        
+                        	{% for details in node.field_list_item %}
+                        		<li>
+	                                <div class="row">
+	                                    <div class="col-md-3">
+	                                        <div class="list-item-image">
+	                                            <img class="img-responsive" src="http://placehold.it/450x265">
+	                                        </div>
+	                                    </div>
+	
+	                                     <div class="col-md-9">
+	                                        <div class="list-item-detail">
+	                                            <!--<p class="sub-headline">Sub Headline, Date, Author or Category</p>-->
+	                                            <h2>{{details.getFieldCollectionItem().field_list_item_title.value}}</h2>
+	                                            {{details.getFieldCollectionItem().field_list_item_copy.value|raw}}
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                <br />
+	                                <hr>
+	                            </li>
+							{% endfor %}
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>

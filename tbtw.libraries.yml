@@ -1,0 +1,20 @@
+bootstrap:
+  version: 3.3.2
+  header: true
+  css:
+    theme:
+      node_modules/bootstrap/dist/css/bootstrap.min.css: {}
+  js:
+    node_modules/bootstrap/dist/js/bootstrap.min.js: {}
+  dependencies:
+    - core/jquery
+    
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      dist/css/main.css: {}
+  js:
+    js/main.js: {}
+  dependencies:
+    - core/jquery

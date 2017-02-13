@@ -1,0 +1,455 @@
+body {
+	background:black;
+	overflow-x: hidden;
+
+	main {
+		.container-fluid {
+			padding:0 45px;
+		}
+	}
+	
+	.calendar {
+		.month-name {
+			font-size:21px;
+		}	
+	}
+}
+
+
+h2 {
+	a {
+		border: none;
+	}
+}
+.relative-position {
+	position: relative;
+	
+	.tooltip {
+		font-size: 15px;
+		font-style: italic;
+	}
+}
+
+.info-icon {
+	cursor: pointer;
+	background: url(../../assets/icons/icon-info.svg);
+    width: 40px;
+    height: 40px;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.nav-pills {
+	a {
+		border: none;
+	}	
+}
+
+.show-site-switcher {
+    font-size: 15px;
+    color: #97979c !important;
+    position: absolute;
+    top: 16px;
+    left: 14px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000000;
+ }
+
+.site-switcher-section {
+	width:100%;
+	background:#4c555d;
+	padding:0px 14px;
+
+	a {
+		font-size:15px;
+		color:#97979c !important;
+		padding:16px 0;
+		display:inline-block;
+		font-weight:bold;
+
+		&:hover {
+			color:#FFF !important;
+			text-decoration:none;
+		}
+	}
+}
+
+.mobile-buy-now {
+	background-color:$red;
+	padding: 16px 0;
+	cursor: pointer;
+    margin-bottom: 5px;
+
+	p {
+		text-transform:uppercase;
+		font-weight:bold;
+		font-size: 14px !important;
+		letter-spacing: 1px;
+		color:white;
+		margin:0px;
+	}
+	
+	.glyphicon {
+		margin-right: 10px !important;
+	}
+}
+
+.subpage-hero-section {
+	
+	.breadcrumb {
+		background:none;
+		padding: 0px;
+		
+		li {
+			
+			&:first-child {
+				a {
+					
+				}
+			}
+			
+			a {
+				font-weight: bold;
+			    color: white;
+			    font-size: 18px;
+			    text-transform: uppercase;
+			    letter-spacing: 1px;
+			    text-shadow: 2px 2px rgba(0,0,0,.5);
+                
+                @media screen and ($screen-xs) {
+                    font-size: 14px;
+                }
+	
+				&:hover {
+					color:white;
+					text-decoration:none !important;
+				}
+			}
+			
+		}
+
+		
+	}
+
+	h1 {
+		font-size:75px;
+		color:white;
+		font-family: "almaq-rough";
+	    font-weight: normal;
+	    text-transform: uppercase;
+	    text-shadow:2px 2px rgba(0,0,0,.5);
+	}
+
+	.parking-hero {
+		background-size: cover;
+		background-position: top right;
+		background-repeat: no-repeat;
+		background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg);
+	}
+	.generic-hero {
+		background-size: cover;
+		background-position: top right;
+		background-repeat: no-repeat;
+		background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg);
+	}
+
+	.press-hero {
+		background-size: cover;
+		background-position: top right;
+		background-repeat: no-repeat;
+		background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample2@2x.jpg.jpg);
+	}
+	
+	.schedule-hero {
+		background-size: cover;
+		background-position: top right;
+		background-repeat: no-repeat;
+		background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-schedule@2x.jpg.jpg);
+	}
+
+	.search-hero {
+		background-size: cover;
+		background-position: top right;
+		background-repeat: no-repeat;
+		background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample2@2x.jpg.jpg);
+	}
+
+	.calendar-hero {
+		background-size: cover;
+		background-position: top right;
+		background-repeat: no-repeat;
+		background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg);
+	}
+
+	.subpage-hero-details {
+		height:445px;
+		position:relative;
+		padding:65px 105px;
+		border-bottom: 2px solid black;
+		    
+		section {
+			position:absolute;
+			bottom:65px;
+		}
+	}
+}
+
+.main-content-subpages {
+
+	margin-bottom:50px;
+
+	h1 {
+		color:white;
+	}
+
+	p {
+		font-size:18px;
+		line-height:30px;
+		margin-bottom:25px;
+	}
+
+	ul {
+		li {
+			color: white;
+			font-size: 18px;
+			line-height: 30px;
+			font-weight: 200;
+		}
+	}
+	
+	figcaption { 
+	    padding: 20px 0 25px;
+	    border-bottom: 1px solid #969696;
+	    margin-bottom: 45px;
+	    font-size:16px;
+	    color:#eee;
+	}
+	
+	
+	.panel-heading .accordion-toggle:after {
+	    /* symbol for "opening" panels */
+	    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+	    content: "\e252";    /* adjust as needed, taken from bootstrap.css */
+	    float: left;        /* adjust as needed */
+	    color: $red;         /* adjust as needed */
+	    padding-right:10px;
+        font-size: 12px;
+        top: 4px;
+        position: relative;
+	}
+	.panel-heading .accordion-toggle.collapsed:after {
+	    /* symbol for "collapsed" panels */
+	    content: "\e250";    /* adjust as needed, taken from bootstrap.css */
+	}
+	
+
+	.panel-default {
+		background:none;
+		border-radius:0px;
+		border:0px;
+		color:white !important;
+		.panel-body {
+			border:0 !important;
+			font-size: 16px;
+			color:white;
+    		line-height: 30px;
+		}
+
+		.panel-heading {
+			background:none;
+			border-radius:0px;
+			border:0;
+			border-top:1px solid grey;
+            padding: 15px;
+		}
+
+		h4 {			
+			
+			a {
+				display:block;
+				padding-top:14;
+				padding-bottom:14px;
+				color: $red;
+				font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+				font-weight: bold;
+				font-size:18px !important; 
+				border: none;
+				
+				&:hover, &:focus, &:active {
+					text-decoration:none;
+					border: none !important;
+				}
+			}
+		}
+	}
+
+}
+
+.padded-box {
+	padding: 65px 105px;
+	background:#4b535c;
+
+	p {
+		color:white;
+		font-size:18px;
+		font-weight:200;
+	}
+}
+
+.calendar-widget {
+	position: fixed;
+    width: 300px;
+    background: #34393f;
+    z-index: 100000000;
+    top: 30%;
+    right: 0px;
+	transition:0.5s all;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+
+    .close-icon {
+		position: absolute;
+		background: url(../../assets/icons/close-icon.svg);
+	    padding: 4px 12px;
+	    background: #34393f;
+	    left: -34px;
+	    top: 10px;
+	    color: white;
+	    font-size: 18px;
+	    cursor: pointer;
+	}
+	
+	.calendar {
+		.month-name {
+			font-size: 10px !important;
+			&.top {
+				top: -25px !important;
+			}
+			
+			&.bottom {
+				top:20px !important;
+			}	
+		}
+		
+		td {
+			.day-number {
+				font-size: 14px;
+                top: 14px;
+                right: 4px;
+                left: auto;
+			}
+			
+			.price {
+				display: none;
+			}
+		}
+	}
+}
+
+ul {
+		&.social-icons {
+			li {
+				.fa-2x {
+					font-size:1.6em !important;;
+				}
+			}
+		}
+	}
+
+label {
+	text-transform:uppercase;
+	color:#aeb1bb;
+	font-weight:bold;
+	letter-spacing:2px;
+}
+
+.modal-content {
+	background:#343940;
+
+	p, h3 {
+		color:white;
+	}
+
+	p {
+		font-size:18px;
+	}
+}
+
+.buy-now-popup {
+	background-color:#34393f;
+	padding:25px;
+	width:400px;
+	position:fixed;
+	z-index:100000000;
+	top:18%;
+	right:0px;
+	transition:0.5s all;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+	
+	.close-icon {
+		position: absolute;
+		background: url(../../assets/icons/close-icon.svg);
+	    padding: 4px 12px;
+	    background: #34393f;
+	    left: -34px;
+	    top: 10px;
+	    color: white;
+	    font-size: 18px;
+	    cursor: pointer;
+	}
+
+	h3 {
+		color:#e5dc19;
+		font-weight:200;
+		margin:10px 0;
+		
+		&.darkGreen {
+			color: rgb(81, 154, 81);
+		}
+
+		&.lightGreen {
+			color: rgb(159, 182, 74);
+		}
+
+		&.yellow {
+			color: rgb(230, 215, 55);
+		}
+
+		&.orange {
+			color: rgb(232, 149, 71);
+		}
+
+		&.red {
+			color: rgb(219, 50, 44);
+		}
+	}
+
+
+	ul {
+		padding:0px;
+		margin:5px 0  30px;
+
+		li {
+			list-style:none;
+			margin:5px 0 10px 0;
+		}
+	}
+
+	p {
+		font-size:18px;
+		color:white;
+		margin:0;
+		
+		&.price {
+			font-weight:bold;
+		}
+	}
+
+	button {
+		margin-top:10px;
+		font-size: 21px !important;
+	}
+}

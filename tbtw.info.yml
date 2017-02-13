@@ -1,0 +1,29 @@
+name: Terror Behind the Walls Theme
+type: theme
+description: 'The base theme for Terror Behind the Walls Theme, built on the Stark theme.'
+package: Core
+version: 1.x
+core: 8.x
+base theme: stable
+
+
+# Libraries
+libraries:
+  - tbtw/bootstrap
+  - tbtw/global-styling
+
+
+# Regions
+regions:
+  primary_menu: 'Primary Menu'
+  main_menu: 'Main Menu'
+  secondary_menu: 'Secondary Menu'
+  preview_menu: 'Preview Menu'
+  visit_menu: 'Visit Menu'
+  
+  highlighted: 'Highlighted'
+  featured: 'Featured Slideshow'
+  content: 'Content'
+  search_box: 'Search Box'
+  recent_posts: 'Recent Posts'
+  blog_archive: 'Blog Archive'

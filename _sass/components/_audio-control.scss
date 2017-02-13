@@ -1,0 +1,26 @@
+.audio-section {
+	margin:45px 0;
+	padding: 20px;
+    background: white;
+
+	#audio-container {
+	    width: 85px;
+	    height: 85px;
+	    position: relative;
+		float:left;
+
+
+		.play-icon {
+			position: absolute;
+		    left: 28px;
+		    font-size: 35px;
+		    top: 20px;
+		} 
+	}
+
+	#audio-info {
+		float: left;
+	    margin-left: 25px;
+	}
+
+}

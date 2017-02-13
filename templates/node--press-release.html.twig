@@ -1,0 +1,98 @@
+<div class="subpage-hero-section">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        
+                        <div class="subpage-hero-details press-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url({{baseurl}}/themes/tbtw/assets/hero-images/tbtw-hero-overlay@2x.png.png), url({{file_url(node.field_lead_image.entity.uri.value)}});">
+                            <section>
+                                <ol class="breadcrumb">
+                                    <li><a href="#">Press Releases</a></li>
+                                    <li class="active"><a href="#">{{node.title.value}}</a></li>
+                                </ol>
+
+                                <h1 class="subpage-title">{{node.title.value}}</h1>
+                            </section>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="main-content-subpages press-release-page">
+
+            <div class="container-fluid">
+
+                <div class="padded-box">
+                    
+                    <div class="main-item">
+
+                        <div class="row">
+                            
+                            <div class="col-md-8">
+                                <p class="press-release-detail"><strong>{{ node.created.value|date("F j, Y") }}</strong> / <strong>Press Release Category</strong></p>
+
+                                <div class="download-press-release hidden-xs">
+                                    <button class="btn btn-large btn-white btn-pdf" data-pdf="{{file_url(node.field_press_release_pdf.entity.uri.value)}}">
+                                        <span class="glyphicon glyphicon-download-alt"></span> Download PDF 
+                                    </button>
+                                </div>
+                                {{node.body.value|raw}}
+
+                                 <p class="text-center">###</p>
+                            </div>
+                            
+
+
+                            <div class="col-md-4">
+
+                                <ul class="list-unstyled">
+                             
+                                	{% for item in node.field_related_images %}
+	                                    <li>
+	                                        <div>
+	                                            <div class="press-image">
+	                                                <img class="img-responsive" src="{{file_url(item.entity.field_press_image.entity.uri.value)}}" style="max-height: 235px; 
+	                                                																									  width: 100%;">
+	
+	                                                <div class="overlay hidden-xs">
+	                                                    <span class="glyphicon glyphicon-download-alt"></span>
+	                                                </div>
+	                                            </div>
+	
+	                                            <div class="caption">
+	                                                <p>{{item.entity.title.value}} <strong>Image Code: {{item.entity.field_image_code.value}}</strong></p>
+	                                            </div>
+	
+	                                            <hr>
+	                                        </div>
+	                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                    
+
+                </div>
+
+            </div>
+
+
+        </div>
+        
+        <script type="text/javascript">
+        	
+        	$(document).ready(function(){
+	        	$('.btn-pdf').click(function(){
+		        	var pdfLink = $(this).data('pdf');
+		        	window.open(window.location.origin + pdfLink);
+	        	})
+        	});
+        	
+        </script>
