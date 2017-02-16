@@ -23,7 +23,10 @@
 			
 			$variables['attractions'] = $arr;
 			$variables['content_type'] = 'home_page';
-        
+			
+			
+			
+			$variables['tbtw_attractions'] = array_values($arr);
         }
         
         if($node->id() == 36) {
@@ -335,7 +338,7 @@
         }
         
         return array(
-            'range' => array(1, $max_date+5),
+            'range' => array(1, $max_date),
             'colors' => array(
             	'darkGreen' => $greenArray,
 				'lightGreen' => $lGreenArray,

@@ -33,7 +33,18 @@
                         	<div id="prison-wrap" style="width:100%; margin-top:65px;">
                                 <img id="prison-img" src="../{{front_page}}themes/tbtw/assets/prison-gfx@2x.png.png" alt="Prison" />
                                 
-                                <a href="javascript:void(0);">
+                                {% for tbtw_attraction in tbtw_attractions %}
+                                	<a href="javascript:void(0);">
+                                    	<span class="bubble"
+                                    		data-title='{{tbtw_attraction.title.value}}' 
+                                    		data-desc='{{tbtw_attraction.field_attraction_description.value}}'
+                                    		data-image='{{file_url(tbtw_attraction.field_tbtw_attraction_logo.entity.uri.value)}}' 
+                                    		data-video='{{tbtw_attraction.field_tbtw_attraction_video.value}}'
+                                    		style="top: {{tbtw_attraction.field_top_position.value}}; left: {{tbtw_attraction.field_left_position.value}}; background-image:"><img src="{{file_url(tbtw_attraction.field_bubble_image.entity.uri.value)}}" ></span>
+									</a>
+                                {% endfor %}
+                                
+                                <!--<a href="javascript:void(0);">
                                     <span class="bubble detritus" 
                                     		data-title='{{attractions.8.title.value}}' 
                                     		data-desc='{{attractions.8.field_attraction_description.value}}'
@@ -74,7 +85,7 @@
                                     		data-desc='{{attractions.9.field_attraction_description.value}}'
                                     		data-image='{{file_url(attractions.9.field_tbtw_attraction_logo.entity.uri.value)}}' 
                                     		data-video='{{attractions.9.field_tbtw_attraction_video.value}}' style="top: 26%; left: 58%;"></span>
-                                </a>
+                                </a>-->
                               </div>
                         </div>
 
