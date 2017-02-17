@@ -1324,6 +1324,23 @@ input[type="radio"]:checked + label span {
     -webkit-transform: translate3d(-50%, -50%, 0);
     transform: translate3d(-50%, -50%, 0);
     z-index: -1; }
+    @media (max-width: 991px) {
+      .hero-section .jumbotron #video-background {
+        display: none; } }
+  .hero-section .jumbotron #img-background-homepage {
+    position: absolute;
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    min-width: 100%;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    z-index: -1; }
+    @media (min-width: 1200px) {
+      .hero-section .jumbotron #img-background-homepage {
+        display: none; } }
   .hero-section .jumbotron h1 {
     margin-bottom: 60px;
     font-size: 85px;
