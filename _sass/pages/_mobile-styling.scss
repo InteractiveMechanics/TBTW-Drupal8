@@ -17,7 +17,7 @@
 	
 	.acttractions-section {
 		#prison-wrap {
-			width: 145%;
+			width: 100%;
 		}	
 	}
 	
@@ -413,6 +413,15 @@
 		
 		img {
 			height: 45px;
+		}
+	}
+}
+
+@media ($screen-ltmd) {
+	.close {
+		svg {
+			top: -20px;
+			right: 0;
 		}
 	}
 }

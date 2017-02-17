@@ -57,6 +57,11 @@ $(function(){
         /*span.onclick = function() {
             modal.style.display = "none";
         }*/
+        $('.close').click(function() {
+	        modal.style.display = "none";
+        })
+		
+
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
@@ -89,6 +94,7 @@ $(function(){
 
         // Get the modal
         var modal = document.getElementById('Attraction-Modal');
+        
 
         
         // Get the <span> element that closes the modal
@@ -99,6 +105,9 @@ $(function(){
         /*span.onclick = function() {
             modal.style.display = "none";
         }*/
+        $('.close').click(function() {
+	        modal.style.display = "none";
+        })
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
@@ -107,6 +116,10 @@ $(function(){
             }
         }
     });
+    
+    
+    
+    
 
     $('.panel-title a').click(function(){
         var hasClass = $( this ).children("span").hasClass( "glyphicon-triangle-right" );
@@ -120,6 +133,10 @@ $(function(){
             $( this ).children("span").removeClass("glyphicon-triangle-bottom");
         }
     });
+    
+    
+    
+    
 
     /*
     var randTypeInterval = Math.random() * 5000 + 10000;
@@ -145,3 +162,6 @@ $(function(){
     //Activate any tooltips on the page
     //$('[data-toggle="tooltip"]').tooltip();
 });
+
+
+

@@ -278,6 +278,16 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
   box-shadow: 0 1px 1px rgba(219, 50, 43, 0.075) inset, 0 0 8px rgba(219, 50, 43, 0.6);
   outline: 0 none; }
 
+.panel {
+  box-shadow: none; }
+
+.close svg {
+  fill: #ffffff;
+  width: 20px;
+  position: absolute;
+  right: -20px;
+  top: -20px; }
+
 h1 {
   letter-spacing: 1px; }
 
@@ -1815,7 +1825,7 @@ input[type="radio"]:checked + label span {
     top: -35px !important; }
 
   .acttractions-section #prison-wrap {
-    width: 145%; } }
+    width: 100%; } }
 @media (min-width: 1200px) and (max-width: 1439px) {
   .hero-section h1 {
     font-size: 96px !important; }
@@ -2028,5 +2038,9 @@ input[type="radio"]:checked + label span {
     top: 10px; }
     .navbar-logo img {
       height: 45px; } }
+@media (max-width: 991px) {
+  .close svg {
+    top: -20px;
+    right: 0; } }
 
 /*# sourceMappingURL=main.css.map */
