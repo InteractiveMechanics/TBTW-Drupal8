@@ -11,7 +11,11 @@
 	}
 
 	h2 {
-		margin-top:0px;
+		margin-top: 0px;
+		@include screen-ltmd {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
 	}
 	
 }

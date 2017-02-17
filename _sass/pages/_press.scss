@@ -27,9 +27,12 @@
 	}
 
 	h2 {
-		margin-top:0px;
 		color:white;
 		font-weight:bold;
+		@include screen-ltmd {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
 		
 		a {
 			color:white;

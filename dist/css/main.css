@@ -285,7 +285,7 @@ h2, h3 {
   letter-spacing: 1px; }
 
 a {
-  transition: 0.5s all; }
+  transition: 0.5s all ease-in-out; }
 
 body.has-active-menu {
   overflow: hidden; }
@@ -776,6 +776,11 @@ label {
   #prison-wrap img {
     max-width: 100%;
     height: auto; }
+    @media (max-width: 480px) {
+      #prison-wrap img {
+        max-width: 112%;
+        position: relative;
+        left: -6%; } }
   #prison-wrap .bubble {
     position: absolute;
     top: 0;
@@ -1114,12 +1119,18 @@ footer .map-image {
       white-space: nowrap;
       background-repeat: no-repeat;
       background-image: url(http://dev.interactivemechanics.com/easternstate/halloween/themes/tbtw/assets/icons/icon-underline.svg);
-      margin: 0px; }
+      margin: 0px;
+      transition: all 0.5s; }
+      footer .map-image p.underline:hover {
+        background-size: 190px 43px; }
     footer .map-image p a {
-      color: white; }
+      color: white;
+      transition: all 0.5s; }
       footer .map-image p a:hover {
         text-decoration: none;
-        color: white; }
+        color: #d9d9d9; }
+      footer .map-image p a:focus {
+        text-decoration: none; }
   footer .map-image address {
     font-size: 16px;
     font-weight: bold;
@@ -1381,6 +1392,11 @@ input[type="radio"]:checked + label span {
   .mainpage-details-section h2 {
     font-weight: 200;
     margin-bottom: 25px; }
+  .mainpage-details-section .container-fluid > .row {
+    display: flex; }
+    @media (max-width: 991px) {
+      .mainpage-details-section .container-fluid > .row {
+        display: initial; } }
   .mainpage-details-section .col-md-4 {
     border-right: 2px solid black; }
   .mainpage-details-section .vip-expriences {
@@ -1394,9 +1410,16 @@ input[type="radio"]:checked + label span {
       bottom: 0;
       left: 0;
       background-image: linear-gradient(to left, #000, #000);
-      opacity: .6; }
+      opacity: .6;
+      transition: all 0.5s; }
+    .mainpage-details-section .vip-expriences:hover:before {
+      background-image: linear-gradient(to left, #555, #555);
+      opacity: #838f98; }
   .mainpage-details-section .frequent-questions {
-    background: #4c555c; }
+    background: #4c555c;
+    transition: all 0.5s; }
+    .mainpage-details-section .frequent-questions:hover {
+      background: #636f78; }
   .mainpage-details-section .favorite-frights {
     background: url(../../assets/homepage-block-vip@2x.jpg.jpg) top right;
     background-size: cover; }
@@ -1408,7 +1431,11 @@ input[type="radio"]:checked + label span {
       bottom: 0;
       left: 0;
       background-image: linear-gradient(to left, #000, #000);
-      opacity: .6; }
+      opacity: .6;
+      transition: all 0.5s; }
+    .mainpage-details-section .favorite-frights:hover:before {
+      background-image: linear-gradient(to left, #555, #555);
+      opacity: .4; }
   .mainpage-details-section .sub-detail {
     padding: 35px;
     text-align: left;
@@ -1433,6 +1460,10 @@ input[type="radio"]:checked + label span {
   margin-bottom: 10px; }
 .listview-page h2 {
   margin-top: 0px; }
+  @media (max-width: 991px) {
+    .listview-page h2 {
+      margin-top: 20px;
+      margin-bottom: 20px; } }
 
 .press-page ul li {
   margin-bottom: 65px; }
@@ -1447,9 +1478,12 @@ input[type="radio"]:checked + label span {
   .press-page p.press-release-detail strong {
     color: #FFF; }
 .press-page h2 {
-  margin-top: 0px;
   color: white;
   font-weight: bold; }
+  @media (max-width: 991px) {
+    .press-page h2 {
+      margin-top: 20px;
+      margin-bottom: 20px; } }
   .press-page h2 a {
     color: white; }
     .press-page h2 a:hover {
@@ -1528,15 +1562,16 @@ input[type="radio"]:checked + label span {
 
 .image-library-page .press-image {
   position: relative;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  height: 220px; }
   .image-library-page .press-image a {
     max-height: 280px;
     overflow: hidden;
     display: block;
     border: none !important; }
   .image-library-page .press-image img {
-    height: auto;
-    width: 100%; }
+    height: 220px;
+    width: auto; }
   .image-library-page .press-image:hover > .overlay {
     background: #DB322B; }
 .image-library-page .overlay {

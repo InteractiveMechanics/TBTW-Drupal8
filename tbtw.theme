@@ -1,10 +1,20 @@
 <?php
 	
 	require_once 'Calendar.php';
+	
+	function tbtw_theme_suggestions_alter(array &$suggestions, array &$variables, $hook) {
+		$form = \Drupal::formBuilder()->getForm('Drupal\photorequest\Form\RequestForm');
+		$variables['formform'] = $form;
+	}
 
 	function tbtw_theme_suggestions_node_alter(array &$suggestions, array &$variables)  {
 		$node = \Drupal::routeMatch()->getParameter('node');
 		$contentType = $node->getType();
+		
+		
+		
+		$node_id = $node->id();
+		
 		
 		$variables['content_type'] = "home_page";
 		
@@ -23,8 +33,6 @@
 			
 			$variables['attractions'] = $arr;
 			$variables['content_type'] = 'home_page';
-			
-			
 			
 			$variables['tbtw_attractions'] = array_values($arr);
         }
@@ -51,7 +59,7 @@
 	     *
 	    */
 	    
-        $g = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load(1);
+        /*$g = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load(1);
         $lg = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load(2);
         $y = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load(3);
         $o = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load(4);
@@ -170,7 +178,7 @@
 				)));
 				
 				$variables['schedule_table'] = $calendar->printHTML();
-				$variables['schedule_table_widget'] = $calendar->printHTMLWidget();
+				$variables['schedule_table_widget'] = $calendar->printHTMLWidget();*/
         
 	}
 	

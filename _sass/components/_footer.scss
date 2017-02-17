@@ -39,14 +39,21 @@ footer {
 			    background-repeat: no-repeat;
 			    background-image: url(http://dev.interactivemechanics.com/easternstate/halloween/themes/tbtw/assets/icons/icon-underline.svg);
 			    margin:0px;
+			    transition: $transition;
+			    &:hover {
+				    background-size: 190px 43px;
+			    }
     		}
     		
     		a {
 	    		color: white;
-	    		
+	    		transition: $transition;
 	    		&:hover {
 		    		text-decoration: none;
-		    		color: white;
+		    		color: darken(white, 15%);
+	    		}
+	    		&:focus {
+		    		text-decoration: none;
 	    		}
     		}
     	}

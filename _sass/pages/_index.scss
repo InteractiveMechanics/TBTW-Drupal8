@@ -168,6 +168,13 @@
 		margin-bottom:25px;
 	}
 	
+	.container-fluid>.row {
+		display: flex;
+		@include screen-ltmd {
+			display: initial;
+		}
+	}
+	
 	.col-md-4 {
 		border-right:2px solid black;
 	}
@@ -185,11 +192,22 @@
 			left: 0;
 			background-image: linear-gradient(to left,#000,#000);
 			opacity: .6; 
+			transition: $transition;
+	  	}
+	  	&:hover {
+		  	&:before {
+			  	background-image: linear-gradient(to left, #555, #555);
+			  	opacity: #838f98;
+		  	}
 	  	}
 	}
 
 	.frequent-questions {
 		background: #4c555c;
+		transition: $transition;
+		&:hover {
+			background: lighten(#4c555c, 10%);
+		}
 	}
 
 	.favorite-frights {
@@ -205,6 +223,13 @@
 			left: 0;
 			background-image: linear-gradient(to left,#000,#000);
 			opacity: .6; 
+			transition: $transition;
+	  	}
+	  	&:hover {
+		  	&:before {
+			  	background-image: linear-gradient(to left, #555, #555);
+			  	opacity: .4;
+		  	}
 	  	}
 	}
 
