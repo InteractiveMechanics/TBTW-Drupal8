@@ -356,6 +356,8 @@ ul.social-icons {
     padding:0;
     cursor:pointer;
     border-bottom: 0px !important;
+    transition: all .5s ease-in-out;
+    
     
     .fa-circle {
       color:white !important;
@@ -369,6 +371,7 @@ ul.social-icons {
     }
 
     &:hover {
+	  
       .fa-circle {
         color:#3b4349 !important;
       }

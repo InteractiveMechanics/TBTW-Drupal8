@@ -33,14 +33,17 @@
                         <div class="row">
                             <div class="col-md-6">
                                 
-                                <img class="img-responsive" src="{{file_url(press_item.field_lead_image.entity.uri.value)}}">
-                                
+                                {%if press_item[0].field_lead_image.entity.filename %}
+                                	<a href="<{# path('entity.node.canonical', {'node': press_item[0].nid.value}) #}">
+                                		<img class="img-responsive" src="{{file_url(press_item[0].field_lead_image.entity.uri.value)}}">
+                                	</a>
+                                {% endif %}
                             </div>
 
                             <div class="col-md-6">
                                 <p>Latest Press Release</p>
-                                <h2><a href="<{# path('entity.node.canonical', {'node': press_item.nid.value}) #}">{{press_item.title.value}}</a></h2>
-                                {{press_item.body.summary|raw}}
+                                <h2><a href="{{ path('entity.node.canonical', {'node': press_item[0].nid.value}) }}">{{press_item[0].title.value}}</a></h2>
+                                {{press_item[0].body.summary|raw}}
                             </div>
                         </div>
 

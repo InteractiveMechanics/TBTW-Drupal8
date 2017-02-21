@@ -253,7 +253,8 @@ hr {
 ul.social-icons li {
   padding: 0;
   cursor: pointer;
-  border-bottom: 0px !important; }
+  border-bottom: 0px !important;
+  transition: all .5s ease-in-out; }
   ul.social-icons li .fa-circle {
     color: white !important; }
   ul.social-icons li .fa-2x {
@@ -780,9 +781,19 @@ label {
     float: left;
     margin-left: 25px; }
 
+@media (min-width: 1399px) {
+  .acttractions-section .jumbotron {
+    padding: 100px 0px 100px 135px !important;
+    overflow: hidden; } }
+
 #prison-wrap {
   position: relative;
   width: 115%; }
+  @media (min-width: 1399px) {
+    #prison-wrap {
+      width: 125% !important;
+      right: 40px;
+      top: 50px; } }
   #prison-wrap img {
     max-width: 100%;
     height: auto; }
@@ -791,6 +802,9 @@ label {
         max-width: 112%;
         position: relative;
         left: -6%; } }
+    @media (min-width: 1399px) {
+      #prison-wrap img {
+        max-width: 100%; } }
   #prison-wrap .bubble {
     position: absolute;
     top: 0;
@@ -1131,14 +1145,12 @@ footer .map-image {
       background-image: url(http://dev.interactivemechanics.com/easternstate/halloween/themes/tbtw/assets/icons/icon-underline.svg);
       margin: 0px;
       transition: all 0.5s; }
-      footer .map-image p.underline:hover {
-        background-size: 190px 43px; }
     footer .map-image p a {
       color: white;
       transition: all 0.5s; }
       footer .map-image p a:hover {
         text-decoration: none;
-        color: #d9d9d9; }
+        color: #DB322B; }
       footer .map-image p a:focus {
         text-decoration: none; }
   footer .map-image address {
@@ -1338,7 +1350,7 @@ input[type="radio"]:checked + label span {
     -webkit-transform: translate3d(-50%, -50%, 0);
     transform: translate3d(-50%, -50%, 0);
     z-index: -1; }
-    @media (min-width: 1200px) {
+    @media (min-width: 1399px) {
       .hero-section .jumbotron #img-background-homepage {
         display: none; } }
   .hero-section .jumbotron h1 {
@@ -1441,7 +1453,7 @@ input[type="radio"]:checked + label span {
       transition: all 0.5s; }
     .mainpage-details-section .vip-expriences:hover:before {
       background-image: linear-gradient(to left, #555, #555);
-      opacity: #838f98; }
+      opacity: 0.4; }
   .mainpage-details-section .frequent-questions {
     background: #4c555c;
     transition: all 0.5s; }
@@ -1590,15 +1602,24 @@ input[type="radio"]:checked + label span {
 .image-library-page .press-image {
   position: relative;
   margin-bottom: 25px;
-  height: 220px; }
+  max-height: 280px; }
+  @media (max-width: 991px) {
+    .image-library-page .press-image {
+      max-height: 225px; } }
   .image-library-page .press-image a {
     max-height: 280px;
     overflow: hidden;
     display: block;
     border: none !important; }
+    @media (max-width: 991px) {
+      .image-library-page .press-image a {
+        max-height: 225px; } }
   .image-library-page .press-image img {
-    height: 220px;
-    width: auto; }
+    max-height: 280px;
+    width: 100%; }
+    @media (max-width: 991px) {
+      .image-library-page .press-image img {
+        max-height: 225px; } }
   .image-library-page .press-image:hover > .overlay {
     background: #DB322B; }
 .image-library-page .overlay {
@@ -1625,6 +1646,11 @@ input[type="radio"]:checked + label span {
 .static-page .body-area img {
   width: 100% !important;
   margin: 20px; }
+
+.press-item-li {
+  margin-bottom: auto !important;
+  padding-bottom: initial !important;
+  height: 400px; }
 
 .calendar {
   color: #fff; }

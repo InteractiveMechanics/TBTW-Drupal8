@@ -1,0 +1,71 @@
+
+{% if node.field_callout.entity.field_link.uri %}
+	<div id="callout">
+        <h3>{{node.field_callout.entity.title.value|raw}}</h3>
+        <p>{{node.field_callout.entity.body.value|raw}}</p>
+        <a href="{{node.field_callout.entity.field_link.uri}}">Explore Eastern State's History 
+        </a>
+        {{node.field_callout.entity.field_link[0]['#url']}}
+            <svg version="1.1"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+            x="0px" y="0px" width="17.5px" height="10.2px" viewBox="0 0 17.5 10.2" enable-background="new 0 0 17.5 10.2"
+            xml:space="preserve">
+                <defs>
+                </defs>
+                <g>
+                    <g>
+                        <rect y="4.6" fill="#D62027" width="16.1" height="1"/>
+                    </g>
+                    <g>
+                        <g>
+                            <polygon fill="#D62027" points="12,10.2 11.1,9.3 15.7,5.1 11.1,0.9 12,0 17.5,5.1            "/>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+    </div>
+{% endif %}
+
+
+<div class="subpage-hero-section">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="subpage-hero-details generic-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url({{baseurl}}/themes/tbtw/assets/hero-images/tbtw-hero-overlay@2x.png.png), url({{file_url(node.field_lead_image.entity.uri.value)}});">
+                            <section>
+                                <ol class="breadcrumb">
+                                    <li><a href="#">Jobs</a></li>
+                                    <li class="active"><a href="#">{{node.title.value}}</a></li>
+                                </ol>
+
+                                <h1 class="subpage-title">{{node.title.value}}</h1>
+                            </section>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="main-content-subpages static-page">
+
+            <div class="container-fluid">
+
+                <div class="padded-box">
+
+                    <div class="row">
+                        <div class="col-md-8 col-sm-12 col-xs-12 body-area">
+                        	{{node.body.value|raw}}
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>

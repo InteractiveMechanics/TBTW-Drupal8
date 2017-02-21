@@ -1,3 +1,32 @@
+
+{% if node.field_callout.entity.field_link.uri %}
+	<div id="callout">
+        <h3>{{node.field_callout.entity.title.value|raw}}</h3>
+        <p>{{node.field_callout.entity.body.value|raw}}</p>
+        <a href="{{node.field_callout.entity.field_link.uri}}">Explore Eastern State's History 
+        </a>
+        {{node.field_callout.entity.field_link[0]['#url']}}
+            <svg version="1.1"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+            x="0px" y="0px" width="17.5px" height="10.2px" viewBox="0 0 17.5 10.2" enable-background="new 0 0 17.5 10.2"
+            xml:space="preserve">
+                <defs>
+                </defs>
+                <g>
+                    <g>
+                        <rect y="4.6" fill="#D62027" width="16.1" height="1"/>
+                    </g>
+                    <g>
+                        <g>
+                            <polygon fill="#D62027" points="12,10.2 11.1,9.3 15.7,5.1 11.1,0.9 12,0 17.5,5.1            "/>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+    </div>
+{% endif %}
+
+
 	<div class="subpage-hero-section">
         <div class="container-fluid">
             <div class="row">
@@ -39,7 +68,9 @@
 	                                <div class="row">
 	                                    <div class="col-md-3">
 	                                        <div class="list-item-image">
-	                                            <img class="img-responsive" src="http://placehold.it/450x265">
+	                                        	{%if details.getFieldCollectionItem().field_list_image_item.entity.filename %}
+	                                            	<img class="img-responsive" src="{{file_url(details.getFieldCollectionItem().field_list_image_item.entity.uri.value)}}">
+	                                            {% endif %}
 	                                        </div>
 	                                    </div>
 	

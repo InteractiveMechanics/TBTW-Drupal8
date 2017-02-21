@@ -239,6 +239,7 @@ class Calendar {
 		
 		$boxesString = "<div class='colors-boxes hidden-xs hidden-sm'>";
 		
+		
 		foreach($this->settings['colors'] as $key => $color) {
 			
 			
@@ -363,7 +364,9 @@ class Calendar {
 
 							$td_color = 'not-colored';
 							foreach($month['colors'] as $color => $content) {
-								if(in_array($i, $content)) {
+								
+								
+								if(in_array($i, $content[0])) {
 									$td_color = $color;
 									break;
 								}

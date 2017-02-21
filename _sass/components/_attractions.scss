@@ -1,6 +1,22 @@
+.acttractions-section {
+	.jumbotron {
+		@include screen-gtmd {
+			padding: 100px 0px 100px 135px !important;
+			overflow: hidden;
+		}
+	}
+}
+
+
+
 #prison-wrap {
     position: relative;
     width:115%;
+    @include screen-gtmd {
+	    width: 125% !important;
+		right: 40px;
+		top: 50px;
+    }
 
     img {
         max-width: 100%;
@@ -9,6 +25,9 @@
 	        max-width: 112%;
 	        position: relative;
 	        left: -6%;
+        }
+        @include screen-gtmd {
+	        max-width: 100%;
         }
     }
 

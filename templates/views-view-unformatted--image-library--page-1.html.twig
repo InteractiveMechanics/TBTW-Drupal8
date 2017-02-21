@@ -91,7 +91,7 @@
     
     
     <!-- Modal -->
-<div class="modal fade press-modal" id="myImageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade press-modal" data-source="" id="myImageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -102,21 +102,21 @@
       <div class="modal-body">
         <div class="row">
             <div class="col-md-6">
-                <img class="img-responsive" src="http://placehold.it/850x465">
+                <img class="img-responsive modal-thumbnail" src="http://placehold.it/850x465">
 
                 <div class="caption">
-                    <p>Lorem ipsum dolor sit amet, conset <br />
+                    <p class=""><span class="modal-title">Lorem ipsum dolor sit amet, conset</span> <br />
                     <strong>
-                        Image Code: SE18 <br /> Photopgrapher: Jane Smith, 2012
+                        Image Code: <span class="modal-codes"></span> <br /> Photopgrapher: <span class="modal-credit"></span>
                     </strong></p>
                 </div>
 
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquLorem te irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                <p class="modal-description">
+                	
                 </p>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6" id="ModalForm">  
                 <h3>Download this Image</h3>
                 <p>
                     Please provide the following information. Your image will be available for immediate download.
@@ -158,6 +158,10 @@
                 </div>-->
                 
                 {{formform}}
+                
+                <input class="btn btn-big btn-download btn-red button button--primary" style="text-align: center; margin: 0px auto; width: 70%; display: none;" data-drupal-selector="edit-download" type="submit" id="edit-download--107" name="op" value="Download Image">
+                
+                <a href="javascript:void(0);"></a>
             </div>
         </div>
       </div>
@@ -181,5 +185,30 @@
 	            scrollTop: $(this).offset().top
 	        }, 1500);
 	    });
+	});
+	
+	$(document).ready(function() {
+
+		$('a[data-toggle=modal], button[data-toggle=modal]').click(function () {
+	  		var title = $(this).data('title');
+	  		var thumbnail = $(this).data('thumbnail');
+	  		var image = $(this).data('image');
+	  		var description = $(this).data('desc');
+	  		var codes = $(this).data('codes');
+	  		var credit = $(this).data('credit');
+	  		
+	  		$('.modal-title').text(title);
+	  		$('.modal-codes').text(codes);
+	  		$('.modal-description').text(description);
+	  		$('.modal-thumbnail').attr("src", thumbnail);
+	  		$('.press-modal').data("source", image);
+	  		$('.modal-credit').text(credit);
+	  	});
+	  	
+	  	$('.btn-download').click(function(){
+		  	var dLink = window.location.origin + $('.press-modal').data("source");
+		  	window.open(dLink);	
+		  	location.reload();
+	  	});
 	});
 </script>

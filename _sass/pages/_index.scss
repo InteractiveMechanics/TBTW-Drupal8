@@ -26,6 +26,7 @@
 	   background: url(../../assets/hero-images/tbtw-hero-homepage@2x.jpg.jpg) top right;
 	   background-size: cover;
 	   background:none;
+	   
 	    
 	   .container2 {
 		  position: relative;
@@ -217,7 +218,7 @@
 	  	&:hover {
 		  	&:before {
 			  	background-image: linear-gradient(to left, #555, #555);
-			  	opacity: #838f98;
+			  	opacity: 0.4;
 		  	}
 	  	}
 	}

@@ -41,15 +41,49 @@
 	     
 	    	$query = \Drupal::entityQuery('node')->condition('type', 'press_release')->condition('status', 1)->sort('created', 'DESC')->range(0, 1);
 	    	$nids = $query->execute();
-			$arr = \Drupal\node\Entity\Node::loadMultiple(array_keys($nids));   
-			$press_item = reset($arr);
+			$arr = \Drupal\node\Entity\Node::loadMultiple($nids);
 			
-			$variables['press_item'] = $press_item;
+			$variables['press_item'] = array_values($arr);
 			
         }
         
+        
         $schedule_node = \Drupal\node\Entity\Node::load(43);
         
+        
+        
+        $query = \Drupal::entityQuery('taxonomy_term');
+		$query->condition('vid', "schedule_pricing");
+		$tids = $query->execute();
+		$terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+    
+		$pricing = array_values($terms);
+		
+		
+		
+		$calendar = new Calendar(array(
+			
+			'colors' => array(
+				'darkGreen' => getValuesByColorValue(getTermByColorName($pricing, 'green')) ,
+				'lightGreen' =>  getValuesByColorValue(getTermByColorName($pricing, 'lightGreen')),
+				'yellow' =>  getValuesByColorValue(getTermByColorName($pricing, 'yellow')) ,
+				'orange' =>  getValuesByColorValue(getTermByColorName($pricing, 'orange')) ,
+				'red' =>  getValuesByColorValue(getTermByColorName($pricing, 'red')) 
+			),
+			
+			'year' => 2017,
+			
+			'months' => array(
+				'september' => septArray($schedule_node),
+	            'october' => octArray($schedule_node),
+	            'november' => novArray($schedule_node),
+			)
+			
+		));
+		
+		$variables['schedule_table'] = $calendar->printHTML();
+		$variables['schedule_table_widget'] = $calendar->printHTMLWidget();
+		
         /*
 	     * $g = darkGreen
 	     * $lg = lightGreen
@@ -206,24 +240,55 @@
 		        }
 		        
 		        $color = $node->field_schedule_date[$i]->entity->field_price[0]->entity->field_hex_color->value;
+				
+				$vip_options = [];
+		        $options = $node->field_schedule_date[$i]->entity->field_price[0]->entity->field_vip_options;
+		        
+		        foreach($options as $option) {
+			        array_push($vip_options, array(
+						'name' => $option->entity->field_vip_option_term->entity->name->value,
+						'price' => $option->entity->field_vip_option_price->value,
+						'description' => $option->entity->field_vip_option_term->entity->description->value
+					));
+		        }
+			    
+			    
+			    
+			    
+			    
 				if($color == 'green') {
-			    	array_push($greenArray, (int) $day);
+			    	array_push($greenArray, array(
+				    	'day' => (int) $day,
+				    	'vip' => $vip_options
+					));
 		    	}
 		    	
 		    	if($color == 'lgreen') {
-			    	array_push($lGreenArray, (int) $day);
+			    	array_push($lGreenArray, array(
+				    	'day' => (int) $day,
+				    	'vip' => $vip_options
+					));
 		    	}
 		    	
 		    	if($color == 'yellow') {
-			    	array_push($yellowArray, (int) $day);
+			    	array_push($yellowArray, array(
+				    	'day' => (int) $day,
+				    	'vip' => $vip_options
+					));
 		    	}
 		    	
 		    	if($color == 'orange') {
-			    	array_push($orangeArray, (int) $day);
+			    	array_push($orangeArray, array(
+				    	'day' => (int) $day,
+				    	'vip' => $vip_options
+					));
 		    	}
 		    	
 		    	if($color == 'red') {
-			    	array_push($redArray, (int) $day);
+			    	array_push($redArray, array(
+				    	'day' => (int) $day,
+				    	'vip' => $vip_options
+					));
 		    	}
 		        
 	        }
@@ -260,24 +325,55 @@
 	        if($month == "October") {
 		        
 		        $color = $node->field_schedule_date[$i]->entity->field_price[0]->entity->field_hex_color->value;
+				
+				$vip_options = [];
+		        $options = $node->field_schedule_date[$i]->entity->field_price[0]->entity->field_vip_options;
+		        
+		        foreach($options as $option) {
+			        array_push($vip_options, array(
+						'name' => $option->entity->field_vip_option_term->entity->name->value,
+						'price' => $option->entity->field_vip_option_price->value,
+						'description' => $option->entity->field_vip_option_term->entity->description->value
+					));
+		        }
+			    
+			    
+			    
+			    
+			    
 				if($color == 'green') {
-			    	array_push($greenArray, (int) $day);
+			    	array_push($greenArray, array(
+				    	'day' => (int) $day,
+				    	'vip' => $vip_options
+					));
 		    	}
 		    	
 		    	if($color == 'lgreen') {
-			    	array_push($lGreenArray, (int) $day);
+			    	array_push($lGreenArray, array(
+				    	'day' => (int) $day,
+				    	'vip' => $vip_options
+					));
 		    	}
 		    	
 		    	if($color == 'yellow') {
-			    	array_push($yellowArray, (int) $day);
+			    	array_push($yellowArray, array(
+				    	'day' => (int) $day,
+				    	'vip' => $vip_options
+					));
 		    	}
 		    	
 		    	if($color == 'orange') {
-			    	array_push($orangeArray, (int) $day);
+			    	array_push($orangeArray, array(
+				    	'day' => (int) $day,
+				    	'vip' => $vip_options
+					));
 		    	}
 		    	
 		    	if($color == 'red') {
-			    	array_push($redArray, (int) $day);
+			    	array_push($redArray, array(
+				    	'day' => (int) $day,
+				    	'vip' => $vip_options
+					));
 		    	}
 		        
 	        }
@@ -305,7 +401,8 @@
         $orangeArray = [];
         $redArray = [];
         
-	        $max_date = 0;
+	    $max_date = 0;
+        $show = true;
         
         for($i = 0; $i < count($node->field_schedule_date); $i++) {
 	        
@@ -321,24 +418,55 @@
 		        }
 		        
 		        $color = $node->field_schedule_date[$i]->entity->field_price[0]->entity->field_hex_color->value;
+		        
+		        $vip_options = [];
+		        $options = $node->field_schedule_date[$i]->entity->field_price[0]->entity->field_vip_options;
+		        
+		        foreach($options as $option) {
+			        array_push($vip_options, array(
+						'name' => $option->entity->field_vip_option_term->entity->name->value,
+						'price' => $option->entity->field_vip_option_price->value,
+						'description' => $option->entity->field_vip_option_term->entity->description->value
+					));
+		        }
+			    
+			    
+			    
+			    
+			    
 				if($color == 'green') {
-			    	array_push($greenArray, (int) $day);
+			    	array_push($greenArray, array(
+				    	'day' => (int) $day,
+				    	'vip' => $vip_options
+					));
 		    	}
 		    	
 		    	if($color == 'lgreen') {
-			    	array_push($lGreenArray, (int) $day);
+			    	array_push($lGreenArray, array(
+				    	'day' => (int) $day,
+				    	'vip' => $vip_options
+					));
 		    	}
 		    	
 		    	if($color == 'yellow') {
-			    	array_push($yellowArray, (int) $day);
+			    	array_push($yellowArray, array(
+				    	'day' => (int) $day,
+				    	'vip' => $vip_options
+					));
 		    	}
 		    	
 		    	if($color == 'orange') {
-			    	array_push($orangeArray, (int) $day);
+			    	array_push($orangeArray, array(
+				    	'day' => (int) $day,
+				    	'vip' => $vip_options
+					));
 		    	}
 		    	
 		    	if($color == 'red') {
-			    	array_push($redArray, (int) $day);
+			    	array_push($redArray, array(
+				    	'day' => (int) $day,
+				    	'vip' => $vip_options
+					));
 		    	}
 		        
 	        }
@@ -356,6 +484,33 @@
             ),
         );
 		
+	}
+	
+	function getTermByColorName($pricing, $color_name) {
+		for($i = 0; $i < count($pricing); $i++) {
+			if($pricing[$i]->name->value == $color_name) {
+				
+				return $pricing[$i];
+				
+			}
+		}
+	}
+	
+	function getValuesByColorValue($term) {
+		
+		
+		
+		return array(
+			"price" => $term->field_online_admission_price->value, 
+			"at_door_price" => $term->field_at_door_admission_price->value, 
+			"hours" => $term->field_time->value,
+			"group_rate" => $term->field_group_rate_admission_price->value,
+			"online_price" => $term->field_online_admission_price->value,
+			"vip_after_dark" => '',
+			"vip_quick_pass" => '',
+			"vip_hex_pass" => '',
+			"vip_after_dark_hex" => '',
+		);
 	}
 	
 
