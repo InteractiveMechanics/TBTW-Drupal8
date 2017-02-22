@@ -28,10 +28,10 @@
   {% import _self as menus %}
   {% if items %}
     {% for item in items %}
-      <li{{ item.attributes }} class="{% if item.below %}dropdown{% endif %} {% if item.in_active_trail %}active{% endif %}">
+      <li{{ item.attributes }} class=" {% if item.in_active_trail %}active{% endif %}">
         {% if item.below %}
-          <a href="{{ item.url }}" class="dropdown-toggle {% if item.title == "Precious Places" %}preciousplaces{% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
-          <ul class="dropdown-menu">
+          <a href="{{ item.url }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
+          <ul class="">
             {{ menus.custom_menu_links(item.below, attributes, menu_level + 1) }}
           </ul>
         {% else %}

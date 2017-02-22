@@ -300,6 +300,43 @@ h2 {
 	}
 }
 
+
+#callout {
+	position: fixed;
+	width: 450px;
+	top: 450px;
+	right: 0px;
+	opacity: 0;
+	background-color: #34393f;
+	padding: 30px 70px 30px 30px;
+	color: #FFF;
+	-webkit-box-shadow: 0px 10px 1px -6px rgba(0,0,0,.65);
+	-moz-box-shadow: 0px 10px 1px -6px rgba(0,0,0,.65);
+	box-shadow: 0px 10px 1px -6px rgba(0,0,0,.65);
+	z-index: 10000000000;
+	
+	@include screen-md {
+		width: 375px;
+	}
+	@include screen-ltmd {
+		display: none;
+	}
+
+		h3 {
+			margin-top: 0px;
+		}
+		a {
+			color:#FFF;
+			
+			&:hover {
+				color: $red;
+			}
+		}
+		svg {
+			margin-left: 7px;
+		}
+}
+
 .calendar-widget {
 	position: fixed;
     width: 300px;

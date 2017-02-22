@@ -237,7 +237,7 @@ class Calendar {
 
 	function printColorsBoxes() {
 		
-		$boxesString = "<div class='colors-boxes hidden-xs hidden-sm'>";
+		$boxesString = "<div class='colors-boxes'>";
 		
 		
 		foreach($this->settings['colors'] as $key => $color) {
@@ -327,11 +327,24 @@ class Calendar {
 		}
 		
 	}
+	
+	function getOptions($day, $month) {
+		for($i = 0; $i < count($this->settings['options'][$month]); $i++) {
+			$temp = $this->settings['options'][$month][$i];
+			
+			if($temp[$day]) {
+				return str_replace('"', "'", json_encode($temp[$day]));	
+			}
+		}
+		
+		return '';
+	}
 
 	function printCalendarTable() {
 		
 		$tableStr == '';
-		
+		$show = true;
+		$optionString = '';
 		$tableStr .= '<div class="calendar-table">';
 			foreach($this->settings['months'] as $key => $month) {
 				$month_number = date('n', strtotime($key));
@@ -363,11 +376,19 @@ class Calendar {
 							}
 
 							$td_color = 'not-colored';
+							$td_options = '';
+							
+							
 							foreach($month['colors'] as $color => $content) {
-								
-								
-								if(in_array($i, $content[0])) {
+								if(in_array($i, $content)) {
 									$td_color = $color;
+									
+									if($show) {
+										
+									$optionString = $this->getOptions($i, $key);
+									$show = false;	
+									}
+									
 									break;
 								}
 							}
@@ -376,7 +397,7 @@ class Calendar {
 							if($td_color != 'not-colored') {
 								$class_name = strtolower($key) . "-" . $i;
 							}
-							$tableStr .= '<td class="' . $td_color . " " . $class_name . '"' . $this->getDataAttributes($i, $key, $td_color) . ' data-schedulekey="' . $class_name . '">';
+							$tableStr .= '<td data-jsondata="' . $optionString . '" class="' . $td_color . " " . $class_name . '"' . $this->getDataAttributes($i, $key, $td_color) . ' data-schedulekey="' . $class_name . ' ">';
 								$tableStr .= '<span class="day-number">' . $i . '</span>';
 								if($td_color != 'not-colored') {
 									$tableStr .= '<div class="price hidden-lg hidden-md">

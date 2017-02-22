@@ -170,6 +170,7 @@
                 min-width:280px;
                 background-color:#4c545c;
                 padding:20px 15px;
+                list-style: none;
 
                 li {
                 	a {
@@ -179,6 +180,8 @@
                 		padding: 10px 20px;
                         overflow: hidden;
                         color:#eeeeee;
+                        display: block;
+                        text-decoration: none !important;
 
                         &:hover {
                         	color:$red;
@@ -192,6 +195,12 @@
 	                		
                 		}
                 	}
+
+                    > ul {
+                        width: auto;
+                        padding: 0 0 0 20px;
+                        min-width: 0;
+                    }
                 }
 			}
 		}

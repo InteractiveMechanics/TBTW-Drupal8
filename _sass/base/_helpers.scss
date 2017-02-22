@@ -93,14 +93,6 @@ main a {
 	}
 }
 
-.visit-dropdown li:nth-child(3) {
-	margin-left:20px;
-}
-
-.visit-dropdown li:nth-child(2) {
-	margin-left:20px;
-}
-
 .fade-in {
     -webkit-animation: fadeIn 1s 1 forwards;                // A sample helper that fades something in, nice for page animations onLoad
     -moz-animation: fadeIn 1s 1 forwards;
@@ -356,11 +348,11 @@ ul.social-icons {
     padding:0;
     cursor:pointer;
     border-bottom: 0px !important;
-    transition: all .5s ease-in-out;
     
     
     .fa-circle {
       color:white !important;
+      transition: all .5s ease-in-out;
     }
     .fa-2x {
       font-size:2.5em !important;
@@ -368,6 +360,7 @@ ul.social-icons {
 
     .fa-inverse {
       color:#4c555c !important;
+      transition: all .5s ease-in-out;
     }
 
     &:hover {
@@ -411,3 +404,4 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 		top: -20px;
 	}
 }
+

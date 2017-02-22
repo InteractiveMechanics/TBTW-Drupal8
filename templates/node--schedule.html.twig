@@ -102,7 +102,7 @@
             <li>
                 <div class="pull-left">
                     <p>
-                        Group Rate <span data-toggle="tooltip" data-placement="top" title="Tooltip Content Here" class="help-icon"></span>
+                        Group Rate <span data-toggle="tooltip" data-placement="top" title="Group Discount Rate Here" class="help-icon"></span>
                     </p>
                 </div>
 
@@ -118,70 +118,8 @@
 
         <label>VIP Experiences</label>
 
-        <ul>
-            <li>
-                <div class="pull-left">
-                    <p>
-                        Quick Pass <span data-toggle="tooltip" data-placement="top" title="Tooltip Content Here" class="help-icon"></span>
-                    </p>
-                </div>
-
-                <div class="pull-right">
-                    <p class="price vipquick">
-                        $10
-                    </p>
-                </div>
-
-                <br style="clear:both;" />
-            </li>
-
-            <li>
-                <div class="pull-left">
-                    <p>
-                        After Dark VIP Tour <span data-toggle="tooltip" data-placement="top" title="Tooltip Content Here" class="help-icon"></span>
-                    </p>
-                </div>
-
-                <div class="pull-right">
-                    <p class="price vipdark">
-                        $99
-                    </p>
-                </div>
-
-                <br style="clear:both;" />
-            </li>
-
-            <li>
-                <div class="pull-left">
-                    <p>
-                        The Hex Challenge <span data-toggle="tooltip" data-placement="top" title="Tooltip Content Here" class="help-icon"></span>
-                    </p>
-                </div>
-
-                <div class="pull-right">
-                    <p class="price viphex">
-                        $55
-                    </p>
-                </div>
-
-                <br style="clear:both;" />
-            </li>
-
-            <li>
-                <div class="pull-left">
-                    <p>
-                        After Dark + Hex Combo <span data-toggle="tooltip" data-placement="top" title="Tooltip Content Here" class="help-icon"></span>
-                    </p>
-                </div>
-
-                <div class="pull-right">
-                    <p class="price vipdarkhex">
-                        $139
-                    </p>
-                </div>
-
-                <br style="clear:both;" />
-            </li>
+        <ul class="vip-ul">
+            
         </ul>
 
         <div class="buy-now">
@@ -194,6 +132,7 @@
 	<script type="text/javascript">
 
         $(document).ready(function(){
+	        
 	        
 	        function showPopup() {
 		        var dateKey = getParameterByName('date');
@@ -226,16 +165,27 @@
 	            	var atdoor = $(this).data('atdoor');
 	            	var grouprate = $(this).data('grouprate');
 	            	var onlineprice = $(this).data('onlineprice');
-	            	var vipdark = $(this).data('vipdark');
 	            	
-	            	var vipquick = $(this).data('vipquick');
-	            	var viphex = $(this).data('viphex');
-	            	var vipdarkhex = $(this).data('vipdarkhex');
 	            	var day = $(this).data('day');
 	            	var month = getMonth($(this).data('month'));
 	            	
 	            	var link = $(this).data('link');
 	            	var color = $(this).data('color');
+	            	
+	            	var jsonData = $(this).data('jsondata');
+	            	jsonData = jsonData.replace(/'/g, '"');
+	            	
+	            	var source   = $("#vip-options-template").html();
+					var template = Handlebars.compile(source);
+	            	
+	            	console.log();
+	            	
+	            	var context = JSON.parse(jsonData);
+					var html    = template(context);
+					
+					console.log(html);
+					$('.vip-ul').empty();
+					$('.vip-ul').append(html);
 	            	
 	            	$('.buy-now-popup h3').removeClass().addClass(color);
 	            	$('.btn-buy-now-link').attr('data-link', link);
@@ -243,10 +193,8 @@
 	            	$('p.price').text('$' + price);
 	            	$('p.atdoor').text('$' + atdoor);
 	            	$('p.grouprate').text('$' + grouprate);
-	            	$('p.vipdark').text('$' + vipdark);
-	            	$('p.vipquick').text('$' + vipquick);
-	            	$('p.viphex').text('$' + viphex);
-	            	$('p.vipdarkhex').text('$' + vipdarkhex);
+	            	
+	            	
 	            	
 	            	$('.month-picked').text(month);
 	            	$('.day-picked').text(day);
@@ -259,6 +207,7 @@
 		            
 					$('td').removeClass('active');
 					$(this).addClass('active');   
+					$('.help-icon').tooltip(); 
 	            }
             });
             
@@ -302,4 +251,27 @@
 		    return decodeURIComponent(results[2].replace(/\+/g, " "));
 		}
 
+
     </script>
+    
+    {% verbatim %}
+    <scrtip id="vip-options-template" type="text/x-handlebars-template">
+    	  {{#each this}}
+		  	<li>
+	            <div class="pull-left">
+	                <p>
+	                    {{name}} <span data-toggle="tooltip" data-placement="top" title="{{description}}" class="help-icon"></span>
+	                </p>
+	            </div>
+	
+	            <div class="pull-right">
+	                <p class="">
+	                    ${{price}}
+	                </p>
+	            </div>
+	
+	            <br style="clear:both;" />
+	        </li>
+	       {{/each}}
+    </scrtip>
+    {% endverbatim %}

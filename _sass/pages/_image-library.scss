@@ -3,27 +3,22 @@
 	.press-image {
 		position: relative;
 		margin-bottom:25px;
-		max-height: 280px;
-		@include screen-ltmd {
-			max-height: 225px;
-		}
+		max-height: 200px;
+		overflow: hidden;
+		
 		
 		a {
-			max-height: 280px;
+			max-height: 200px;
 			overflow:hidden;
 			display:block;
 			border: none !important;
-			@include screen-ltmd {
-				max-height: 225px;
-			}
+			
 			
 		}
 		img {
-			max-height: 280px;
+			height: auto;
 			width: 100%;
-			@include screen-ltmd {
-				max-height: 225px;
-			}
+			
 		}
 		
 		&:hover {
@@ -82,5 +77,4 @@
 .press-item-li {
 	margin-bottom: auto !important;
     padding-bottom: initial !important;
-    height: 400px;
 }

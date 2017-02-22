@@ -4,10 +4,6 @@ bootstrap:
   css:
     theme:
       node_modules/bootstrap/dist/css/bootstrap.min.css: {}
-  js:
-    node_modules/bootstrap/dist/js/bootstrap.min.js: {}
-  dependencies:
-    - core/jquery
     
 global-styling:
   version: 1.x
@@ -16,5 +12,3 @@ global-styling:
       dist/css/main.css: {}
   js:
     js/main.js: {}
-  dependencies:
-    - core/jquery

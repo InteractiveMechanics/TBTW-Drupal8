@@ -203,6 +203,7 @@
 	.vip-expriences {
 		background: url(../../assets/homepage-block-event@2x.jpg.jpg) top right;
     	background-size: cover;
+    	transition: $transition;
     	
     	&:before {
 	    	content: '';
@@ -213,13 +214,10 @@
 			left: 0;
 			background-image: linear-gradient(to left,#000,#000);
 			opacity: .6; 
-			transition: $transition;
-	  	}
+		}
 	  	&:hover {
-		  	&:before {
-			  	background-image: linear-gradient(to left, #555, #555);
-			  	opacity: 0.4;
-		  	}
+			  	filter: grayscale(1) drop-shadow(1px 1px 3px black);
+			  	-webkit-filter: grayscale(1) drop-shadow(1px 1px 3px black);
 	  	}
 	}
 
@@ -244,13 +242,11 @@
 			left: 0;
 			background-image: linear-gradient(to left,#000,#000);
 			opacity: .6; 
-			transition: $transition;
+			
 	  	}
 	  	&:hover {
-		  	&:before {
-			  	background-image: linear-gradient(to left, #555, #555);
-			  	opacity: .4;
-		  	}
+		  	filter: grayscale(1) drop-shadow(1px 1px 3px black);
+			-webkit-filter: grayscale(1) drop-shadow(1px 1px 3px black);
 	  	}
 	}
 

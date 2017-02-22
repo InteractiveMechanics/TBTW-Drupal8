@@ -14,7 +14,7 @@ body {
 }
 
 .mobile-menu-top {
-    padding: 15px 30px 20px;
+    padding: 15px 5px 0px 30px;
 	height: 65%;
 	
     h2 {
@@ -40,13 +40,18 @@ body {
         
         &.scrollable-ul {
 			height: 100%;
-			overflow-y: scroll;	
+			overflow-y: scroll;
+				
 		}
 
         li {
             margin: 0px;
             padding: 0px;
             list-style: none;
+
+            > ul {
+                margin: 20px 0 0 20px;
+            }
 
             &.indent {
                 padding-left: 25px;
@@ -240,4 +245,6 @@ body {
 .c-menu--push-right.is-active {
   transform: translateX(0);
 } 
+
+@include scrollbars();	
 
