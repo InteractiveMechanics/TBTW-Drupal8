@@ -266,7 +266,7 @@ class Calendar {
 				<div class='when'>$hours</div>
 			</div>";
 		}
-		$boxesString .= '</div>';
+		$boxesString .= '</div><br style="clear:both;" />';
 		
 		return $boxesString;
 	}

@@ -102,6 +102,10 @@
 	    	}
 	    
 	    }
+	    
+	    .breadcrumb {
+		    display:none;
+	    }
     	
     </style>
     
@@ -146,13 +150,13 @@
             </li>
 
             <li>
-                <a href="javascript:void(0);" class="switch-caret">
+                <a href="http://dev.interactivemechanics.com/easternstate/" class="switch-caret">
                     Eastern State Penitentiary
                 </a>
             </li>
 
             <li>
-                <a href="javascript:void(0);" class="switch-caret">
+                <a href="http://dev.interactivemechanics.com/easternstate/halloween/" class="switch-caret">
                     Terror Behind the Walls
                 </a>
             </li>
@@ -191,7 +195,7 @@
         </div>
         <div class="attraction-modal-footer">
           <div class="attraction-image" style="width:200px; float:left;">
-            <img src="./assets/attractions/attraction-breakout@2x.jpg.jpg" style="width:100%;" />
+            <img src="" style="width:100%;" />
           </div>
 
           <div class="attraction-description" >
@@ -396,10 +400,12 @@
 		  return check;
 		};
 		
+		
+		
 		function addEmail(email) {
 			if(email) {
-	       		var url = "http://dev.interactivemechanics.com/1/examples/add-email.php?email=" + email;
-	       		
+	       		var url = "http://prisonstoday.easternstate.org/kiosk/letters/data/1/examples/add-email.php?email=" + email;
+	       		$('.error-newsletter').html("<img src='https://www.premiumbeat.com/v225/assets/img/loading.gif' />");
 	       		$.ajax({
 		            type: 'GET',
 		            url: url,
@@ -511,19 +517,33 @@
     		
     		
 
-		breadCrumbMaker();
+		// breadCrumbMaker();
 
         });
         
         function breadCrumbMaker () {
 	        var pathArray = location.href.split('/').slice(3);
 	        var breadCrumbs = $('.breadcrumb');
+	        
+	        pathArray.shift();
+	        pathArray.shift();
+	        
 	        if(breadCrumbs.length > 0) {
 		        
-		        if(pathArray.length > 3) {
-			     	$('.breadcrumb li:eq(0) a').text(capitalizeFirstLetter(pathArray[pathArray.length - 2]));   
-		        } else {				        
-			        $('.breadcrumb li:eq(0) a').text(capitalizeFirstLetter(pathArray[pathArray.length - 1]));
+		        if(pathArray.length == 1) {
+			        
+			        if(pathArray[0] == "node") {
+				    	$('.breadcrumb li:eq(0) a').text("Home");    
+			        } else {
+				        $('.breadcrumb li:eq(0) a').text(capitalizeFirstLetter(pathArray[0])); 
+			        }
+			     	$('.breadcrumb li:eq(1').hide();   
+		        } else {	
+			        if(pathArray[0] == "node") {
+				    	$('.breadcrumb li:eq(0) a').text("Home");    
+			        } else {
+				        $('.breadcrumb li:eq(0) a').text(capitalizeFirstLetter(pathArray[pathArray.length - 2])); 
+			        }
 		        }
 	        }
         }
@@ -538,15 +558,19 @@
 	    var $callout = $('#callout');
 		
 	    $window.on('scroll', function() {
-	        var startZone = $('header').offset().top;
-	        var endZone = $('footer').offset().top - $window.height() - 100;
+	        var startZone = $('main').offset().top - 300;
+	        var endZone = $('footer').offset().top - $window.height();
 	        
-	        if ($window.scrollTop() > startZone && $window.scrollTop() < endZone) {
-	            $callout.animate({'opacity': '1.0'}, 175);
-			} else {
-	           $callout.stop(true).animate({'opacity': '0'}, 175);
+	        if($window.scrollTop() > 225 && $window.scrollTop() < 600) {
+		        $callout.animate({'opacity': '1.0'}, 175);
+	        } else if($window.scrollTop() > 600 && !($window.scrollTop() > 225 && $window.scrollTop() < 600)) {
+		         $callout.stop(true).animate({'opacity': '0'}, 175);
+	        } else if($window.scrollTop() < 225) {
+		         $callout.stop(true).animate({'opacity': '0'}, 175);
 	        }
 	    });
+	    
+	    
     </script>
 </body>
 </html>

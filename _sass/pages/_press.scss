@@ -143,20 +143,25 @@
 .press-contacts-container {
 	border-top: 1px solid grey;
 	margin-top: 30px;
-	padding-top: 20px;
+	padding-top: 30px;
 	.col-md-4 {
 		padding-right: 100px;
 	}
 	h3 {
 		color: #ffffff;
 		font-weight: 300;
+		margin-top: 0px;
 	}
 	h4 {
 		color: #ffffff;
 		letter-spacing: 1px;
+		margin-top: 0px;
 	}
 	a {
 		letter-spacing: 1px;
+	    border-bottom: 5px solid transparent !important;
+		border-image: url(../../assets/icons/icon-underline.svg) 0 0 3 0 repeat !important;
+		text-decoration: none;
 	}
 	
 	h6 {

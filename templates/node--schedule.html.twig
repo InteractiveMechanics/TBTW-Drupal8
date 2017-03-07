@@ -62,7 +62,7 @@
 		<div class="close-icon close-icon-tickets">
 	    	<img src="../{{front_page}}themes/tbtw/assets/icons/icon-close.svg" style="width: 10px; height: 10px;">
 	    </div>
-        <h3>Tickets for <span class="month-picked">October</span> <span class="day-picked">14</span>, 2016</h3>
+        <h3>Tickets for <span class="month-picked">October</span> <span class="day-picked">14</span>, <span class="year-picked">2016</span></h3>
 
         <label class="uppercase" >General Admission</label>
 
@@ -102,7 +102,7 @@
             <li>
                 <div class="pull-left">
                     <p>
-                        Group Rate <span data-toggle="tooltip" data-placement="top" title="Group Discount Rate Here" class="help-icon"></span>
+                        Group Rate <span data-toggle="tooltip" data-placement="top" title="{{node.field_group_rate_info_text.value}}" class="help-icon"></span>
                     </p>
                 </div>
 
@@ -198,6 +198,7 @@
 	            	
 	            	$('.month-picked').text(month);
 	            	$('.day-picked').text(day);
+	            	$('.year-picked').text(new Date().getFullYear());
 	            	
 	            	var hasClass = $('.buy-now-popup').hasClass('display-block');
 	            
@@ -254,6 +255,8 @@
 
     </script>
     
+    <div style="display:none;">
+    
     {% verbatim %}
     <scrtip id="vip-options-template" type="text/x-handlebars-template">
     	  {{#each this}}
@@ -275,3 +278,4 @@
 	       {{/each}}
     </scrtip>
     {% endverbatim %}
+    </div>

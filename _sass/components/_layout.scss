@@ -146,41 +146,41 @@ h2 {
 
 	.parking-hero {
 		background-size: cover;
-		background-position: top right;
+		background-position: center center;
 		background-repeat: no-repeat;
 		background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg);
 	}
 	.generic-hero {
 		background-size: cover;
-		background-position: top right;
+		background-position: center center;
 		background-repeat: no-repeat;
 		background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg);
 	}
 
 	.press-hero {
 		background-size: cover;
-		background-position: top right;
+		background-position: center center;
 		background-repeat: no-repeat;
 		background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample2@2x.jpg.jpg);
 	}
 	
 	.schedule-hero {
 		background-size: cover;
-		background-position: top right;
+		background-position: center center;
 		background-repeat: no-repeat;
 		background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-schedule@2x.jpg.jpg);
 	}
 
 	.search-hero {
 		background-size: cover;
-		background-position: top right;
+		background-position: center center;
 		background-repeat: no-repeat;
 		background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample2@2x.jpg.jpg);
 	}
 
 	.calendar-hero {
 		background-size: cover;
-		background-position: top right;
+		background-position: center center;
 		background-repeat: no-repeat;
 		background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg);
 	}
@@ -336,6 +336,24 @@ h2 {
 			margin-left: 7px;
 		}
 }
+#haunted-image {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999999999999999;
+    opacity: 0.9;
+    -moz-animation: flicker 0.5s linear 0s 1;
+    -ms-animation: flicker 0.5s linear 0s 1;
+    -webkit-animation: flicker 0.5s linear 0s 1;
+    animation: flicker 0.5s linear 0s 1;
+    
+    img {
+        min-width: 100%;
+        min-height: 100%;
+    }
+}
 
 .calendar-widget {
 	position: fixed;
@@ -345,7 +363,8 @@ h2 {
     top: 30%;
     right: 0px;
 	transition:0.5s all;
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25); 
+	
 
     .close-icon {
 		position: absolute;
@@ -369,6 +388,17 @@ h2 {
 			&.bottom {
 				top:20px !important;
 			}	
+		}
+		
+		.month {
+			
+			&:nth-child(2){
+				top:30px;
+			}
+			
+			&:nth-child(3) {
+				top:20px;
+			}
 		}
 		
 		td {
@@ -425,6 +455,10 @@ label {
 	right:0px;
 	transition:0.5s all;
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+	@include screen-xxs {
+		width: 322px;
+	}
+	
 	
 	.close-icon {
 		position: absolute;

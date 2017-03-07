@@ -74,12 +74,12 @@
 
 @mixin scrollbars() {
   // For Google Chrome
-  ::-webkit-scrollbar {
+  .scrollable-ul::-webkit-scrollbar {
       width:  14px;
       height: 18px;
   }
 
-  ::-webkit-scrollbar-thumb {
+  .scrollable-ul::-webkit-scrollbar-thumb {
       height: 6px;
       background-color: rgba(0,0,0, 0.4);
       border: 4px solid rgba(0, 0, 0, 0);
@@ -92,13 +92,13 @@
       }
   }
 
-  ::-webkit-scrollbar-track {
+  .scrollable-ul::-webkit-scrollbar-track {
       background: transparent;
       border: 10px solid transparent;
 
   }
 
-  ::-webkit-scrollbar-button {
+  .scrollable-ul::-webkit-scrollbar-button {
       width: 0;
       height: 0;
       display: none;

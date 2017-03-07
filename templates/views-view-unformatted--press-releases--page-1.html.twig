@@ -35,7 +35,7 @@
 
                     <div class="col-md-12">
                         
-                        <ul class="list-unstyled">
+                        <ul class="list-unstyled press-ul">
                         
                         	{% for row in rows %}  
 	                            
@@ -53,23 +53,15 @@
                     </div>
                 </div>
                 
-                <div class="press-contacts-container">
-                	<div class="row">
-                		<div class="col-md-4">
-                			<h3>Press Contacts</h3>
-                		</div>
-                		
-                		<div class="col-md-4">
-                			{{press_contact_1|raw}}
-                		</div>
-                		
-                		<div class="col-md-4">
-                			{{press_contact_2|raw}}
-                		</div>
-                		
-                		
-                	</div>	
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-outline btn-large btn-white load-more-btn" style="display:none;">
+                            View More
+                        </button>
+                    </div>
                 </div>
+                
+                {% include directory ~ '/inc/press-contact.html.twig' %}
 
             </div>
 
@@ -81,3 +73,52 @@
 
      
 </main>
+
+<script type="text/javascript">
+	
+	$(function () {
+		
+		
+	    $(".press-ul li").slice(0, 9).show();
+	    
+	    if($(".press-ul li").length > 9) {
+			$(".load-more-btn").show();
+		}
+		
+	    $(".load-more-btn").on('click', function (e) {
+	        e.preventDefault();
+	        $(".press-ul li:hidden").slice(0, 9).slideDown();
+	        if ($(".press-ul li:hidden").length == 0) {
+	            $(".load-more-btn").fadeOut('slow');
+	        }
+	        $('html,body').animate({
+	            scrollTop: $(this).offset().top
+	        }, 1500);
+	    });
+	});
+	
+	$(document).ready(function() {
+
+		$('a[data-toggle=modal], button[data-toggle=modal]').click(function () {
+	  		var title = $(this).data('title');
+	  		var thumbnail = $(this).data('thumbnail');
+	  		var image = $(this).data('image');
+	  		var description = $(this).data('desc');
+	  		var codes = $(this).data('codes');
+	  		var credit = $(this).data('credit');
+	  		
+	  		$('.modal-title').text(title);
+	  		$('.modal-codes').text(codes);
+	  		$('.modal-description').text(description);
+	  		$('.modal-thumbnail').attr("src", thumbnail);
+	  		$('.press-modal').data("source", image);
+	  		$('.modal-credit').text(credit);
+	  	});
+	  	
+	  	$('.btn-download').click(function(){
+		  	var dLink = window.location.origin + $('.press-modal').data("source");
+		  	window.open(dLink);	
+		  	location.reload();
+	  	});
+	});
+</script>

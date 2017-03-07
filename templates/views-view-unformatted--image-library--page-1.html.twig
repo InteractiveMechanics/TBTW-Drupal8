@@ -24,8 +24,8 @@
                 </div>
             </div>
         </div>
-
-
+        
+        
         <div class="main-content-subpages image-library-page">
 
             <div class="container-fluid">
@@ -61,23 +61,7 @@
 
                     </div>
                     
-                    <div class="press-contacts-container">
-                    	<div class="row">
-                    		<div class="col-md-4">
-                    			<h3>Press Contacts</h3>
-                    		</div>
-                    		
-                    		<div class="col-md-4">
-                    			{{press_contact_1|raw}}
-                    		</div>
-                    		
-                    		<div class="col-md-4">
-                    			{{press_contact_2|raw}}
-                    		</div>
-                    		
-                    		
-                    	</div>	
-                    </div>
+                    {% include directory ~ '/inc/press-contact.html.twig' %}
                     
                     
         
@@ -138,7 +122,9 @@
                 <p>
                     Please provide the following information. Your image will be available for immediate download.
                 </p>
-
+				<p class="request-form-error-message text-center" style="color:#DB322B">
+					
+				</p>
                 <br />
 
                 <!--<div class="form-group">
@@ -190,11 +176,15 @@
 <script type="text/javascript">
 	
 	$(function () {
-		$(".load-more-btn").show();
-	    $("div.press-item-li").slice(0, 3).show();
+	    $("div.press-item-li").slice(0, 9).show();
+	    
+	    if ($("div.press-item-li").length > 9) {
+			$(".load-more-btn").show();
+		}
+			
 	    $(".load-more-btn").on('click', function (e) {
 	        e.preventDefault();
-	        $("div.press-item-li:hidden").slice(0, 3).slideDown();
+	        $("div.press-item-li:hidden").slice(0, 9).slideDown();
 	        if ($("div.press-item-li:hidden").length == 0) {
 	            $(".load-more-btn").fadeOut('slow');
 	        }
@@ -216,6 +206,10 @@
 	  		
 	  		$('.modal-title').text(title);
 	  		$('.modal-codes').text(codes);
+	  		
+	  		$('.code-text').val(codes);
+	  		$('.site-name-text').val('Terror Behind The Walls');
+	  		
 	  		$('.modal-description').text(description);
 	  		$('.modal-thumbnail').attr("src", thumbnail);
 	  		$('.press-modal').data("source", image);

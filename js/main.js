@@ -135,30 +135,24 @@ $(function(){
     });
     
     
-    
-    
-
-    /*
-    var randTypeInterval = Math.random() * 5000 + 10000;
-    var typeInterval = setInterval(function(){
-        var headline = $('.subpage-hero-section h1').first().text();
-        var headlineCount = headline.length;
-        var headlineRandom = Math.floor(Math.random() * (headlineCount/4)) + 2;
-
-        var replacement = headline;
-
-        for (i=0; i<headlineRandom; i++){
-            var randomChar = Math.floor(Math.random() * headlineCount);
-            var getChar = replacement.charAt(randomChar);
-            var newChar = '<span>' + getChar + '</span>';
-
-            replacement = replacement.replace(getChar, newChar);
+    var randomEffect = Math.floor(Math.random() * 2);
+    $('a').on('click tap', function(e){
+        if ($(this).attr('href') !== 'javascript: void(0);' && $(this).attr('href').length !== 0){
+            if (randomEffect === 1) {
+                var randImage = Math.floor(Math.random() * 6 + 1);
+                $('body').append('<div id="haunted-image"><img src="/easternstate/themes/tbtw/assets/scary-images/TBTW-scare-img0' + randImage + '.jpg" /></div>')
+                setTimeout(function(){
+                    $('#haunted-image').remove();
+                }, 500);
+            }
         }
+    });
 
-        $('.subpage-hero-section h1').first().html(replacement);
+    var headline = $('h1').not('.js-quickedit-page-title').first();
+    var headlineEffect = Math.floor(Math.random() * 3 + 1);
 
-    }, randTypeInterval);
-    */
+    headline.addClass('headline-animation-' + headlineEffect);
+
     //Activate any tooltips on the page
     //$('[data-toggle="tooltip"]').tooltip();
 });

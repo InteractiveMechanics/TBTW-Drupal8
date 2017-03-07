@@ -95,11 +95,10 @@
 			}
 			
 			.schedule .calendar .month:nth-child(2) {
-			    top:-65px;
+			    top:65px;
 			}
 			
 			 .schedule .calendar .month:nth-child(3) {
-				 top:-130px;
 			 }
 
 			.calendar .month-name {
@@ -194,11 +193,11 @@
 				}
 				
 				.schedule .calendar .month:nth-child(2) {
-				    top:-50px;
+				    top:50px;
 				}
 				
 				.schedule .calendar .month:nth-child(3) {
-					 top:-100px;
+					 top:0px;
 				 }
 				 
 				.schedule .calendar .month-name.bottom {
@@ -214,11 +213,11 @@
 				}
 				
 				.schedule .calendar .month:nth-child(2) {
-				    top:-50px;
+				    top:50px;
 				}
 				
 				.schedule .calendar .month:nth-child(3) {
-					 top:-100px;
+					 
 				 }
 				 
 				.schedule .calendar .month-name.bottom {
@@ -249,11 +248,10 @@
 				}
 				
 				.schedule .calendar .month:nth-child(2) {
-				    top:-40px;
+				    top:40px;
 				}
 				
 				 .schedule .calendar .month:nth-child(3) {
-					 top:-80px;
 				 }
 				 
 				 .schedule .calendar .month-name{
@@ -269,11 +267,11 @@
 			@media (max-width: 400px) {
 				
 				.schedule .calendar .month:nth-child(2) {
-				    top:-25px;
+				    top:25px;
 				}
 				
 				.schedule .calendar .month:nth-child(3) {
-					 top:-50px;
+					 top:0px;
 				 }
 				 
 				.schedule .calendar .month-name.bottom {

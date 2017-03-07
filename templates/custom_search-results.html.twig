@@ -1,36 +1,87 @@
 
 
-<div class="container" style="margin-bottom:100px;">
+
+<div class="subpage-hero-section">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="subpage-hero-details generic-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url({{baseurl}}/themes/tbtw/assets/hero-images/tbtw-hero-overlay@2x.png.png), url({{file_url(node.field_lead_image.entity.uri.value)}});">
+                            <section>
+                                <ol class="breadcrumb">
+                                    <li><a href="#">Jobs</a></li>
+                                    <li class="active"><a href="#">Home</a></li>
+                                </ol>
+
+                                <h1 class="subpage-title">Search</h1>
+                            </section>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
 
-	{% if not items is empty %}
+        <div class="main-content-subpages static-page">
+
+            <div class="container-fluid">
+
+                <div class="padded-box">
+                
+                
+
+                    <div class="row">
+                        
+                        <div class="row">
+                        	
+                        	<div class="col-md-8">
+                        	
+                        		{% if not items is empty %}
 	
-		<div class="row">
-			    
-		    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 search-item">
-		    	<h1>Search Results</h1>
-		    </div>
-		    
-		</div>
-		
-		{% for item in items %}
-			<div class="search row">
-			    
-			    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 search-item">
-			    	<h3>
-						<a href="{{ item['#result'].link }}">{{ item['#result'].title }}</a>
-				   	</h3>
-			    </div>
-			    
-			</div>
-		{% endfor %}
-    
-	{% else %}
-		<div class="text-center">
-            <h2 class="text-muted">No results found</h2>
-			<p class="text-muted"><em>Try expanding or refining your search keywords or terms.</em></p>
-		</div>
-	{% endif %}
+									<div class="row">
+										    
+									    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 search-item">
+									    	<h1>Search Results</h1>
+									    </div>
+									    
+									</div>
+									
+									
+									<ul class="list-unstyled">
+                                	
+										{% for item in items %}
+											<li>
+			                                    <div class="list-item-detail">
+			                                        <h3><a href="{{ item['#result'].link }}">{{ item['#result'].title }}</a></h3>
+			                                        <p>
+			                                           Test
+			                                        </p>
+			                                    </div>
+			                                    <hr>
+			                                </li>
+										{% endfor %}
+									
+									</ul>
+							    
+								{% else %}
+									<div class="">
+							            <h2 class="text-muted">No results found</h2>
+										<p class="text-muted"><em>Try expanding or refining your search keywords or terms.</em></p>
+									</div>
+								{% endif %}
+                        		
+                        	</div>
+                        	
+                        </div>
+                        
 
-</div>
+                    </div>
 
+                </div>
+
+            </div>
+
+
+        </div>
