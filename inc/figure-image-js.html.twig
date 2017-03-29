@@ -1,0 +1,57 @@
+<script type="text/javascript">
+        	
+        	$(document).ready(function(){
+	        	
+	        	
+	        	
+	        	
+	        	$('.body-area img').each(function(){
+		        	var src = $(this).attr('src');
+		        	var alt = $(this).attr('alt');
+		        	var caption = $(this).data('caption');
+		        	var align = $(this).data('align');
+		        	
+		        	
+		        	console.log(align);
+		        	if(!caption) {
+			        	caption = "";
+		        	}
+		        	
+		        	if(!align) {
+			        	align = "center";
+		        	}
+		        	
+		        	$(this).replaceWith( getFigureHTML(src, alt, caption, align) );
+				});
+	        	
+	        	
+	        	setTimeout(function(){
+		        	$('[data-toggle="tooltip"]').tooltip();
+		        	
+		        	//setAudioEvents();
+	        	}, 1000);
+	        	
+	        	$('[data-entity-type]').each(function(){
+		        	var a_file = $(this).attr('href');
+		        	//$(this).parent().html(createAudioHTML(a_file));
+				});
+        	});
+        	
+        	function getFigureHTML(src, alt, caption, align) {
+	        	
+	        	if(!caption) {
+		        	caption = "";
+	        	}
+	        	
+	        	align = "align-" + align;
+	        	
+	        	return "<figure role='group' class='" + align + "'>" +
+						    "<div class='relative-position'>" +
+								"<img alt='' class='img-responsive' src='"+ src +"'>" +
+								"<div data-toggle='tooltip' data-placement='left' title='' class='info-icon' data-original-title='"+ alt+ "'></div>" +
+							"</div>" +
+						    "<figcaption>" + caption + "</figcaption>" +
+						"</figure>";
+        	}
+        	
+</script>

@@ -3,9 +3,12 @@
 	<div id="callout">
         <h3>{{node.field_callout.entity.title.value|raw}}</h3>
         <p>{{node.field_callout.entity.body.value|raw}}</p>
-        <a href="{{node.field_callout.entity.field_link.uri}}">Explore Eastern State's History 
-        </a>
-        {{node.field_callout.entity.field_link[0]['#url']}}
+        {% if node.field_callout.entity.field_link.uri starts with 'entity' %}
+			{% set urlLink = node.field_callout.entity.field_link.uri|split('/')|last %}
+			<a href="{{ path('entity.node.canonical', {'node': urlLink}) }}">
+				{{node.field_callout.entity.field_link.title}}
+			</a> 
+		{% endif %}
             <svg version="1.1"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
             x="0px" y="0px" width="17.5px" height="10.2px" viewBox="0 0 17.5 10.2" enable-background="new 0 0 17.5 10.2"
@@ -57,7 +60,7 @@
                 <div class="padded-box">
 
                     <div class="row">
-                        <div class="col-md-8 col-sm-12 col-xs-12 body-area">
+                        <div class="col-md-8 col-sm-12 col-xs-12 body-area node-body-area">
                         	{{node.body.value|raw}}
                         </div>
 
@@ -69,34 +72,7 @@
 
 
         </div>
-        
-        
-        
-        <script type="text/javascript">
-        	
-        	$(document).ready(function(){
-	        	
-	        	var src = $('.body-area img').attr('src');
-	        	var alt = $('.body-area img').attr('alt');
-	        	var caption = $('.body-area img').data('caption');
-	        	
-	        	var figureHTML = getFigureHTML(src, alt, caption);
-	        	
-	        	$('.body-area img').replaceWith(figureHTML);
-	        	
-	        	setTimeout(function(){
-		        	//$('[data-toggle="tooltip"]').tooltip();
-	        	}, 1000);
-        	});
-        	
-        	function getFigureHTML(src, alt, caption) {
-	        	return "<figure role='group' class='align-center'>" +
-						    "<div class='relative-position'>" +
-								"<img alt='' class='img-responsive' src='"+ src +"'>" +
-								"<div data-toggle='tooltip' data-placement='left' title='' class='info-icon' data-original-title='"+ alt+ "'></div>" +
-							"</div>" +
-						    "<figcaption>" + caption + "</figcaption>" +
-						"</figure>";
-        	}
-        	
-        </script>
+     
+     
+     
+        {% include directory ~ '/inc/figure-image-js.html.twig' %}

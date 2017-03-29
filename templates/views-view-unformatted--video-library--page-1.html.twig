@@ -39,7 +39,7 @@
 								<div class="password-form">
 									<p>
 										The page you are trying to view is password protected. To obtain the password, 
-										please email your name and media organization to Ellen Feist at ef@easternstate.org.
+										please email your name and media organization to Nicole Frankhouser at nf@easternstate.org.
 									</p>
 									
 									<div class="form-group">
@@ -146,6 +146,10 @@
 		  		
 		  		$('.modal-title').text(title);
 		  		$('.modal-codes').text(codes);
+		  		
+		  		$('.code-text').val(codes);
+		  		$('.site-name-text').val('Terror Behind the Walls');
+		  		
 		  		$('.modal-description').text(description);
 		  		$('.modal-thumbnail').attr("src", thumbnail);
 		  		$('.press-modal').data("source", image);
@@ -155,7 +159,14 @@
 		  	$('.btn-download').click(function(){
 			  	var dLink = window.location.origin + $('.press-modal').data("source");
 			  	window.open(dLink);	
-			  	location.reload();
+			  //	location.reload();
+		  	});
+		  	
+		  	$('#myImageModal').on('hidden.bs.modal', function () {
+			  	//if($('.btn-download').is(':visible')) {
+			  		$('#request-form-wrapper-id form').css('display', 'block');
+			  		$('.btn-download').css('display', 'none');
+			  	//}
 		  	});
 		});
 </script>

@@ -22,8 +22,6 @@
 		
 		$variables['content_type'] = "home_page";
 		
-		$base_url = "http://dev.interactivemechanics.com/easternstate/halloween";
-		$variables['baseurl'] = $base_url;
 		
 		$form = \Drupal::formBuilder()->getForm('Drupal\photorequest\Form\RequestForm');
 		$variables['formform'] = $form;
@@ -496,6 +494,7 @@
 			    
 			    
 			    
+			    $day = (int) $day;
 			    
 				if($color == 'green') {
 			    	array_push($optionsArray, array(
@@ -567,7 +566,7 @@
 		        }
 			    
 			    
-			    
+			    $day = (int) $day;
 			    
 			    
 				if($color == 'green') {
@@ -648,7 +647,7 @@
 					));
 		        }
 			    
-			    
+			    $day = (int) $day;
 			    
 			    
 			    

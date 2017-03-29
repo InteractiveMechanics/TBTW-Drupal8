@@ -329,9 +329,16 @@ class Calendar {
 	}
 	
 	function getOptions($day, $month) {
+		
+		
 		for($i = 0; $i < count($this->settings['options'][$month]); $i++) {
 			$temp = $this->settings['options'][$month][$i];
 			
+			if($month == 'october') {
+				if($day == 7) {
+					//var_dump($temp[$day]]);
+				}
+			}
 			if($temp[$day]) {
 				return str_replace('"', "'", json_encode($temp[$day]));	
 			}
@@ -385,11 +392,10 @@ class Calendar {
 									
 									if($show) {
 										
-									$optionString = $this->getOptions($i, $key);
 									$show = false;	
 									}
+									$optionString = $this->getOptions($i, $key);
 									
-									break;
 								}
 							}
 							

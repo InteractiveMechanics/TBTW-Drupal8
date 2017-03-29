@@ -447,7 +447,10 @@ body.has-active-menu {
 
 .mobile-menu-top {
   padding: 15px 5px 0px 30px;
-  height: 65%; }
+  position: absolute;
+  top: 0;
+  bottom: 220px;
+  width: 100%; }
   .mobile-menu-top h2 {
     color: white;
     font-weight: 200;
@@ -493,7 +496,13 @@ body.has-active-menu {
         font-weight: bold; }
 
 .mobile-menu-bottom {
-  height: 35%; }
+  height: 220px;
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+  .mobile-menu-bottom > .mobile-menu-top {
+    position: relative;
+    padding: 20px 30px 0px 30px; }
   .mobile-menu-bottom a.buy-now {
     text-decoration: none; }
     .mobile-menu-bottom a.buy-now:hover {
@@ -640,9 +649,9 @@ h2 a {
 .info-icon {
   cursor: pointer;
   background: url(../../assets/icons/icon-info.svg);
-  width: 40px;
-  height: 40px;
-  background-size: 40px;
+  width: 24px;
+  height: 24px;
+  background-size: 24px;
   background-repeat: no-repeat;
   position: absolute;
   right: 20px;
@@ -718,6 +727,11 @@ h2 a {
   background-position: center center;
   background-repeat: no-repeat;
   background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg); }
+.subpage-hero-section .jobs-hero {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/jobs-hero.png); }
 .subpage-hero-section .generic-hero {
   background-size: cover;
   background-position: center center;
@@ -727,7 +741,7 @@ h2 a {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample2@2x.jpg.jpg); }
+  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/press-hero.jpg); }
 .subpage-hero-section .schedule-hero {
   background-size: cover;
   background-position: center center;
@@ -1369,7 +1383,7 @@ footer .map-image {
       background-size: 170px 43px;
       white-space: nowrap;
       background-repeat: no-repeat;
-      background-image: url(http://dev.interactivemechanics.com/easternstate/halloween/themes/tbtw/assets/icons/icon-underline.svg);
+      background-image: url(../../assets/icons/icon-underline.svg);
       margin: 0px;
       transition: all 0.5s; }
     footer .map-image p a {
@@ -1404,6 +1418,14 @@ footer .newsletter-signup {
   footer .newsletter-signup .form-area {
     margin-bottom: 30px; }
 
+legend {
+  font-size: 14px;
+  color: white;
+  border: none;
+  margin: 0; }
+
+input:focus::-webkit-contacts-auto-fill-button {
+  opacity: 0; }
 input[type=checkbox] {
   display: none; }
 input[type=checkbox] + label {
@@ -1420,37 +1442,41 @@ input[type=checkbox]:checked + label {
   border-bottom: 2px solid #2c3135;
   display: inline-block;
   padding: 0 0 0 0px;
-  background-image: url(http://dev.interactivemechanics.com/easternstate/halloween/themes/tbtw/assets/icons/icon-close.svg);
+  background-image: url(../../tbtw/assets/icons/icon-close.svg);
   background-size: 25px 21px;
   background-repeat: no-repeat; }
 input[type="text"] {
   background: #4c545c;
   border-radius: 0px;
-  padding: 20px 15px;
+  padding: 0px 15px;
   border: 0px;
   border-bottom: 2px solid #2c3135;
-  font-style: italic; }
+  font-style: italic;
+  margin-bottom: 20px; }
 input[type="password"] {
   background: #4c545c;
   border-radius: 0px;
-  padding: 20px 15px;
+  padding: 0px 15px;
   border: 0px;
   border-bottom: 2px solid #2c3135;
-  font-style: italic; }
+  font-style: italic;
+  margin-bottom: 20px; }
 input[type="search"] {
   background: #4c545c;
   border-radius: 0px;
-  padding: 20px 15px;
+  padding: 0px 15px;
   border: 0px;
   border-bottom: 2px solid #2c3135;
-  font-style: italic; }
+  font-style: italic;
+  margin-bottom: 20px; }
 input[type="email"] {
   background: #4c545c;
   border-radius: 0px;
-  padding: 20px 15px;
+  padding: 0px 15px;
   border: 0px;
   border-bottom: 2px solid #2c3135;
-  font-style: italic; }
+  font-style: italic;
+  margin-bottom: 20px; }
 input.grey-input {
   background: #d1d2d4;
   color: #111; }
@@ -1979,7 +2005,8 @@ input[type="radio"]:checked + label span {
   border: solid 1px transparent;
   background: #3b3c41;
   position: relative;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 1; }
 
 .calendar td.active {
   transform: translateY(-5px); }
@@ -2004,7 +2031,8 @@ input[type="radio"]:checked + label span {
 
 .calendar .padding-td {
   background: none;
-  cursor: default; }
+  cursor: default;
+  z-index: -1000; }
 
 .calendar .not-colored {
   color: #555559; }

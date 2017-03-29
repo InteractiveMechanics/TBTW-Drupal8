@@ -36,6 +36,7 @@
 				background: rgb(59, 60, 65);
 				position: relative;
 				cursor: pointer;
+				z-index: 1;
 			}
 
 			.calendar td.active {
@@ -67,7 +68,8 @@
 
 			.calendar .padding-td {
 				background: none;	
-				cursor: default;			
+				cursor: default;	
+				z-index: -1000;		
 			}
 
 			.calendar .not-colored {

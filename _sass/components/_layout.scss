@@ -33,9 +33,9 @@ h2 {
 .info-icon {
 	cursor: pointer;
 	background: url(../../assets/icons/icon-info.svg);
-    width: 40px;
-    height: 40px;
-    background-size: 40px;
+    width: 24px;
+    height: 24px;
+    background-size: 24px;
     background-repeat: no-repeat;
     position: absolute;
     right: 20px;
@@ -150,6 +150,13 @@ h2 {
 		background-repeat: no-repeat;
 		background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg);
 	}
+	.jobs-hero {
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/jobs-hero.png);
+	}
+	
 	.generic-hero {
 		background-size: cover;
 		background-position: center center;
@@ -161,7 +168,7 @@ h2 {
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
-		background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample2@2x.jpg.jpg);
+		background-image: linear-gradient(to bottom, rgba(0,0,0,0) 49%,rgba(0,0,0,0.01) 50%,rgba(0,0,0,0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/press-hero.jpg);
 	}
 	
 	.schedule-hero {

@@ -32,14 +32,16 @@
 
                         <div class="row">
                             
-                            <div class="col-md-8">
+                            <div class="col-md-8 col-sm-12 col-xs-12 body-area node-body-area">
                                 <p class="press-release-detail"><strong>{{ node.created.value|date("F j, Y") }}</strong> / <strong>Press Release Category</strong></p>
 
+                                {% if node.field_press_release_pdf.entity.uri.value %}
                                 <div class="download-press-release hidden-xs">
                                     <button class="btn btn-large btn-white btn-pdf" data-pdf="{{file_url(node.field_press_release_pdf.entity.uri.value)}}">
                                         <span class="glyphicon glyphicon-download-alt"></span> Download PDF 
                                     </button>
                                 </div>
+                                {% endif %}
                                 {{node.body.value|raw}}
 
                                  <p class="text-center">###</p>
@@ -87,6 +89,10 @@
 
 
         </div>
+        
+        
+        
+        {% include directory ~ '/inc/figure-image-js.html.twig' %}
         
         <script type="text/javascript">
         	

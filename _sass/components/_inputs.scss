@@ -1,5 +1,14 @@
+legend {
+	font-size: 14px;
+    color: white;
+    border: none;
+    margin: 0;
+}
 
 input {
+	&:focus::-webkit-contacts-auto-fill-button{
+	    opacity: 0;
+	}
 	
 	&[type=checkbox] {
 		display:none;
@@ -21,7 +30,7 @@ input {
     	border-bottom: 2px solid #2c3135;
 		display:inline-block;
 		padding: 0 0 0 0px;
-	    background-image: url(http://dev.interactivemechanics.com/easternstate/halloween/themes/tbtw/assets/icons/icon-close.svg);
+	    background-image: url(../../tbtw/assets/icons/icon-close.svg);
 		background-size: 25px 21px;
 		background-repeat: no-repeat;
 	}
@@ -29,37 +38,41 @@ input {
     &[type="text"] {
     	background: #4c545c;
     	border-radius: 0px;
-    	padding: 20px 15px;
+    	padding: 0px 15px;
     	border: 0px;
     	border-bottom: 2px solid #2c3135;
     	font-style: italic;
+    	margin-bottom: 20px;
     }
     
     &[type="password"] {
     	background: #4c545c;
     	border-radius: 0px;
-    	padding: 20px 15px;
+    	padding: 0px 15px;
     	border: 0px;
     	border-bottom: 2px solid #2c3135;
     	font-style: italic;
+    	margin-bottom: 20px;
     }
 
     &[type="search"] {
     	background: #4c545c;
     	border-radius: 0px;
-    	padding: 20px 15px;
+    	padding: 0px 15px;
     	border: 0px;
     	border-bottom: 2px solid #2c3135;
     	font-style: italic;
+    	margin-bottom: 20px;
     }
 
     &[type="email"] {
     	background: #4c545c;
     	border-radius: 0px;
-    	padding: 20px 15px;
+    	padding: 0px 15px;
     	border: 0px;
     	border-bottom: 2px solid #2c3135;
     	font-style: italic;
+    	margin-bottom: 20px;
     }
 
     &.grey-input {

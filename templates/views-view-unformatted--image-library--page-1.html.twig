@@ -119,10 +119,7 @@
 
             <div class="col-md-6" id="ModalForm">  
                 <h3>Download this Image</h3>
-                <p>
-                    Please provide the following information. Your image will be available for immediate download.
-                </p>
-				<p class="request-form-error-message text-center" style="color:#DB322B">
+                <p class="request-form-error-message text-center" style="color:#DB322B">
 					
 				</p>
                 <br />
@@ -208,7 +205,7 @@
 	  		$('.modal-codes').text(codes);
 	  		
 	  		$('.code-text').val(codes);
-	  		$('.site-name-text').val('Terror Behind The Walls');
+	  		$('.site-name-text').val('Terror Behind the Walls');
 	  		
 	  		$('.modal-description').text(description);
 	  		$('.modal-thumbnail').attr("src", thumbnail);
@@ -219,7 +216,14 @@
 	  	$('.btn-download').click(function(){
 		  	var dLink = window.location.origin + $('.press-modal').data("source");
 		  	window.open(dLink);	
-		  	location.reload();
+		  	//location.reload();
+	  	});
+	  	
+	  	$('#myImageModal').on('hidden.bs.modal', function () {
+		  	//if($('.btn-download').is(':visible')) {
+		  		$('#request-form-wrapper-id form').css('display', 'block');
+		  		$('.btn-download').css('display', 'none');
+		  	//}
 	  	});
 	});
 </script>

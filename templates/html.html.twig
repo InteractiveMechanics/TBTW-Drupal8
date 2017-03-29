@@ -54,7 +54,7 @@
     
     <script src="https://use.typekit.net/vcn8cop.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
-	<script src="http://dev.interactivemechanics.com/easternstate/halloween/themes/tbtw/js/classie.js"></script>
+	<script src="{{ path('<front>') }}themes/tbtw/js/classie.js"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 	
     <css-placeholder token="{{ placeholder_token|raw }}">
@@ -111,7 +111,7 @@
     
     
     <!-- FAVICONS -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <!--<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
@@ -123,7 +123,7 @@
 	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">-->
 	<link rel="manifest" href="/manifest.json">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
@@ -133,6 +133,18 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body {{ attributes }} class="fade-in" data-spy="scroll" data-target="#artwork-scrollspy" data-offset="200">
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-212020-4', 'auto');
+	  ga('send', 'pageview');
+	
+	</script>
+	
 	<div class="mobile-buy-now visible-xs" data-path="{{ path('entity.node.canonical', {'node': 43}) }}">
         <p class="text-center"><span class="glyphicon glyphicon-calendar"></span>  Buy Now & Save On Tickets!</p>
     </div>
@@ -156,7 +168,7 @@
             </li>
 
             <li>
-                <a href="http://dev.interactivemechanics.com/easternstate/halloween/" class="switch-caret">
+                <a href="{{ path('<front>') }}" class="switch-caret">
                     Terror Behind the Walls
                 </a>
             </li>

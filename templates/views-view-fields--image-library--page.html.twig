@@ -7,7 +7,8 @@
              data-thumbnail="{{row._entity.field_press_image.entity.uri.value | image_style('large')}}"
              data-codes="{{row._entity.field_image_code.value}}"
              data-credit="{{row._entity.field_image_credit.value}}"
-             date-desc="{{row._entity.field_image_description.value}}">
+             data-desc="{{row._entity.field_image_description.value}}"
+             data-form="">
                 <img class="img-responsive" src="{{row._entity.field_press_image.entity.uri.value | image_style('large')}}">
                 
             </a>
@@ -19,7 +20,8 @@
              data-thumbnail="{{row._entity.field_press_image.entity.uri.value | image_style('large')}}"
              data-codes="{{row._entity.field_image_code.value}}"
              data-credit="{{row._entity.field_image_credit.value}}"
-             date-desc="{{row._entity.field_image_description.value}}"><span class="glyphicon glyphicon-download-alt"></span></a>
+             data-form=""
+             data-desc="{{row._entity.field_image_description.value}}"><span class="glyphicon glyphicon-download-alt"></span></a>
             </div>
         </div>
 
