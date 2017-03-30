@@ -140,7 +140,7 @@ $(function(){
         if ($(this).attr('href') !== 'javascript: void(0);' && $(this).attr('href').length !== 0){
             if (randomEffect === 1) {
                 var randImage = Math.floor(Math.random() * 7 + 1);
-                $('body').append('<div id="haunted-image"><img src="/easternstate/themes/tbtw/assets/scary-images/TBTW-scare-img0' + randImage + '.jpg" /></div>')
+                $('body').append('<div id="haunted-image"><img src="/themes/tbtw/assets/scary-images/TBTW-scare-img0' + randImage + '.jpg" /></div>')
                 setTimeout(function(){
                     $('#haunted-image').remove();
                 }, 500);
