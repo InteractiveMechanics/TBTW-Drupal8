@@ -3,7 +3,7 @@
         <div class="col-md-3">
             <div class="list-item-image">
             	{%if row._entity.field_thumbnail_image.entity.filename %}
-            		<a href="{{ path('entity.node.canonical', {'node': row._entity.nid.value}) }}" style="max-height: 150px; overflow: hidden; display: block; border: none !important;">
+            		<a href="{{ path('entity.node.canonical', {'node': row._entity.nid.value}) }}" style="max-height: 225px; overflow: hidden; display: block; border: none !important;">
                 		<img class="img-responsive" src="{{file_url(row._entity.field_thumbnail_image.entity.uri.value)}}">
                 	</a>
                 {% endif %}

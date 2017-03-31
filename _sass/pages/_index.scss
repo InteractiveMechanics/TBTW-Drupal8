@@ -28,12 +28,24 @@
 	   background-size: cover;
 	   background:none;
 	   
+	   @include screen-gtmd {
+			padding: !important;
+		}
 	    
 	   .container2 {
 		  position: relative;
 		  color: #ffffff;
 		  z-index: 2; /* Show content above video */
+		  
+		  
 		} 
+		
+		.contaienr2 {
+			@include screen-ltmd {
+			  padding-top: 50px;
+			  
+		  }
+		}
 		
 		#video-background{ 
 		  position: absolute;
@@ -52,17 +64,8 @@
 		  }
 		}
 		
-		#img-background-homepage {
-			position: absolute;
-			height: auto;
-			width: auto;
-			max-height: 100%;
-			min-width: 100%;
-			left: 50%;
-			top: 50%;
-			-webkit-transform: translate3d(-50%, -50%, 0);
-			transform: translate3d(-50%, -50%, 0);
-		  z-index: -1;
+		#mobile-background {
+			
 			@include screen-gtmd {
 				display: none;
 			}

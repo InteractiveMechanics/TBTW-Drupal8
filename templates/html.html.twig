@@ -156,13 +156,13 @@
     <div class="site-switcher-section hidden-sm hidden-xs" style="display:none;">
         <ul class="list-inline">
             <li>
-                <a href="https://www.easternstate.org/" class="switch-caret">
+                <a href="javascript: void(0);" class="switch-caret">
                     <span class="slide-up-menu glyphicon glyphicon-triangle-top"></span>
                 </a>
             </li>
 
             <li>
-                <a href="https://www.easternstate.org/halloween/" class="switch-caret">
+                <a href="https://www.easternstate.org/" class="switch-caret">
                     Eastern State Penitentiary
                 </a>
             </li>
@@ -415,9 +415,11 @@
 		
 		
 		function addEmail(email) {
-			/*if(email) {
-	       		var url = "http://prisonstoday.easternstate.org/kiosk/letters/data/1/examples/add-email.php?email=" + email;
-	       		$('.error-newsletter').html("<img src='https://www.premiumbeat.com/v225/assets/img/loading.gif' />");
+			if(email) {
+	       		var url = "https://www.easternstate.org/newsletter/data/1/examples/add-email.php?email=" + email;
+	       		
+			    $('.error-newsletter').show();
+	       		$('.error-newsletter').html("<img src='{{front_page}}themes/historic/assets/loading.gif' />");
 	       		$.ajax({
 		            type: 'GET',
 		            url: url,
@@ -434,7 +436,7 @@
 						$('.error-newsletter').text("An error has occured, please try again later.");
 		            }
 		        });
-		   	}*/
+		   	}
 		}
 		
 		

@@ -1573,11 +1573,17 @@ input[type="radio"]:checked + label span {
   background: url(../../assets/hero-images/tbtw-hero-homepage@2x.jpg.jpg) top right;
   background-size: cover;
   background: none; }
+  @media (min-width: 1399px) {
+    .hero-section .jumbotron {
+      padding: !important; } }
   .hero-section .jumbotron .container2 {
     position: relative;
     color: #ffffff;
     z-index: 2;
     /* Show content above video */ }
+  @media (max-width: 991px) {
+    .hero-section .jumbotron .contaienr2 {
+      padding-top: 50px; } }
   .hero-section .jumbotron #video-background {
     position: absolute;
     height: auto;
@@ -1592,20 +1598,9 @@ input[type="radio"]:checked + label span {
     @media (max-width: 991px) {
       .hero-section .jumbotron #video-background {
         display: none; } }
-  .hero-section .jumbotron #img-background-homepage {
-    position: absolute;
-    height: auto;
-    width: auto;
-    max-height: 100%;
-    min-width: 100%;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate3d(-50%, -50%, 0);
-    transform: translate3d(-50%, -50%, 0);
-    z-index: -1; }
-    @media (min-width: 1399px) {
-      .hero-section .jumbotron #img-background-homepage {
-        display: none; } }
+  @media (min-width: 1399px) {
+    .hero-section .jumbotron #mobile-background {
+      display: none; } }
   .hero-section .jumbotron h1 {
     margin-bottom: 60px;
     font-size: 85px;
@@ -2272,7 +2267,7 @@ input[type="radio"]:checked + label span {
     margin-left: 0px; }
 
   .hero-section .jumbotron {
-    padding: 60px 35px 20px 35px !important;
+    padding: 0 !important;
     height: 600px; }
     .hero-section .jumbotron h1 {
       font-size: 54px;
