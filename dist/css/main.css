@@ -1936,8 +1936,8 @@ input[type="radio"]:checked + label span {
 
 .image-library-page .press-image {
   position: relative;
-  margin-bottom: 25px;
-  max-height: 200px;
+  margin-bottom: 5px;
+  height: 200px;
   overflow: hidden; }
   .image-library-page .press-image a {
     max-height: 200px;
@@ -1976,7 +1976,11 @@ input[type="radio"]:checked + label span {
 
 .press-item-li {
   margin-bottom: auto !important;
-  padding-bottom: initial !important; }
+  padding-bottom: initial !important;
+  min-height: 295px; }
+  @media screen and (max-width: 767px) {
+    .press-item-li {
+      min-height: auto; } }
 
 .calendar {
   color: #fff; }

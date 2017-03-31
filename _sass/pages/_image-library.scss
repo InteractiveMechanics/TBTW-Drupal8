@@ -2,8 +2,8 @@
 
 	.press-image {
 		position: relative;
-		margin-bottom:25px;
-		max-height: 200px;
+		margin-bottom: 5px;
+		height: 200px;
 		overflow: hidden;
 		
 		
@@ -77,4 +77,9 @@
 .press-item-li {
 	margin-bottom: auto !important;
     padding-bottom: initial !important;
+    min-height: 295px;
+
+    @media screen and ($screen-xs) {
+        min-height: auto;
+    }
 }
