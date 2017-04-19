@@ -183,11 +183,11 @@ main a {
 
 .padded-box a {
   font-weight: bold;
-  color: white; }
+  color: white;
+  border-bottom: 5px solid transparent !important;
+  border-image: url(../../assets/icons/icon-underline.svg) 0 0 3 0 repeat !important; }
   .padded-box a:hover {
     color: #DB322B;
-    border-bottom: 5px solid transparent !important;
-    border-image: url(../../assets/icons/icon-underline.svg) 0 0 3 0 repeat !important;
     text-decoration: none; }
 
 .row.equalheights {
@@ -1020,7 +1020,7 @@ label {
     #prison-wrap {
       width: 125% !important;
       right: 40px;
-      top: 50px; } }
+      top: -50px; } }
   #prison-wrap img {
     max-width: 100%;
     height: auto; }

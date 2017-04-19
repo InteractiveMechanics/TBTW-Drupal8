@@ -39,7 +39,7 @@
     	{% set hmtlTitle = head_title|safe_join(' | ') %}
     {% endif %}
     
-    <title>{{hmtlTitle}}</title> 
+    <title>{{hmtlTitle|raw}}</title> 
     
     {{meta_tags|raw}}
 	
