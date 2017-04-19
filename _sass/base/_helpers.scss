@@ -28,11 +28,11 @@ main a {
 .padded-box a {
 	font-weight: bold;
     color: white;
-	
+	border-bottom: 5px solid transparent !important;
+	border-image: url(../../assets/icons/icon-underline.svg) 0 0 3 0 repeat !important;
+		
 	&:hover {
 		color: $red; 
-		border-bottom: 5px solid transparent !important;
-		border-image: url(../../assets/icons/icon-underline.svg) 0 0 3 0 repeat !important;
 		text-decoration: none;
 	}
 	

@@ -8,6 +8,7 @@
 		
 		$variables['press_contact_1'] = theme_get_setting('press_contact_1');
 		$variables['press_contact_2'] = theme_get_setting('press_contact_2');
+		$variables['press_password'] = theme_get_setting('press_password');
 		
 		$node = \Drupal::routeMatch()->getParameter('node');
 		
@@ -75,6 +76,7 @@
 		
 		$variables['press_contact_1'] = theme_get_setting('press_contact_1');
 		$variables['press_contact_2'] = theme_get_setting('press_contact_2');
+		$variables['press_password'] = theme_get_setting('press_password');
 		
 		$node_id = $node->id();
 		

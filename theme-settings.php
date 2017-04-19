@@ -18,4 +18,11 @@ function tbtw_form_system_theme_settings_alter (&$form, \Drupal\Core\Form\FormSt
         '#default_value' => theme_get_setting('press_contact_2'),
         '#description'   => t("The press area's secondary press contact"),
     );
+    
+    $form['press_password'] = array(
+        '#type'          => 'textarea',
+        '#title'         => t('Press Password Value'),
+        '#default_value' => theme_get_setting('press_password'),
+        '#description'   => t("Here's the code that contains the password for the press images and videos"),
+    );
 }
