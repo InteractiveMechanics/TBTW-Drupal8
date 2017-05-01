@@ -10,6 +10,7 @@
 		$variables['press_contact_2'] = theme_get_setting('press_contact_2');
 		$variables['press_password'] = theme_get_setting('press_password');
 		$variables['tracking_pixel'] = theme_get_setting('tracking_pixel');
+		$variables['ticket_purchase_text'] = theme_get_setting('ticket_purchase_text');
 		
 		$node = \Drupal::routeMatch()->getParameter('node');
 		
@@ -79,6 +80,7 @@
 		$variables['press_contact_2'] = theme_get_setting('press_contact_2');
 		$variables['press_password'] = theme_get_setting('press_password');
 		$variables['tracking_pixel'] = theme_get_setting('tracking_pixel');
+		$variables['ticket_purchase_text'] = theme_get_setting('ticket_purchase_text');
 		
 		$node_id = $node->id();
 		
