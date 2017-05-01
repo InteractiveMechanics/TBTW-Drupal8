@@ -36,7 +36,7 @@
 		
 	        <a href="{{ path('entity.node.canonical', {'node': 43}) }}" class="buy-now">
 	        	<div class="mobile-buy-now-menu">
-	            	Buy Now & Save
+	            	{{ticket_purchase_text}}
 				</div>
 	        </a>
 	        <div class="mobile-menu-top">
@@ -156,7 +156,7 @@
                     </li>
                     <!--<li><a href="#">Shop</a>-->
                     </li>
-                    <li><a class="red-link" href="{{ path('entity.node.canonical', {'node': 43}) }}" class="underline"><strong>Buy Now & Save</strong></a>
+                    <li><a class="red-link" href="{{ path('entity.node.canonical', {'node': 43}) }}" class="underline"><strong>{{ticket_purchase_text}}</strong></a>
                     </li>
                   </ul>
                 </div>
