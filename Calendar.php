@@ -284,7 +284,7 @@ class Calendar {
 			<div style="clear: both;"></div>
 		</div>';
 	}
-	
+
 	function getDataAttributes($day, $month, $color) {
 		
 		

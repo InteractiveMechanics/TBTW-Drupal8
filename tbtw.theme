@@ -9,8 +9,10 @@
 		$variables['press_contact_1'] = theme_get_setting('press_contact_1');
 		$variables['press_contact_2'] = theme_get_setting('press_contact_2');
 		$variables['press_password'] = theme_get_setting('press_password');
+
 		$variables['tracking_pixel'] = theme_get_setting('tracking_pixel');
 		$variables['ticket_purchase_text'] = theme_get_setting('ticket_purchase_text');
+        $variables['closed_today'] = theme_get_setting('closed_today');
 		
 		$node = \Drupal::routeMatch()->getParameter('node');
 		
@@ -41,6 +43,16 @@
 		} else {
 			$variables['meta_tags'] = "";
 		}
+
+        $schedule_node = \Drupal\node\Entity\Node::load(43);
+        
+        $query = \Drupal::entityQuery('taxonomy_term');
+		$query->condition('vid', "schedule_pricing");
+		$tids = $query->execute();
+		$terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+		$pricing = array_values($terms);
+
+		$variables['todays_hours'] = getHoursForToday($schedule_node, $pricing);
 	}
 
 	function tbtw_theme_suggestions_node_alter(array &$suggestions, array &$variables)  {
@@ -79,8 +91,10 @@
 		$variables['press_contact_1'] = theme_get_setting('press_contact_1');
 		$variables['press_contact_2'] = theme_get_setting('press_contact_2');
 		$variables['press_password'] = theme_get_setting('press_password');
+
 		$variables['tracking_pixel'] = theme_get_setting('tracking_pixel');
 		$variables['ticket_purchase_text'] = theme_get_setting('ticket_purchase_text');
+        $variables['closed_today'] = theme_get_setting('closed_today');
 		
 		$node_id = $node->id();
 		
@@ -138,7 +152,7 @@
 				'red' =>  getValuesByColorValue(getTermByColorName($pricing, 'red')) 
 			),
 			
-			'year' => 2017,
+			'year' => date("Y"),
 			
 			'months' => array(
 				'september' => septArray($schedule_node),
@@ -152,9 +166,7 @@
 	            'november' => novOptionsArray($schedule_node),
 			)
 			
-		));
-		
-		
+		));		
 		$variables['schedule_table'] = $calendar->printHTML();
 		$variables['schedule_table_widget'] = $calendar->printHTMLWidget();
 		
@@ -289,6 +301,27 @@
 				$variables['schedule_table_widget'] = $calendar->printHTMLWidget();*/
         
 	}
+
+    function getHoursForToday($node, $pricing) {
+        $today_month = date("F");
+        $today_day = date("d");
+
+        for($i = 0; $i < count($node->field_schedule_date); $i++) {
+            $mydate = $node->field_schedule_date[$i]->entity->field_date->value;
+	        $day = date("d",strtotime($mydate));
+	        $month = date("F",strtotime($mydate));
+
+            if($day == $today_day && $month == $today_month) {
+                $color = $node->field_schedule_date[$i]->entity->field_price[0]->entity->field_hex_color->value;
+                if ($color == 'lgreen'){
+                    $valuesArray = getValuesByColorValue(getTermByColorName($pricing, 'lightGreen'));
+                } else {
+                    $valuesArray = getValuesByColorValue(getTermByColorName($pricing, $color));
+                }
+                return $valuesArray['hours'];
+            }
+        }
+    }
 	
 	function septArray($node) {
 		$greenArray = [];
