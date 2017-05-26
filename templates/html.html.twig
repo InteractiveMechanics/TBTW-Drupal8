@@ -34,12 +34,16 @@
     {% set hmtlTitle = node_type %}
     
     {% if hmtlTitle starts with "home_" %}
-    	{% set hmtlTitle = head_title['title'] %}
+    	{% set hmtlTitle = head_title['name'] %}
     {% else %}
     	{% set hmtlTitle = head_title|safe_join(' | ') %}
     {% endif %}
     
-    <title>{{hmtlTitle|raw}}</title> 
+    {% if node_title %}
+    	<title>{{node_title}} | Terror Behind the Walls</title>
+     {% else %}
+    	<title>{{hmtlTitle|raw}}</title>
+    {% endif %}
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     {{meta_tags|raw}}
