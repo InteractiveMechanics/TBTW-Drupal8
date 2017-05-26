@@ -287,20 +287,30 @@ class Calendar {
 
 	function getDataAttributes($day, $month, $color) {
 		
+		$price = '';
+		$hours = '';
+		$at_door_price = '';
+		$group_rate = '';
+		$online_prie = '';
+		
+		$vip_after_dark = '';
+		$vip_quick_pass = '';
+		$vip_hex_pass = '';
+		$vip_after_dark_hex = '';
 		
 		$attr = $this->settings['colors'][$color];
-		if($attr) {
+		if(isset($attr)) {
 			
-			$price = $attr['price'];
-			$hours = $attr['hours'];
-			$at_door_price = $attr['at_door_price'];
-			$group_rate = $attr['group_rate'];
-			$online_prie = $attr['online_price'];
+			$price = $attr['price'] ? $attr['price'] : '';
+			$hours = $attr['hours'] ? $attr['hours'] : '';
+			$at_door_price = $attr['at_door_price'] ? $attr['at_door_price'] : '';
+			$group_rate = $attr['group_rate'] ? $attr['group_rate'] : '';
+			$online_prie = $attr['online_price'] ? $attr['online_price'] : '';
 			
-			$vip_after_dark = $attr['vip_after_dark'];
-			$vip_quick_pass = $attr['vip_quick_pass'];
-			$vip_hex_pass = $attr['vip_hex_pass'];
-			$vip_after_dark_hex = $attr['vip_after_dark_hex'];
+			$vip_after_dark = $attr['vip_after_dark'] ? $attr['vip_after_dark'] : '';
+			$vip_quick_pass = $attr['vip_quick_pass'] ? $attr['vip_quick_pass'] : '';
+			$vip_hex_pass = $attr['vip_hex_pass'] ? $attr['vip_hex_pass'] : '';
+			$vip_after_dark_hex = $attr['vip_after_dark_hex'] ? $attr['vip_after_dark_hex'] : '';
 			
 			$dataAttr = "data-color='$color' data-price='$price' data-hours='$hours' data-atdoor='$at_door_price' data-grouprate='$group_rate' data-onlineprice='$online_price' data-vipdark='$vip_after_dark' data-vipquick='$vip_quick_pass' data-viphex='$vip_hex_pass' data-vipdarkhex='$vip_after_dark_hex' data-day='$day' data-month='$month'";
 			
@@ -332,15 +342,21 @@ class Calendar {
 		
 		
 		for($i = 0; $i < count($this->settings['options'][$month]); $i++) {
-			$temp = $this->settings['options'][$month][$i];
-			
-			if($month == 'october') {
-				if($day == 7) {
-					//var_dump($temp[$day]]);
-				}
-			}
-			if($temp[$day]) {
-				return str_replace('"', "'", json_encode($temp[$day]));	
+            
+            try {
+	            if (isset($this->settings['options'][$month][$i])){
+	    			$temp = $this->settings['options'][$month][$i];
+	    			
+	    			if($month == 'october') {
+	    				if($day == 7) {
+	    					//var_dump($temp[$day]]);
+	    				}
+	    			}
+	    			if(isset($temp[$day])) {
+	    				return str_replace('"', "'", json_encode($temp[$day]));	
+	    			}
+	            }
+            } catch (Exception $e) {
 			}
 		}
 		
@@ -349,7 +365,7 @@ class Calendar {
 
 	function printCalendarTable() {
 		
-		$tableStr == '';
+		$tableStr = '';
 		$show = true;
 		$optionString = '';
 		$tableStr .= '<div class="calendar-table">';

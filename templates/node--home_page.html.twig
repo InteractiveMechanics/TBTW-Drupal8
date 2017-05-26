@@ -189,42 +189,7 @@
 										</a>
                                     {% endfor %}
                                     
-                                    
-                                    <!--<a href="javascript:void(0);">
-	                                    <span class="bubble breakout" 
-	                                    		data-title='{{attractions.11.title.value}}' 
-	                                    		data-desc='{{attractions.11.field_attraction_description.value}}'
-	                                    		data-image='{{file_url(attractions.11.field_tbtw_attraction_logo.entity.uri.value)}}'
-	                                    		data-video='{{attractions.11.field_tbtw_attraction_video.value}}' style="top: -11%; left: 32%;"></span>
-	                                </a>
-	                                <a href="javascript:void(0);">
-	                                    <span class="bubble infirmary" 
-	                                    		data-title='{{attractions.12.title.value}}' 
-	                                    		data-desc='{{attractions.12.field_attraction_description.value}}'
-	                                    		data-image='{{file_url(attractions.12.field_tbtw_attraction_logo.entity.uri.value)}}'
-	                                    		data-video='{{attractions.12.field_tbtw_attraction_video.value}}' style="top: 14%; left: 37%;"></span>
-	                                </a>
-	                                <a href="javascript:void(0);">
-	                                    <span class="bubble quaratine" 
-	                                    		data-title='{{attractions.8.title.value}}' 
-	                                    		data-desc='{{attractions.8.field_attraction_description.value}}'
-	                                    		data-image='{{file_url(attractions.8.field_tbtw_attraction_logo.entity.uri.value)}}' 
-	                                    		data-video='{{attractions.8.field_tbtw_attraction_video.value}}' style="top: 40%; left: 17%;"></span>
-	                                </a>
-	                                <a href="javascript:void(0);">
-	                                    <span class="bubble lockdown" 
-	                                    		data-title='{{attractions.10.title.value}}' 
-	                                    		data-desc='{{attractions.10.field_attraction_description.value}}'
-	                                    		data-image='{{file_url(attractions.10.field_tbtw_attraction_logo.entity.uri.value)}}' 
-	                                    		data-video='{{attractions.10.field_tbtw_attraction_video.value}}' style="top: 53.5%; left: 48%;"></span>
-	                                </a>
-	                                <a href="javascript:void(0);">
-	                                    <span class="bubble machine-shop" 
-	                                    		data-title='{{attractions.9.title.value}}' 
-	                                    		data-desc='{{attractions.9.field_attraction_description.value}}'
-	                                    		data-image='{{file_url(attractions.9.field_tbtw_attraction_logo.entity.uri.value)}}' 
-	                                    		data-video='{{attractions.9.field_tbtw_attraction_video.value}}' style="top: 26%; left: 58%;"></span>
-	                                </a>-->
+
                                   </div>
                                 </div>
 
@@ -241,12 +206,12 @@
             <div class="container-fluid">
                 <div class="row" style="margin:0;">
                 
-                	{%
-	                    set image  = file_url(node.field_feature_block.0.getFieldCollectionItem().field_feature_block_image.entity.uri.value)
-                    %}
+                	{% if (node.field_feature_block.0.getFieldCollectionItem().field_feature_block_image.entity.filename) %}
+	                    {% set image0 = file_url(node.field_feature_block.0.getFieldCollectionItem().field_feature_block_image.entity.uri.value) %}
+                    {% endif %}
 
-					{% if image ends with '.jpg' or image ends with '.jpeg' or image ends with '.png' or image ends with '.bmp' %}
-                    	<div class="col-md-4 vip-expriences" style="background: url({{image}}) top right; background-size: cover;">
+					{% if image0 ends with '.jpg' or image0 ends with '.jpeg' or image0 ends with '.png' or image0 ends with '.bmp' %}
+                    	<div class="col-md-4 vip-expriences" style="background: url({{image0}}) top right; background-size: cover;">
                     {% else %}
 						<div class="col-md-4 vip-expriences" style="background: #4c555c;">
                     {% endif %}
@@ -266,14 +231,12 @@
                         <div class="darken-overlay"></div>
                     </div>
                     
-                    {%
-	                    set image  = file_url(node.field_feature_block.1.getFieldCollectionItem().field_feature_block_image.entity)
-                    %}
-                    
-                    
+                    {% if (node.field_feature_block.1.getFieldCollectionItem().field_feature_block_image.entity.filename) %}
+	                    {% set image1 = file_url(node.field_feature_block.1.getFieldCollectionItem().field_feature_block_image.entity.uri.value) %}
+                    {% endif %}                    
 
-					{% if image ends with '.jpg' or image ends with '.jpeg' or image ends with '.png' or image ends with '.bmp'  %}
-                    	<div class="col-md-4 frequent-questions" style="background: url({{image}}) top right; background-size: cover;">
+					{% if image1 ends with '.jpg' or image1 ends with '.jpeg' or image1 ends with '.png' or image1 ends with '.bmp'  %}
+                    	<div class="col-md-4 frequent-questions" style="background: url({{image1}}) top right; background-size: cover;">
                     {% else %}
 						<div class="col-md-4 frequent-questions">
                     {% endif %}
@@ -291,12 +254,12 @@
                     </div>
                     
                     
-                    {%
-	                    set image  = file_url(node.field_feature_block.2.getFieldCollectionItem().field_feature_block_image.entity.uri.value)
-                    %}
+                    {% if (node.field_feature_block.2.getFieldCollectionItem().field_feature_block_image.entity.filename) %}
+	                    {% set image2 = file_url(node.field_feature_block.2.getFieldCollectionItem().field_feature_block_image.entity.uri.value) %}
+                    {% endif %}
 
-					{% if image ends with '.jpg' or image ends with '.jpeg' or image ends with '.png' or image ends with '.bmp'  %}
-                    	<div class="col-md-4 favorite-frights" style="background: url({{image}}) top right; background-size: cover;">
+					{% if image2 ends with '.jpg' or image2 ends with '.jpeg' or image2 ends with '.png' or image2 ends with '.bmp'  %}
+                    	<div class="col-md-4 favorite-frights" style="background: url({{image2}}) top right; background-size: cover;">
                     {% else %}
 						<div class="col-md-4 favorite-frights" style="background: #4c555c;">
                     {% endif %}
