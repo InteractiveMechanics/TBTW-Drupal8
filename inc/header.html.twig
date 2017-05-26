@@ -50,8 +50,15 @@
                             Phone: (215) 236-3300 <br />
 	                	</a>
 	                </p>
-	                
-	                <p> Open Today from 6:00pm to 1:00am</p>
+	                {% if closed_today %}
+	                    <p>Eastern State is Closed Today</p>
+                    {% else %}
+                        {% if todays_hours %}
+                            <p>Open Today from {{ todays_hours }}</p>
+                        {% else %}
+                            <p>Eastern State is Closed Today</p>
+                        {% endif %}
+                    {% endif %}
 	            </div>
 	
 	            <ul class="list-inline social-icons">
@@ -100,8 +107,19 @@
 
         <div class="hours-section hidden-sm hidden-xs">
             <ul class="list-unstyled">
-                <li>Open Today from</li>
-                <li><span class="hours">6:00pm to 1:00am</span></li>
+                {% if closed_today %}
+                    <li>Eastern State is</li>
+                    <li>Closed Today</li>
+                {% else %}
+                    {% if todays_hours %}
+                        <li>Open Today from</li>
+                        <li><span class="hours">{{ todays_hours }}</span></li>
+                    {% else %}
+                        <li>Eastern State is</li>
+                        <li>Closed Today</li>
+                    {% endif %}
+                {% endif %}
+                
                 <li><a href="{{ path('entity.node.canonical', {'node': 5}) }}">Directions &amp; Parking</a></li>
             </ul>
         </div>
