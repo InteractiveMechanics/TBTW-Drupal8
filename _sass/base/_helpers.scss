@@ -61,13 +61,8 @@ main a {
 .navbar-nav .preview-dropdown  {
 	li {
 		&.active {
-		    border: 5px solid transparent;
-			border-image: url(../../assets/icons/icon-underline.svg) 0 0 3 0 repeat;
-			
-			&:hover {
-				border: 5px solid transparent;
-				border-image: none;
-			}
+		    //border: 5px solid transparent;
+			//border-image: url(../../assets/icons/icon-underline.svg) 0 0 3 0 repeat;
 		}
 		
 	}

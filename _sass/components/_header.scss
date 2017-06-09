@@ -24,7 +24,7 @@
 
 .hours-section {
 	float:right; 
-	width:200px;
+    width: 225px;
 	padding-left:22px;
 	border-left:2px solid rgba(255,255,255,.25);
 	font-size:16px;
@@ -104,7 +104,7 @@
 	    white-space: nowrap;
 	    color:$red !important;
 		border: 5px solid transparent !important;
-		border-image: url(../../assets/icons/icon-underline.svg) 0 0 3 0 repeat !important;
+		border-image: url(../../assets/icons/icon-underline.svg) 0 0 3 0 !important;
 	}
 				
 	li {
@@ -115,7 +115,7 @@
 			
 			&.unerline_active {
 				border: 5px solid transparent;
-			    border-image: url(../../assets/icons/icon-underline.svg) 0 0 3 0 repeat;
+			    border-image: url(../../assets/icons/icon-underline.svg) 0 0 3 0;
 			    color: $red;
 			}
 
@@ -130,7 +130,7 @@
 					&:hover {
 						color:$red !important;
 						border: 5px solid transparent !important;
-					    border-image: url(../../assets/icons/icon-underline.svg) 0 0 3 0 repeat !important;
+					    border-image: url(../../assets/icons/icon-underline.svg) 0 0 3 0 !important;
 					}
 				}
 			}
@@ -140,7 +140,7 @@
 			> a {
 				color:$red !important;
 				border: 5px solid transparent !important;
-			    border-image: url(../../assets/icons/icon-underline.svg) 0 0 3 0 repeat !important;
+			    border-image: url(../../assets/icons/icon-underline.svg) 0 0 3 0 !important;
 			}
 		}
 		
