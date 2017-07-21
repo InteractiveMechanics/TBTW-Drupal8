@@ -5,11 +5,13 @@
 	        	
 	        	
 	        	
-	        	$('.body-area img').each(function(){
+	        	$('.node-body-area img').each(function(){
 		        	var src = $(this).attr('src');
 		        	var alt = $(this).attr('alt');
 		        	var caption = $(this).data('caption');
 		        	var align = $(this).data('align');
+                    var width = $(this).attr('width');
+                    var height = $(this).attr('height');
 		        	
 		        	
 		        	console.log(align);
@@ -21,7 +23,7 @@
 			        	align = "center";
 		        	}
 		        	
-		        	$(this).replaceWith( getFigureHTML(src, alt, caption, align) );
+		        	$(this).replaceWith( getFigureHTML(src, alt, caption, align, width, height) );
 				});
 	        	
 	        	
@@ -37,7 +39,7 @@
 				});
         	});
         	
-        	function getFigureHTML(src, alt, caption, align) {
+        	function getFigureHTML(src, alt, caption, align, width, height) {
 	        	
 	        	if(!caption) {
 		        	caption = "";
@@ -45,7 +47,7 @@
 	        	
 	        	align = "align-" + align;
 	        	
-	        	return "<figure role='group' class='" + align + "'>" +
+	        	return "<figure role='group' class='" + align + "' style='width:" + width + "px; min-height:" + height + "px;'>" +
 						    "<div class='relative-position'>" +
 								"<img alt='' class='img-responsive' src='"+ src +"'>" +
 								"<div data-toggle='tooltip' data-placement='left' title='' class='info-icon' data-original-title='"+ alt+ "'></div>" +

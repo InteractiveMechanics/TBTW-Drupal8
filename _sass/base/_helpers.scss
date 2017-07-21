@@ -79,6 +79,38 @@ main a {
 	text-transform: uppercase !important;
 }
 
+.align-right {
+    min-width: 25%;
+    margin: 10px 0 0 30px;
+
+    img {
+        width: 100%;
+    }
+    
+    @media screen and ($screen-xs) {
+        width: 100%;
+    }
+}
+.align-left {
+    min-width: 25%;
+    margin: 10px 30px 0 0;
+
+    img {
+        width: 100%;
+    }
+
+    @media screen and ($screen-xs) {
+        width: 100%;
+    }
+}
+.align-center {
+    min-width: 25%;
+
+    @media screen and ($screen-xs) {
+        width: 100%;
+    }
+}
+
 
 .col-centered {
 	margin: 0 auto;
