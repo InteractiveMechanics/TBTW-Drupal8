@@ -210,6 +210,30 @@ main a {
 .uppercase {
   text-transform: uppercase !important; }
 
+.align-right {
+  min-width: 25%;
+  margin: 10px 0 0 30px; }
+  .align-right img {
+    width: 100%; }
+  @media screen and (max-width: 767px) {
+    .align-right {
+      width: 100%; } }
+
+.align-left {
+  min-width: 25%;
+  margin: 10px 30px 0 0; }
+  .align-left img {
+    width: 100%; }
+  @media screen and (max-width: 767px) {
+    .align-left {
+      width: 100%; } }
+
+.align-center {
+  min-width: 25%; }
+  @media screen and (max-width: 767px) {
+    .align-center {
+      width: 100%; } }
+
 .col-centered {
   margin: 0 auto;
   float: none; }
@@ -717,37 +741,37 @@ h2 a {
   text-shadow: 2px 2px rgba(0, 0, 0, 0.5); }
 .subpage-hero-section .parking-hero {
   background-size: cover;
-  background-position: center center;
+  background-position: top right;
   background-repeat: no-repeat;
   background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg); }
 .subpage-hero-section .jobs-hero {
   background-size: cover;
-  background-position: center center;
+  background-position: top right;
   background-repeat: no-repeat;
   background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/jobs-hero.png); }
 .subpage-hero-section .generic-hero {
   background-size: cover;
-  background-position: center center;
+  background-position: top right;
   background-repeat: no-repeat;
   background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg); }
 .subpage-hero-section .press-hero {
   background-size: cover;
-  background-position: center center;
+  background-position: top right;
   background-repeat: no-repeat;
   background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/press-hero.jpg); }
 .subpage-hero-section .schedule-hero {
   background-size: cover;
-  background-position: center center;
+  background-position: top right;
   background-repeat: no-repeat;
   background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-schedule@2x.jpg.jpg); }
 .subpage-hero-section .search-hero {
   background-size: cover;
-  background-position: center center;
+  background-position: top right;
   background-repeat: no-repeat;
   background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample2@2x.jpg.jpg); }
 .subpage-hero-section .calendar-hero {
   background-size: cover;
-  background-position: center center;
+  background-position: top right;
   background-repeat: no-repeat;
   background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg); }
 .subpage-hero-section .subpage-hero-details {
@@ -1965,10 +1989,6 @@ input[type="radio"]:checked + label span {
     width: 240px; }
   .image-library-page .filter-row .form-group {
     display: inline-block; }
-
-.static-page .body-area img {
-  width: 100% !important;
-  margin: 20px; }
 
 .press-item-li {
   margin-bottom: auto !important;

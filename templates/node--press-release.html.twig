@@ -33,6 +33,9 @@
                         <div class="row">
                             
                             <div class="col-md-8 col-sm-12 col-xs-12 body-area node-body-area">
+                            
+                            	<h2>{{node.field_long_title.value|raw}}</h2>
+                            
                                 <p class="press-release-detail"><strong>{{ node.created.value|date("F j, Y") }}</strong> / <strong>Press Release Category</strong></p>
 
                                 {% if node.field_press_release_pdf.entity.uri.value %}
@@ -57,11 +60,23 @@
 	                                    <li>
 	                                        <div>
 	                                            <div class="press-image">
-	                                                <img class="img-responsive" src="{{file_url(item.entity.field_press_image.entity.uri.value)}}" style="max-height: 235px; 
-	                                                																									  width: 100%;">
+	                                                <a href="javascript:void(0);" code="{{item.entity.field_image_code.value}}" 
+             data-image="{{file_url(item.entity.field_press_image.entity.uri.value)}}"
+             data-title="{{item.entity.title.value}}"
+             data-thumbnail="{{item.entity.field_press_image.entity.uri.value | image_style('large')}}"
+             data-codes="{{item.entity.field_image_code.value}}"
+             data-credit="{{item.entity.field_image_credit.value}}"
+             date-desc="{{item.entity.field_image_description.value}}"><img class="img-responsive" src="{{file_url(item.entity.field_press_image.entity.uri.value)}}" style="max-height: 235px; 
+	                                                																									  width: 100%;"></a>
 	
 	                                                <div class="overlay hidden-xs">
-	                                                    <span class="glyphicon glyphicon-download-alt"></span>
+	                                                    <a href="javascript:void(0);" code="{{item.entity.field_image_code.value}}" 
+             data-image="{{file_url(item.entity.field_press_image.entity.uri.value)}}"
+             data-title="{{item.entity.title.value}}"
+             data-thumbnail="{{item.entity.field_press_image.entity.uri.value | image_style('large')}}"
+             data-codes="{{item.entity.field_image_code.value}}"
+             data-credit="{{item.entity.field_image_credit.value}}"
+             date-desc="{{item.entity.field_image_description.value}}"><span class="glyphicon glyphicon-download-alt"></span></a>
 	                                                </div>
 	                                            </div>
 	
@@ -104,3 +119,114 @@
         	});
         	
         </script>
+        
+        
+    
+    <!-- Modal -->
+<div class="modal fade press-modal" data-source="" id="myImageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" style="font-size:30px;">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6">
+                <img class="img-responsive modal-thumbnail" src="http://placehold.it/850x465">
+
+                <div class="caption">
+                    <p class=""><span class="modal-title">Lorem ipsum dolor sit amet, conset</span> <br />
+                </div>
+            </div>
+
+            <div class="col-md-6" id="ModalForm">  
+                <h3>Download this Image</h3>
+                <p class="request-form-error-message text-center" style="margin:0px; margin-bottom:10px;">
+					
+				</p>
+                
+                {{formform}}
+                
+                <input class="btn btn-big btn-download btn-red button button--primary" style="text-align: center; margin: 0px auto; width: 70%; display: none;" data-drupal-selector="edit-download" type="submit" id="edit-download--107" name="op" value="Download Video">
+                
+                <a href="javascript:void(0);"></a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+<script type="text/javascript">
+	
+	$(function () {
+		var cid = getParameterByName('categoryid');
+		if( cid ) {
+			setTimeout(function(){
+				$('.selectpicker').val(cid);
+				$('.selectpicker').selectpicker('refresh');
+			}, 1500);
+
+		}
+		
+		
+	    $("div.press-item-li").slice(0, 9).show();
+	    
+	    if ($("div.press-item-li").length > 9) {
+			$(".load-more-btn").show();
+		}
+			
+	    $(".load-more-btn").on('click', function (e) {
+	        e.preventDefault();
+	        $("div.press-item-li:hidden").slice(0, 9).slideDown();
+	        if ($("div.press-item-li:hidden").length == 0) {
+	            $(".load-more-btn").fadeOut('slow');
+	        }
+	        $('html,body').animate({
+	            scrollTop: $(this).offset().top
+	        }, 1500);
+	    });
+	});
+	
+	$(document).ready(function() {
+
+		$('a[data-toggle=modal], button[data-toggle=modal]').click(function () {
+	  		var title = $(this).data('title');
+	  		var thumbnail = $(this).data('thumbnail');
+	  		var image = $(this).data('image');
+	  		var description = "None";
+	  		var codes = "Node";
+	  		var credit = "None";
+	  		
+	  		$('.modal-title').text(title);
+	  		$('.modal-codes').text(codes);
+	  		
+	  		$('.code-text').val(codes);
+	  		$('.site-name-text').val('Terror Behind The Walls');
+	  		
+	  		$('.modal-description').text(description);
+	  		$('.modal-thumbnail').attr("src", thumbnail);
+	  		$('.press-modal').data("source", image);
+	  		$('.modal-credit').text(credit);
+	  		
+	  	});
+	  	
+	  	$('.btn-download').click(function(){
+		  	var dLink = $('.press-modal').data("source");
+		  	window.open(dLink);	
+		  	//location.reload();
+	  	});
+	  	
+	  	$('#myImageModal').on('hidden.bs.modal', function () {
+		  	//if($('.btn-download').is(':visible')) {
+		  		$('#request-form-wrapper-id form').css('display', 'block');
+		  		$('.btn-download').css('display', 'none');
+		  	//}
+	  	});
+	});
+</script>
