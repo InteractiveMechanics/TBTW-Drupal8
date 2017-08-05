@@ -1887,9 +1887,10 @@ input[type="radio"]:checked + label span {
   color: white; }
 .press-release-page .press-image {
   position: relative;
-  margin-bottom: 25px; }
+  margin-bottom: 10px;
+  max-height: 225px;
+  overflow: hidden; }
   .press-release-page .press-image .img-responsive {
-    height: 360px;
     width: 100%; }
   .press-release-page .press-image a {
     border-image: none; }
