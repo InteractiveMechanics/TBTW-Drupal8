@@ -105,10 +105,11 @@
 
 	.press-image {
 		position: relative;
-		margin-bottom:25px;
+        margin-bottom: 10px;
+        max-height: 225px;
+        overflow: hidden;
 		
 		.img-responsive {
-			height: 360px;
 			width: 100%;
 		}
 		
