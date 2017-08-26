@@ -89,6 +89,22 @@ input {
 	}
 }
 
+textarea {
+	border-radius: 0px;
+	padding: 0px 15px;
+	border: 0px;
+	margin-bottom: 20px;
+    background: #d1d2d4;
+    color: #111;
+    font-style: italic;
+    border-bottom: none;
+    transition: $transition;
+
+    &:hover, &:focus, &:active {
+        background: white;
+    }
+}
+
 select {
 	&.form-control {
 		line-height:normal;
