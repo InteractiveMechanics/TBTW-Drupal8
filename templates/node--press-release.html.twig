@@ -36,7 +36,7 @@
                             
                             	<h2>{{node.field_long_title.value|raw}}</h2>
                             
-                                <p class="press-release-detail"><strong>{{ node.created.value|date("F j, Y") }}</strong> / <strong>Press Release Category</strong></p>
+                                <p class="press-release-detail"><strong>{{ node.created.value|date("F j, Y") }}</strong></p>
 
                                 {% if node.field_press_release_pdf.entity.uri.value %}
                                 <div class="download-press-release hidden-xs">
