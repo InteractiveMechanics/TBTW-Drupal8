@@ -6,6 +6,7 @@ legend {
 }
 
 input {
+
 	&:focus::-webkit-contacts-auto-fill-button{
 	    opacity: 0;
 	}
@@ -35,44 +36,41 @@ input {
 		background-repeat: no-repeat;
 	}
     
-    &[type="text"] {
-    	background: #4c545c;
-    	border-radius: 0px;
-    	padding: 0px 15px;
-    	border: 0px;
-    	border-bottom: 2px solid #2c3135;
-    	font-style: italic;
-    	margin-bottom: 20px;
-    }
-    
-    &[type="password"] {
-    	background: #4c545c;
-    	border-radius: 0px;
-    	padding: 0px 15px;
-    	border: 0px;
-    	border-bottom: 2px solid #2c3135;
-    	font-style: italic;
-    	margin-bottom: 20px;
-    }
-
-    &[type="search"] {
-    	background: #4c545c;
-    	border-radius: 0px;
-    	padding: 0px 15px;
-    	border: 0px;
-    	border-bottom: 2px solid #2c3135;
-    	font-style: italic;
-    	margin-bottom: 20px;
-    }
-
+    &[type="text"],
+    &[type="password"],
+    &[type="search"],
     &[type="email"] {
-    	background: #4c545c;
     	border-radius: 0px;
     	padding: 0px 15px;
     	border: 0px;
-    	border-bottom: 2px solid #2c3135;
-    	font-style: italic;
     	margin-bottom: 20px;
+        height: 50px;
+        background: #d1d2d4;
+        color: #111;
+        font-style: italic;
+        border-bottom: none;
+        transition: $transition;
+
+        &:hover, &:focus, &:active {
+            background: white;
+        }
+    }
+    &[type="submit"] {
+        color: #DB322B;
+        background-color: #FFFFFF;
+        border-color: #FFFFFF;
+        text-transform: uppercase;
+        border-radius: 0px;
+        font-size: 14px;
+        font-weight: bold;
+        transition: 0.5s all;
+        border: none !important;
+
+        &:hover, &:focus, &:active {
+            color: #FFF;
+            background-color: #DB322B;
+            border-color: #DB322B;
+        }
     }
 
     &.grey-input {
