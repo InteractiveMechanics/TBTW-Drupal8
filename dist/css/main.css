@@ -1508,6 +1508,19 @@ input input:focus {
   outline: 0px !important;
   -webkit-appearance: none !important; }
 
+textarea {
+  border-radius: 0px;
+  padding: 0px 15px;
+  border: 0px;
+  margin-bottom: 20px;
+  background: #d1d2d4;
+  color: #111;
+  font-style: italic;
+  border-bottom: none;
+  transition: all 0.5s; }
+  textarea:hover, textarea:focus, textarea:active {
+    background: white; }
+
 select.form-control {
   line-height: normal;
   height: 40px;
