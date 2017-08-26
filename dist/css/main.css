@@ -1469,38 +1469,33 @@ input[type=checkbox]:checked + label {
   background-image: url(../../tbtw/assets/icons/icon-close.svg);
   background-size: 25px 21px;
   background-repeat: no-repeat; }
-input[type="text"] {
-  background: #4c545c;
+input[type="text"], input[type="password"], input[type="search"], input[type="email"] {
   border-radius: 0px;
   padding: 0px 15px;
   border: 0px;
-  border-bottom: 2px solid #2c3135;
+  margin-bottom: 20px;
+  height: 50px;
+  background: #d1d2d4;
+  color: #111;
   font-style: italic;
-  margin-bottom: 20px; }
-input[type="password"] {
-  background: #4c545c;
+  border-bottom: none;
+  transition: all 0.5s; }
+  input[type="text"]:hover, input[type="text"]:focus, input[type="text"]:active, input[type="password"]:hover, input[type="password"]:focus, input[type="password"]:active, input[type="search"]:hover, input[type="search"]:focus, input[type="search"]:active, input[type="email"]:hover, input[type="email"]:focus, input[type="email"]:active {
+    background: white; }
+input[type="submit"] {
+  color: #DB322B;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  text-transform: uppercase;
   border-radius: 0px;
-  padding: 0px 15px;
-  border: 0px;
-  border-bottom: 2px solid #2c3135;
-  font-style: italic;
-  margin-bottom: 20px; }
-input[type="search"] {
-  background: #4c545c;
-  border-radius: 0px;
-  padding: 0px 15px;
-  border: 0px;
-  border-bottom: 2px solid #2c3135;
-  font-style: italic;
-  margin-bottom: 20px; }
-input[type="email"] {
-  background: #4c545c;
-  border-radius: 0px;
-  padding: 0px 15px;
-  border: 0px;
-  border-bottom: 2px solid #2c3135;
-  font-style: italic;
-  margin-bottom: 20px; }
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.5s all;
+  border: none !important; }
+  input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active {
+    color: #FFF;
+    background-color: #DB322B;
+    border-color: #DB322B; }
 input.grey-input {
   background: #d1d2d4;
   color: #111; }
