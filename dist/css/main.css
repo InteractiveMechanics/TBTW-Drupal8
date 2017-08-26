@@ -1477,7 +1477,6 @@ input[type="text"], input[type="password"], input[type="search"], input[type="em
   height: 50px;
   background: #d1d2d4;
   color: #111;
-  font-style: italic;
   border-bottom: none;
   transition: all 0.5s; }
   input[type="text"]:hover, input[type="text"]:focus, input[type="text"]:active, input[type="password"]:hover, input[type="password"]:focus, input[type="password"]:active, input[type="search"]:hover, input[type="search"]:focus, input[type="search"]:active, input[type="email"]:hover, input[type="email"]:focus, input[type="email"]:active {
@@ -1510,12 +1509,11 @@ input input:focus {
 
 textarea {
   border-radius: 0px;
-  padding: 0px 15px;
+  padding: 15px;
   border: 0px;
   margin-bottom: 20px;
   background: #d1d2d4;
   color: #111;
-  font-style: italic;
   border-bottom: none;
   transition: all 0.5s; }
   textarea:hover, textarea:focus, textarea:active {
