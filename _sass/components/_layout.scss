@@ -469,9 +469,13 @@ label {
 	right:0px;
 	transition:0.5s all;
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+
 	@include screen-xxs {
 		width: 322px;
 	}
+    @include screen-xs {
+        top: 12%;
+    }
 	
 	
 	.close-icon {
@@ -510,6 +514,11 @@ label {
 		&.red {
 			color: rgb(219, 50, 44);
 		}
+
+        @include screen-xs {
+            margin: 0 0 10px;
+            font-size: 21px;
+        }
 	}
 
 
@@ -517,11 +526,28 @@ label {
 		padding:0px;
 		margin:5px 0  30px;
 
+        @include screen-xs {
+            margin: 5px 0 20px;
+        }
+
 		li {
 			list-style:none;
 			margin:5px 0 10px 0;
+
+            .pull-left {
+                @include screen-xs {
+                    max-width: 215px;
+                }
+            }
 		}
 	}
+    
+    button.btn-big {
+        @include screen-xs {
+            padding: 16px 20px !important;
+            font-size: 18px !important;
+        }
+    }
 
 	p {
 		font-size:18px;
