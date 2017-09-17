@@ -974,6 +974,9 @@ label {
   @media (max-width: 480px) {
     .buy-now-popup {
       width: 322px; } }
+  @media (max-width: 767px) {
+    .buy-now-popup {
+      top: 12%; } }
   .buy-now-popup .close-icon {
     position: absolute;
     background: url(../../assets/icons/close-icon.svg);
@@ -998,12 +1001,26 @@ label {
       color: #e89547; }
     .buy-now-popup h3.red {
       color: #db322c; }
+    @media (max-width: 767px) {
+      .buy-now-popup h3 {
+        margin: 0 0 10px;
+        font-size: 21px; } }
   .buy-now-popup ul {
     padding: 0px;
     margin: 5px 0  30px; }
+    @media (max-width: 767px) {
+      .buy-now-popup ul {
+        margin: 5px 0 20px; } }
     .buy-now-popup ul li {
       list-style: none;
       margin: 5px 0 10px 0; }
+      @media (max-width: 767px) {
+        .buy-now-popup ul li .pull-left {
+          max-width: 215px; } }
+  @media (max-width: 767px) {
+    .buy-now-popup button.btn-big {
+      padding: 16px 20px !important;
+      font-size: 18px !important; } }
   .buy-now-popup p {
     font-size: 18px;
     color: white;
