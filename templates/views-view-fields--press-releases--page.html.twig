@@ -10,7 +10,7 @@
          <div class="col-md-9">
             <div class="list-item-detail">
                 <!--<p class="sub-headline">Sub Headline, Date, Author or Category</p>-->
-                <h2>{{fields.title.content}}</h2>
+                <h2><a href="{{ path('entity.node.canonical', {'node': row._entity.nid.value}) }}">{{row._entity.title.value}}</a></h2>
                 {{fields.body.content}}
                 
                 <p><strong><a href="{{ path('entity.node.canonical', {'node': row._entity.nid.value}) }}">Read more</a></strong></p>
