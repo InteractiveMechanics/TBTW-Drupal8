@@ -193,7 +193,7 @@
 	
 	$(document).ready(function() {
 
-		$('a[data-toggle=modal], button[data-toggle=modal]').click(function () {
+		$('.image-modal').click(function () {
 	  		var title = $(this).data('title');
 	  		var thumbnail = $(this).data('thumbnail');
 	  		var image = $(this).data('image');
@@ -211,6 +211,8 @@
 	  		$('.modal-thumbnail').attr("src", thumbnail);
 	  		$('.press-modal').data("source", image);
 	  		$('.modal-credit').text(credit);
+	  		
+	  		$('#myImageModal').modal();
 	  	});
 	  	
 	  	$('.btn-download').click(function(){
