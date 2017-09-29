@@ -328,6 +328,10 @@ class Calendar {
 			if($month == "november") {
 				$monNum = "11";
 			}
+
+            if ($day < 10){
+                $day = '0' . $day;
+            }
 			
 			$d = date("Y") . "-" . $monNum . "-" . $day;
 			
