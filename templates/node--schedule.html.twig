@@ -123,9 +123,9 @@
         </ul>
 
         <div class="buy-now">
-            <button class="btn btn-white btn-big btn-buy-now-link" id="buy-now-link" style="width:100%;" onclick="buyTikcets()">
+            <a class="btn btn-white btn-big btn-buy-now-link" id="buy-now-link" style="width:100%;">
                 BUY NOW & SAVE
-            </button>
+            </a>
         </div>
     </div>
         
@@ -188,7 +188,7 @@
 					$('.vip-ul').append(html);
 	            	
 	            	$('.buy-now-popup h3').removeClass().addClass(color);
-	            	$('.btn-buy-now-link').attr('data-link', link);
+	            	$('.btn-buy-now-link').attr('href', link);
 	            	
 	            	$('p.price').text('$' + price);
 	            	$('p.atdoor').text('$' + atdoor);
@@ -237,7 +237,7 @@
         
         function buyTikcets() {
 	        var buy = document.getElementById('buy-now-link');
-			window.open(buy.dataset.link, '_blank');
+			//window.open(buy.dataset.link, '_blank');
         }
         
         function getParameterByName(name, url) {
