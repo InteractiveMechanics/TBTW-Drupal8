@@ -12,9 +12,10 @@
 		        	var align = $(this).data('align');
                     var width = $(this).attr('width');
                     var height = $(this).attr('height');
+                    var title = $(this).parent().attr('title');
 		        	
 		        	
-		        	console.log(align);
+		        	console.log(title);
 		        	if(!caption) {
 			        	caption = "";
 		        	}
@@ -22,8 +23,13 @@
 		        	if(!align) {
 			        	align = "center";
 		        	}
-		        	
-		        	$(this).replaceWith( getFigureHTML(src, alt, caption, align, width, height) );
+
+                    if (!title) {
+                        title = "";
+                        $(this).replaceWith( getFigureHTML(src, alt, caption, align, width, height, title) );
+                    } else {
+                        $(this).parent('a').replaceWith( getFigureHTML(src, alt, caption, align, width, height, title) );
+                    }
 				});
 	        	
 	        	
@@ -39,21 +45,28 @@
 				});
         	});
         	
-        	function getFigureHTML(src, alt, caption, align, width, height) {
-	        	
+        	function getFigureHTML(src, alt, caption, align, width, height, title) {
+                var html = "";	        	
+
 	        	if(!caption) {
 		        	caption = "";
 	        	}
 	        	
 	        	align = "align-" + align;
 	        	
-	        	return "<figure role='group' class='" + align + "' style='width:" + width + "px; min-height:" + height + "px;'>" +
-						    "<div class='relative-position'>" +
-								"<img alt='' class='img-responsive' src='"+ src +"'>" +
-								"<div data-toggle='tooltip' data-placement='left' title='' class='info-icon' data-original-title='"+ alt+ "'></div>" +
-							"</div>" +
-						    "<figcaption>" + caption + "</figcaption>" +
-						"</figure>";
+	        	html += "<figure role='group' class='" + align + "' style='width:" + width + "px; min-height:" + height + "px;'>";
+                html += "<div class='relative-position'>";
+                html += "<img alt='' class='img-responsive' src='"+ src +"'>";
+
+                if (title){
+				    html += "<div data-toggle='tooltip' data-placement='left' title='' class='info-icon' data-original-title='"+ title + "'></div>";
+                }
+
+				html += "</div>";
+                html += "<figcaption>" + caption + "</figcaption>";
+				html += "</figure>";
+
+                return html;
         	}
         	
 </script>
