@@ -1,9 +1,22 @@
 /////
 
+            .schedule h4 {
+                color: white;
+                font-size: 21px;
+                font-weight: 500;
+            }
+            @media screen and (max-width: 900px){
+                .schedule .padded-box {
+                    padding-top: 30px !important;
+                }
+            }
 
 			.calendar {
 				color: #fff;
 			}
+            .calendar .colors-boxes {
+                padding-top: 30px;
+            }
 
 			.calendar .darkGreen {
 				background-color: rgb(81, 154, 81);
@@ -38,7 +51,30 @@
 				cursor: pointer;
 				z-index: 1;
                 transition: 0.5s all;
+
+                &:not(.not-colored):hover, &:not(.not-colored):focus, &:not(.not-colored):active {
+                    transform: translateY(-5px); 
+                    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+                }
 			}
+
+            .calendar-widget td img {
+                display: none;
+            }
+
+            .calendar td img {
+                max-width: 80px;
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+
+                @media (max-width: 1220px) {
+                    max-width: 50px;
+                }
+                @media (max-width: 990px) {
+                    display: none;
+                }
+            }
 
 			.calendar td.active {
 				transform: translateY(-5px); 
@@ -49,6 +85,7 @@
 				position: absolute;
 				bottom: 5px;
 				right: 7px;
+                display: none !important;
 			}
 
 			.calendar td .number {
@@ -108,10 +145,11 @@
 
 			.calendar .month-name {
 				text-transform: uppercase;
-				font-weight: bold;
-				letter-spacing: 2px;
 				position: absolute;
 				left: 0;
+                font-size: 18px !important;
+                letter-spacing: 3px;
+                font-weight: 400;
 			}
 
 			.calendar .month-name.top {
@@ -119,7 +157,10 @@
 			}
 
 			.calendar .month-name.bottom {
-				top: 85px;
+				top: 95px;
+			}
+            .calendar .month-name.bottom:first-of-type {
+				top: 75px;
 			}
 
 			.calendar .days-name {
@@ -133,9 +174,11 @@
 				background-color: #949599;
 				float: left;
 				margin: 1px;
-				margin-bottom: 60px;
+				margin-bottom: 30px;
 				text-transform: uppercase;
 				font-weight: bold;
+                font-size: 12px;
+                letter-spacing: 1px;
 			}
 
 			.calendar .days-name .day:first-child {
@@ -234,9 +277,9 @@
 
 			@media (max-width: 767px) {
 				.schedule .calendar td .day-number {
-					font-size: 12px;
-					top: 5px;
-					left: 5px; 
+					font-size: 14px;
+                    top: 8px;
+                    left: 8px; 
 				}
 
 				.schedule .calendar td .price {
@@ -272,7 +315,8 @@
 			@media (max-width: 400px) {
 				
 				.schedule .calendar .month:nth-child(2) {
-				    top:25px;
+				    top: 35px;
+                    margin-bottom: 35px;
 				}
 				
 				.schedule .calendar .month:nth-child(3) {

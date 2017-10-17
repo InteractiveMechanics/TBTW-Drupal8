@@ -228,7 +228,7 @@ class Calendar {
 	}
 
 	function printHTML() {
-		return 	'<div class="calendar">' . $this->printColorsBoxes() . $this->printDaysName() . $this->printCalendarTable() . '</div>';	
+		return 	'<div class="calendar">' . $this->printDaysName() . $this->printCalendarTable() . $this->printColorsBoxes() . '</div>';	
 	}
 	
 	function printHTMLWidget() {
@@ -397,6 +397,7 @@ class Calendar {
 
 						// Print the "real" table
 						for($j = $day_of_the_week, $i = $month['range'][0]; $i <= $month['range'][1]; $i++, $j++) {
+
 							if($j % 7 == 0) {
 								$tableStr .= '</tr>';
 								$tableStr .= '<tr>';
@@ -423,8 +424,12 @@ class Calendar {
 							if($td_color != 'not-colored') {
 								$class_name = strtolower($key) . "-" . $i;
 							}
+                            
 							$tableStr .= '<td data-jsondata="' . $optionString . '" class="' . $td_color . " " . $class_name . '"' . $this->getDataAttributes($i, $key, $td_color) . ' data-schedulekey="' . $class_name . ' ">';
 								$tableStr .= '<span class="day-number">' . $i . '</span>';
+                                if (strpos($optionString, 'remix') !== false) {
+								    $tableStr .= '<img src="./themes/tbtw/assets/REMIX.png" alt="REMIX" />';
+							    }
 								if($td_color != 'not-colored') {
 									$tableStr .= '<div class="price hidden-lg hidden-md">
 										<span class="dollars">$</span>
