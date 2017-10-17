@@ -29,20 +29,13 @@
                 <div class="padded-box">
 
                     <div class="row">
-                        <div class="col-md-9">
-                          
-                          {{schedule_table|raw}}
-                        </div>
-                    </div>
-
-                    <div class="row">
                         <div class="col-md-8">
-                            <h1>Important Info</h1>
+                            <h4 class="visible-xs">Click a date to purchase tickets.</h4>
+                            {{schedule_table|raw}}
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-4">
+                            <h4 class="hidden-xs">Click a date to purchase tickets.</h4>
                             {{node.body.value|raw}}
                         </div>
 
@@ -260,6 +253,7 @@
     {% verbatim %}
     <scrtip id="vip-options-template" type="text/x-handlebars-template">
     	  {{#each this}}
+            {{#if name}}
 		  	<li>
 	            <div class="pull-left">
 	                <p>
@@ -275,6 +269,7 @@
 	
 	            <br style="clear:both;" />
 	        </li>
+            {{/if}}
 	       {{/each}}
     </scrtip>
     {% endverbatim %}

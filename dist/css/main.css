@@ -2025,8 +2025,19 @@ input[type="radio"]:checked + label span {
     .press-item-li {
       min-height: auto; } }
 
+.schedule h4 {
+  color: white;
+  font-size: 21px;
+  font-weight: 500; }
+
+@media screen and (max-width: 900px) {
+  .schedule .padded-box {
+    padding-top: 30px !important; } }
 .calendar {
   color: #fff; }
+
+.calendar .colors-boxes {
+  padding-top: 30px; }
 
 .calendar .darkGreen {
   background-color: #519a51; }
@@ -2055,6 +2066,24 @@ input[type="radio"]:checked + label span {
   cursor: pointer;
   z-index: 1;
   transition: 0.5s all; }
+  .calendar td:not(.not-colored):hover, .calendar td:not(.not-colored):focus, .calendar td:not(.not-colored):active {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+
+.calendar-widget td img {
+  display: none; }
+
+.calendar td img {
+  max-width: 80px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px; }
+  @media (max-width: 1220px) {
+    .calendar td img {
+      max-width: 50px; } }
+  @media (max-width: 990px) {
+    .calendar td img {
+      display: none; } }
 
 .calendar td.active {
   transform: translateY(-5px);
@@ -2063,7 +2092,8 @@ input[type="radio"]:checked + label span {
 .calendar td .price {
   position: absolute;
   bottom: 5px;
-  right: 7px; }
+  right: 7px;
+  display: none !important; }
 
 .calendar td .number {
   font-size: 24px; }
@@ -2108,16 +2138,20 @@ input[type="radio"]:checked + label span {
 
 .calendar .month-name {
   text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 2px;
   position: absolute;
-  left: 0; }
+  left: 0;
+  font-size: 18px !important;
+  letter-spacing: 3px;
+  font-weight: 400; }
 
 .calendar .month-name.top {
   top: -25px; }
 
 .calendar .month-name.bottom {
-  top: 85px; }
+  top: 95px; }
+
+.calendar .month-name.bottom:first-of-type {
+  top: 75px; }
 
 .calendar .days-name {
   width: 100%; }
@@ -2129,9 +2163,11 @@ input[type="radio"]:checked + label span {
   background-color: #949599;
   float: left;
   margin: 1px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   text-transform: uppercase;
-  font-weight: bold; }
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 1px; }
 
 .calendar .days-name .day:first-child {
   margin-left: 0; }
@@ -2198,9 +2234,9 @@ input[type="radio"]:checked + label span {
     top: 75px; } }
 @media (max-width: 767px) {
   .schedule .calendar td .day-number {
-    font-size: 12px;
-    top: 5px;
-    left: 5px; }
+    font-size: 14px;
+    top: 8px;
+    left: 8px; }
 
   .schedule .calendar td .price {
     bottom: 2px;
@@ -2222,7 +2258,8 @@ input[type="radio"]:checked + label span {
     top: 45px; } }
 @media (max-width: 400px) {
   .schedule .calendar .month:nth-child(2) {
-    top: 25px; }
+    top: 35px;
+    margin-bottom: 35px; }
 
   .schedule .calendar .month:nth-child(3) {
     top: 0px; }

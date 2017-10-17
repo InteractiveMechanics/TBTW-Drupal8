@@ -228,7 +228,7 @@ class Calendar {
 	}
 
 	function printHTML() {
-		return 	'<div class="calendar">' . $this->printColorsBoxes() . $this->printDaysName() . $this->printCalendarTable() . '</div>';	
+		return 	'<div class="calendar">' . $this->printDaysName() . $this->printCalendarTable() . $this->printColorsBoxes() . '</div>';	
 	}
 	
 	function printHTMLWidget() {
@@ -291,23 +291,21 @@ class Calendar {
 		$hours = '';
 		$at_door_price = '';
 		$group_rate = '';
-		$online_price = '';
+		$online_prie = '';
 		
 		$vip_after_dark = '';
 		$vip_quick_pass = '';
 		$vip_hex_pass = '';
 		$vip_after_dark_hex = '';
 		
-        if ($color !== 'not-colored'){
-		    $attr = $this->settings['colors'][$color];
-        }
+		$attr = $this->settings['colors'][$color];
 		if(isset($attr)) {
 			
 			$price = $attr['price'] ? $attr['price'] : '';
 			$hours = $attr['hours'] ? $attr['hours'] : '';
 			$at_door_price = $attr['at_door_price'] ? $attr['at_door_price'] : '';
 			$group_rate = $attr['group_rate'] ? $attr['group_rate'] : '';
-			$online_price = $attr['online_price'] ? $attr['online_price'] : '';
+			$online_prie = $attr['online_price'] ? $attr['online_price'] : '';
 			
 			$vip_after_dark = $attr['vip_after_dark'] ? $attr['vip_after_dark'] : '';
 			$vip_quick_pass = $attr['vip_quick_pass'] ? $attr['vip_quick_pass'] : '';
@@ -399,6 +397,7 @@ class Calendar {
 
 						// Print the "real" table
 						for($j = $day_of_the_week, $i = $month['range'][0]; $i <= $month['range'][1]; $i++, $j++) {
+
 							if($j % 7 == 0) {
 								$tableStr .= '</tr>';
 								$tableStr .= '<tr>';
@@ -425,8 +424,12 @@ class Calendar {
 							if($td_color != 'not-colored') {
 								$class_name = strtolower($key) . "-" . $i;
 							}
+                            
 							$tableStr .= '<td data-jsondata="' . $optionString . '" class="' . $td_color . " " . $class_name . '"' . $this->getDataAttributes($i, $key, $td_color) . ' data-schedulekey="' . $class_name . ' ">';
 								$tableStr .= '<span class="day-number">' . $i . '</span>';
+                                if (strpos($optionString, 'remix') !== false) {
+								    $tableStr .= '<img src="./themes/tbtw/assets/REMIX.png" alt="REMIX" />';
+							    }
 								if($td_color != 'not-colored') {
 									$tableStr .= '<div class="price hidden-lg hidden-md">
 										<span class="dollars">$</span>
