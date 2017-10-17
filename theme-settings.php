@@ -46,6 +46,12 @@ function tbtw_form_system_theme_settings_alter (&$form, \Drupal\Core\Form\FormSt
         '#default_value' => theme_get_setting('ticket_purchase_text'),
         '#description'   => t("Update the text for the 'Purchase Tickets' buttons in the menus. Default: Purchase Tickets"),
     );
+    $form['sitewide_options']['ticket_purchase_link'] = array(
+        '#type'          => 'textfield',
+        '#title'         => t('Ticketing Buy Button Link'),
+        '#default_value' => theme_get_setting('ticket_purchase_link'),
+        '#description'   => t("Update the URL for the 'Purchase Tickets' buttons in the menus. Default: /halloween/schedule"),
+    );
     $form['sitewide_options']['closed_today'] = array(
       '#type'            => 'checkbox',
       '#title'           => t('Is Terror Behind the Walls closed today?'),

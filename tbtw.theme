@@ -10,6 +10,8 @@
 
 		$variables['tracking_pixel'] = theme_get_setting('tracking_pixel');
 		$variables['ticket_purchase_text'] = theme_get_setting('ticket_purchase_text');
+        $variables['ticket_purchase_link'] = theme_get_setting('ticket_purchase_link');
+        
         $variables['closed_today'] = theme_get_setting('closed_today');
 		
 		$node = \Drupal::routeMatch()->getParameter('node');
@@ -612,6 +614,7 @@
         for($i = 0; $i < count($node->field_schedule_date); $i++) {
 	        
 	        $mydate = $node->field_schedule_date[$i]->entity->field_date->value;
+            $remix = $node->field_schedule_date[$i]->entity->field_remix->value;
 	        $day = date("d",strtotime($mydate));
 	        $month = date("F",strtotime($mydate));
 	        
@@ -634,10 +637,13 @@
 						'description' => strip_tags($option->entity->field_vip_option_term->entity->description->value)
 					));
 		        }
+                if($remix) {
+                    array_push($vip_options, array(
+						'remix' => true
+					));
+                }
 			    
 			    $day = (int) $day;
-			    
-			    
 			    
 				if($color == 'green') {
 			    	array_push($optionsArray, array(
