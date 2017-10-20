@@ -132,16 +132,17 @@
         }
 
         if($contentType == 'page_flexible_static') {
-			$form_name = $node->field_webform[0]->target_id;
+            if($node->field_webform[0]){
+                $form_name = $node->field_webform[0]->target_id;
 			
-			
-			if($form_name) {
-				//$webform = \Drupal::entityTypeManager()->getStorage('webform')->load($form_name);
-				$my_form = \Drupal\webform\Entity\Webform::load($form_name);
-				//$webform = $webform->getSubmissionForm();
-				$output = \Drupal::entityManager()->getViewBuilder('webform')->view($my_form);
-				$variables['webform_field'] = $output;
-			}
+    			if($form_name) {
+    				//$webform = \Drupal::entityTypeManager()->getStorage('webform')->load($form_name);
+    				$my_form = \Drupal\webform\Entity\Webform::load($form_name);
+    				//$webform = $webform->getSubmissionForm();
+    				$output = \Drupal::entityManager()->getViewBuilder('webform')->view($my_form);
+    				$variables['webform_field'] = $output;
+    			}
+            }
 		}
         
         

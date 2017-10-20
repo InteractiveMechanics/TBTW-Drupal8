@@ -298,14 +298,16 @@ class Calendar {
 		$vip_hex_pass = '';
 		$vip_after_dark_hex = '';
 		
-		$attr = $this->settings['colors'][$color];
+        if ($color !== 'not-colored') {
+            $attr = $this->settings['colors'][$color];
+        }
 		if(isset($attr)) {
 			
 			$price = $attr['price'] ? $attr['price'] : '';
 			$hours = $attr['hours'] ? $attr['hours'] : '';
 			$at_door_price = $attr['at_door_price'] ? $attr['at_door_price'] : '';
 			$group_rate = $attr['group_rate'] ? $attr['group_rate'] : '';
-			$online_prie = $attr['online_price'] ? $attr['online_price'] : '';
+			$online_price = $attr['online_price'] ? $attr['online_price'] : '';
 			
 			$vip_after_dark = $attr['vip_after_dark'] ? $attr['vip_after_dark'] : '';
 			$vip_quick_pass = $attr['vip_quick_pass'] ? $attr['vip_quick_pass'] : '';
