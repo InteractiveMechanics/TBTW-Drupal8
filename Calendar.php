@@ -369,12 +369,26 @@ class Calendar {
 
 	function printCalendarTable() {
 		
+		
+		
 		$tableStr = '';
 		$show = true;
 		$optionString = '';
 		$tableStr .= '<div class="calendar-table">';
+		
 			foreach($this->settings['months'] as $key => $month) {
 				$month_number = date('n', strtotime($key));
+				
+				if($key == 'september') {
+					$month_number = 9;
+				}
+				if($key == 'october') {
+					$month_number = 10;
+				}
+				if($key == 'november') {
+					$month_number = 11;
+				}
+				
 				$jd = gregoriantojd($month_number, $month['range'][0], $this->settings['year']);
 				$day_of_the_week = jddayofweek($jd, 0);
 
