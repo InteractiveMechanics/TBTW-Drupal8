@@ -216,9 +216,8 @@ class Calendar {
 
 						if(m.hasClass('bottom')) {
 							m.css('top', top - 25);
-						}
-						else {
-							m.css('top', - 25);
+						} else {
+							m.css('top', 25);
 						}
 					})
 				}
@@ -393,7 +392,7 @@ class Calendar {
 				$day_of_the_week = jddayofweek($jd, 0);
 
 				$month_name_pos = 'top';
-				if($day_of_the_week != 0) {
+				if($day_of_the_week > 1) {
 					$month_name_pos = 'bottom';
 				}
 				
