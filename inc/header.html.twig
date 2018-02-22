@@ -51,12 +51,12 @@
 	                	</a>
 	                </p>
 	                {% if closed_today %}
-	                    <p>Terror Behind the Walls is Closed Today</p>
+	                    <p>Terror Behind the Walls is Closed Tonight</p>
                     {% else %}
                         {% if todays_hours %}
-                            <p>Open Today from {{ todays_hours }}</p>
+                            <p>Open Tonight from {{ todays_hours }}</p>
                         {% else %}
-                            <p>Terror Behind the Walls is Closed Today</p>
+                            <p>Terror Behind the Walls is Closed Tonight</p>
                         {% endif %}
                     {% endif %}
 	            </div>
@@ -109,14 +109,14 @@
             <ul class="list-unstyled">
                 {% if closed_today %}
                     <li>Terror Behind the Walls</li>
-                    <li>is Closed Today</li>
+                    <li>is Closed Tonight</li>
                 {% else %}
                     {% if todays_hours %}
-                        <li>Open Today from</li>
+                        <li>Open Tonight from</li>
                         <li><span class="hours">{{ todays_hours }}</span></li>
                     {% else %}
                         <li>Terror Behind the Walls</li>
-                        <li>is Closed Today</li>
+                        <li>is Closed Tonight</li>
                     {% endif %}
                 {% endif %}
                 
