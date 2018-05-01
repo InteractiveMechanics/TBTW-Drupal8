@@ -335,7 +335,7 @@ class Calendar {
 			
 			$d = date("Y") . "-" . $monNum . "-" . $day;
 			
-			$dataAttr .= " data-link='" . $this->settings['ticketing_link'] . $d . "'";
+			$dataAttr .= " data-link='" . $this->settings['ticketing_link'] . "?slot_date=" . $d . "'";
 			
 			return $dataAttr;
 		}
