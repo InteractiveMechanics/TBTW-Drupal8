@@ -3,8 +3,6 @@ class Calendar {
 	public $settings;
 	public $columns = 7;
 	
-	public $ticket_link_base = "https://secure.interactiveticketing.com/1.15/b70cea/?slot_date=";
-
 	function __construct($settings) {
 		$this->settings = $settings;
 	}
@@ -337,7 +335,7 @@ class Calendar {
 			
 			$d = date("Y") . "-" . $monNum . "-" . $day;
 			
-			$dataAttr .= " data-link='https://secure.interactiveticketing.com/1.15/b70cea/?slot_date=" . $d . "'";
+			$dataAttr .= " data-link='" . $this->settings['ticketing_link'] . $d . "'";
 			
 			return $dataAttr;
 		}
