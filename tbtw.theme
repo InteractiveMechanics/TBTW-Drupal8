@@ -96,6 +96,7 @@
 		$variables['press_password'] = theme_get_setting('press_password');
 
 		$variables['tracking_pixel'] = theme_get_setting('tracking_pixel');
+        $variables['ticket_purchase_link'] = theme_get_setting('ticket_purchase_link');
 		$variables['ticket_purchase_text'] = theme_get_setting('ticket_purchase_text');
         $variables['closed_today'] = theme_get_setting('closed_today');
 		
@@ -185,7 +186,9 @@
 					'september' => septOptionsArray($schedule_node),
 		            'october' => octOptionsArray($schedule_node),
 		            'november' => novOptionsArray($schedule_node),
-				)
+				),
+
+                'ticketing_link' => theme_get_setting('ticket_purchase_link')
 				
 			));	
 			
