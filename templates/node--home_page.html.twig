@@ -222,8 +222,9 @@
                            
                             {{node.field_feature_block.0.getFieldCollectionItem().field_feature_block_copy.value|raw}}
                             <p style="margin:0;">
-                            	<span  class="terror-underline underline-learn-more" href="{{node.field_feature_block.2.getFieldCollectionItem().field_feature_block_link.uri}}">
-                            		<a href="{{ path('entity.node.canonical', {'node': 1}) }}">Learn More</a>
+                            	<span  class="terror-underline underline-learn-more">
+                            		{% set featureBlock0UrlLink = node.field_feature_block.0.getFieldCollectionItem().field_feature_block_link.uri|split('/')|last %}
+                            		<a href="{{ path('entity.node.canonical', {'node': featureBlock0UrlLink}) }}">Learn More</a>
                             	</span>
                             </p>
                         </div>
@@ -246,8 +247,9 @@
                            
                             {{node.field_feature_block.1.getFieldCollectionItem().field_feature_block_copy.value|raw}}
                             <p style="margin:0;">
-                            	<span  class="terror-underline underline-learn-more" href="{{node.field_feature_block.2.getFieldCollectionItem().field_feature_block_link.uri}}">
-                            		<a href="{{ path('entity.node.canonical', {'node': 4}) }}">Learn More</a>
+                            	<span  class="terror-underline underline-learn-more">
+                                    {% set featureBlock1UrlLink = node.field_feature_block.1.getFieldCollectionItem().field_feature_block_link.uri|split('/')|last %}
+                            		<a href="{{ path('entity.node.canonical', {'node': featureBlock1UrlLink}) }}">Learn More</a>
                             	</span>
                             </p>
                         </div>
@@ -269,8 +271,9 @@
                            
                             {{node.field_feature_block.2.getFieldCollectionItem().field_feature_block_copy.value|raw}}
                             <p style="margin:0;">
-                            	<span  class="terror-underline underline-learn-more" href="{{node.field_feature_block.2.getFieldCollectionItem().field_feature_block_link.uri}}">
-                            		<a href="{{ path('entity.node.canonical', {'node': 1}) }}">Learn More</a>
+                            	<span  class="terror-underline underline-learn-more">
+                            		{% set featureBlock2UrlLink = node.field_feature_block.2.getFieldCollectionItem().field_feature_block_link.uri|split('/')|last %}
+                            		<a href="{{ path('entity.node.canonical', {'node': featureBlock2UrlLink}) }}">Learn More</a>
                             	</span>
                             </p>
                         </div>
