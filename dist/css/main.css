@@ -743,37 +743,37 @@ h2 a {
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
-  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg); }
+  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg); }
 .subpage-hero-section .jobs-hero {
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
-  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/jobs-hero.png); }
+  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/jobs-hero.png); }
 .subpage-hero-section .generic-hero {
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
-  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg); }
+  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg); }
 .subpage-hero-section .press-hero {
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
-  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/press-hero.jpg); }
+  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/press-hero.jpg); }
 .subpage-hero-section .schedule-hero {
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
-  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-schedule@2x.jpg.jpg); }
+  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-schedule@2x.jpg.jpg); }
 .subpage-hero-section .search-hero {
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
-  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample2@2x.jpg.jpg); }
+  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-sample2@2x.jpg.jpg); }
 .subpage-hero-section .calendar-hero {
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
-  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-overlay@2x.png.png), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg); }
+  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.35) 100%), url(../../assets/hero-images/tbtw-hero-sample@2x.jpg.jpg); }
 .subpage-hero-section .subpage-hero-details {
   height: 445px;
   position: relative;
@@ -2491,5 +2491,37 @@ input[type="radio"]:checked + label span {
   .close svg {
     top: -20px;
     right: 0; } }
+.open > .dropdown-menu {
+  display: none; }
+
+.list-item-detail img {
+  width: 25%; }
+
+.list-item-detail h2 {
+  color: white; }
+
+.list-item-detail a {
+  color: white; }
+
+.js-quickedit-page-title {
+  display: none; }
+
+.visit-dropdown li:eq(1) {
+  padding-left: 20px; }
+
+.visit-dropdown li:eq(2) {
+  padding-left: 20px; }
+
+.request-form .form-control {
+  color: white !important; }
+
+.request-form input.form-control {
+  color: #353535 !important; }
+
+@media (max-width: 600px) {
+  .calendar .colors-boxes .box {
+    width: calc(33% - 4.8px) !important; } }
+.breadcrumb {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */
