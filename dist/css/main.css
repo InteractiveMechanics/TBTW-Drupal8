@@ -506,7 +506,7 @@ body.has-active-menu {
     .mobile-menu-top > ul > li {
       margin-bottom: 20px; }
       .mobile-menu-top > ul > li > a {
-        color: #777;
+        color: #AAA;
         cursor: pointer;
         font-size: 14px;
         text-transform: uppercase;
