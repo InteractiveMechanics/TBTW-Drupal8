@@ -170,13 +170,10 @@
 	            	
 	            	var source   = $("#vip-options-template").html();
 					var template = Handlebars.compile(source);
-	            	
-	            	console.log();
-	            	
+	            		            	
 	            	var context = JSON.parse(jsonData);
 					var html    = template(context);
 					
-					console.log(html);
 					$('.vip-ul').empty();
 					$('.vip-ul').append(html);
 	            	
