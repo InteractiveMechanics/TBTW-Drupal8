@@ -1,6 +1,7 @@
 $(function(){
     $('.close-icon').click(function(){
-        $(".calendar-widget").addClass('display-none');   
+        $('.calendar-widget').removeClass('display-block');  
+        $(".calendar-widget").addClass('display-none');
     });
 
     var slideLeftBtn = document.querySelector('#c-button--slide-right');
