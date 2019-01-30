@@ -328,22 +328,23 @@
             </div>
         </div>
         
-        
-        <script type="text/javascript">
-        	$(document).ready(function(){
-	        	$('.calendar-table td').click(function(){
-					var key = $(this).data('schedulekey');
-					
-					if(key) {
-						var dateLink = window.location.origin + window.location.pathname + "schedule?date=" + key
-						window.location.replace(dateLink);
-						//window.open(dateLink);
-					} 
-			    });
-			    
-			    setTimeout(function(){
-				   $('.calendar-widget').removeClass('display-none');  
-				   $('.calendar-widget').addClass('display-block');  
-			    }, 2200);
-        	});
-        </script>
+        {% if not disable_sidebar_calendar %}
+	        <script type="text/javascript">
+	        	$(document).ready(function(){
+		        	$('.calendar-table td').click(function(){
+						var key = $(this).data('schedulekey');
+						
+						if(key) {
+							var dateLink = window.location.origin + window.location.pathname + "schedule?date=" + key
+							window.location.replace(dateLink);
+							//window.open(dateLink);
+						} 
+				    });
+				    
+				    setTimeout(function(){
+					   $('.calendar-widget').removeClass('display-none');  
+					   $('.calendar-widget').addClass('display-block');  
+				    }, 2200);
+	        	});
+	        </script>
+	    {% endif %}

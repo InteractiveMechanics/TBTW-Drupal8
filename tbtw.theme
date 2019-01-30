@@ -13,6 +13,7 @@
         $variables['ticket_purchase_link'] = theme_get_setting('ticket_purchase_link');
         
         $variables['closed_today'] = theme_get_setting('closed_today');
+        $variables['disable_sidebar_calendar'] = theme_get_setting('disable_sidebar_calendar');
 		
 		$node = \Drupal::routeMatch()->getParameter('node');
 		
