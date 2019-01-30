@@ -58,4 +58,10 @@ function tbtw_form_system_theme_settings_alter (&$form, \Drupal\Core\Form\FormSt
       '#default_value'   => theme_get_setting('closed_today'),
       '#description'     => t("Check this box to indicate that Terror Behind the Walls is closed today. Default: unchecked"),
     );
+    $form['sitewide_options']['disable_sidebar_calendar'] = array(
+      '#type'            => 'checkbox',
+      '#title'           => t('Do you want to disable the homepage sidebar calendar?'),
+      '#default_value'   => theme_get_setting('disable_sidebar_calendar'),
+      '#description'     => t("Check this box to hide the homepage sidebar calendar. Default: unchecked"),
+    );
 }
